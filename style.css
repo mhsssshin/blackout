@@ -344,6 +344,7 @@ header::after {
     line-height: 1.6;
     color: var(--text-primary);
     font-family: var(--font-sans);
+    white-space: pre-wrap;
 }
 
 /* Typing cursor animation */
