@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operation: 블랙아웃 - Stage 09</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="terminal-theme">
+    <div class="grid-bg"></div>
+    
+    <div class="app-container">
+        <!-- Common Header -->
+        <header>
+            <div class="logo-section">
+                <h1>OPERATION: BLACKOUT <span class="tqo-badge">TQO CORE</span></h1>
+            </div>
+            
+            <div class="system-status">
+                <div class="status-item">
+                    <span class="status-indicator red"></span>
+                    <span class="status-label">SYS STATUS:</span>
+                    <span class="status-value">CRITICAL EMERGENCY</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">CURR STAGE:</span>
+                    <span class="status-value">09 / 20</span>
+                </div>
+            </div>
+
+            <!-- Dynamic SLA metric widget -->
+            <div class="sla-widget">
+                <span class="sla-title">SLA RATIO</span>
+                <div class="sla-bar-container">
+                    <div class="sla-bar"></div>
+                </div>
+                <span class="sla-value" style="font-family: var(--font-mono); font-size: 0.8rem; font-weight: bold;">99.90%</span>
+            </div>
+        </header>
+
+        <!-- Stage Game Body -->
+        <div class="dashboard-grid" id="stage-container" data-stage="9" data-verify="27dce682e1ad2f2106be21d27e8025de5de7ee65cecc737d4f27a33af4c29a8a">
+            <!-- Left Narrative Area -->
+            <main class="main-stage-panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        📡 DETECTED LOG FILE & SUSPECT SHIELD
+                    </div>
+                    <div class="stage-badge">
+                        STAGE 09 : Knowledgebase (지식 정보 조회)
+                    </div>
+                </div>
+
+                <div class="story-container">
+                    <!-- Dialogue representation -->
+                    <div class="dialogue-card speaker-suspect">
+                        <div class="avatar-container">
+                            <div class="avatar-placeholder">KB</div>
+                        </div>
+                        <div class="dialogue-body">
+                            <div class="dialogue-speaker">
+                                <span>HIS 지식관리 시스템</span>
+                                <span class="speaker-role">KNOWLEDGEBASE</span>
+                            </div>
+                            <div class="dialogue-text typing-text" data-text="장애 유형별 대응 SOP 조회를 위한 사내 지식 라이브러리 포털입니다. 현재 차세대 데이터베이스의 파괴 증상이 목격되었습니다. 아래 포털 덤프 리스트 중에서 '스토리지 동기화 실패로 인한 DB 파손 대응 매뉴얼'에 부합하는 올바른 문서 코드의 숫자 4자리를 도출하십시오.">
+                                장애 유형별 대응 SOP 조회를 위한 사내 지식 라이브러리 포털입니다. 현재 차세대 데이터베이스의 파괴 증상이 목격되었습니다. 아래 포털 덤프 리스트 중에서 '스토리지 동기화 실패로 인한 DB 파손 대응 매뉴얼'에 부합하는 올바른 문서 코드의 숫자 4자리를 도출하십시오.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gimmick HTML rendering -->
+                    <div class='puzzle-container'>
+    <div class='puzzle-title'>🔍 KNOWLEDGEBASE DOCUMENT LIST</div>
+    <table style='width: 100%; border-collapse: collapse; font-size: 0.85rem; text-align: left; margin-top: 10px;'>
+        <tr style='border-bottom: 1px solid var(--border-color); color: var(--accent-blue);'>
+            <th style='padding: 6px;'>문서코드</th>
+            <th style='padding: 6px;'>주제</th>
+        </tr>
+        <tr>
+            <td style='padding: 6px;'>KB-7108</td>
+            <td style='padding: 6px;'>웹 애플리케이션 서버 커널 튜닝 규격</td>
+        </tr>
+        <tr style='background: rgba(0, 229, 255, 0.05);'>
+            <td style='padding: 6px; font-weight: bold; color: var(--accent-green);'>KB-8204</td>
+            <td style='padding: 6px; color: var(--text-primary);'>스토리지 동기화 실패로 인한 DB 파손 대응 매뉴얼</td>
+        </tr>
+        <tr>
+            <td style='padding: 6px;'>KB-9321</td>
+            <td style='padding: 6px;'>L4 네트워크 로드밸런서 VIP 이중화 스키마</td>
+        </tr>
+    </table>
+</div>
+                </div>
+            </main>
+
+            <!-- Right Terminal Input Area -->
+            <aside class="terminal-panel">
+                <div class="terminal-header">
+                    <div class="terminal-controls">
+                        <span class="control-dot close"></span>
+                        <span class="control-dot minimize"></span>
+                        <span class="control-dot maximize"></span>
+                    </div>
+                    <div class="terminal-title">tqo@his-system:~/incident_monitor</div>
+                </div>
+
+                <div class="terminal-body">
+                    <div class="terminal-output">
+                        <p class="system-log">HIS Incident Management Subsystem v1.0.4</p>
+                        <p class="system-log">Loading kernel security context for Stage 09...</p>
+                        <p class="system-log">Ready. Enter decrypted passcode or entity key to route next file.</p>
+                        <p style="color: var(--text-muted);">--------------------------------------------------------</p>
+                    </div>
+
+                    <div class="terminal-prompt">
+                        <span class="prompt-symbol">[root@tqo-system ~]#</span>
+                        <input type="text" class="terminal-input" placeholder="Enter key..." autofocus autocomplete="off" spellcheck="false">
+                        <button class="submit-btn">EXEC</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

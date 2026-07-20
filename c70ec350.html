@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operation: 블랙아웃 - Stage 14</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="terminal-theme">
+    <div class="grid-bg"></div>
+    
+    <div class="app-container">
+        <!-- Common Header -->
+        <header>
+            <div class="logo-section">
+                <h1>OPERATION: BLACKOUT <span class="tqo-badge">TQO CORE</span></h1>
+            </div>
+            
+            <div class="system-status">
+                <div class="status-item">
+                    <span class="status-indicator red"></span>
+                    <span class="status-label">SYS STATUS:</span>
+                    <span class="status-value">CRITICAL EMERGENCY</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">CURR STAGE:</span>
+                    <span class="status-value">14 / 20</span>
+                </div>
+            </div>
+
+            <!-- Dynamic SLA metric widget -->
+            <div class="sla-widget">
+                <span class="sla-title">SLA RATIO</span>
+                <div class="sla-bar-container">
+                    <div class="sla-bar"></div>
+                </div>
+                <span class="sla-value" style="font-family: var(--font-mono); font-size: 0.8rem; font-weight: bold;">99.90%</span>
+            </div>
+        </header>
+
+        <!-- Stage Game Body -->
+        <div class="dashboard-grid" id="stage-container" data-stage="14" data-verify="838940b6f1deea2e9aca2c69a4df9a484139e1d8ab954a1b2366df3777ae416b">
+            <!-- Left Narrative Area -->
+            <main class="main-stage-panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        📡 DETECTED LOG FILE & SUSPECT SHIELD
+                    </div>
+                    <div class="stage-badge">
+                        STAGE 14 : The Motivation (박용철 총괄)
+                    </div>
+                </div>
+
+                <div class="story-container">
+                    <!-- Dialogue representation -->
+                    <div class="dialogue-card speaker-suspect">
+                        <div class="avatar-container">
+                            <div class="avatar-placeholder">PARK_YC</div>
+                        </div>
+                        <div class="dialogue-body">
+                            <div class="dialogue-speaker">
+                                <span>박용철 파트장</span>
+                                <span class="speaker-role">품질총괄</span>
+                            </div>
+                            <div class="dialogue-text typing-text" data-text="서버 셧다운 직전, 데이터베이스에 심각한 로지컬 블록 깨짐(Block Corruption)이 잡혔다는 보고가 있네. 아래의 타겟 정규표현식(Regex)을 이용해 아래의 내부 로그 중에서 데이터 무결성을 파괴하고 물리 손상을 가져온 오라클 핵심 내부 오류 코드 명칭을 식별해 내어 소문자로 보고하게!">
+                                서버 셧다운 직전, 데이터베이스에 심각한 로지컬 블록 깨짐(Block Corruption)이 잡혔다는 보고가 있네. 아래의 타겟 정규표현식(Regex)을 이용해 아래의 내부 로그 중에서 데이터 무결성을 파괴하고 물리 손상을 가져온 오라클 핵심 내부 오류 코드 명칭을 식별해 내어 소문자로 보고하게!
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gimmick HTML rendering -->
+                    <div class='puzzle-container'>
+    <div class='puzzle-title'>🔍 CORRUPTION PATTERN DETECTION FILTER</div>
+    <ul style='list-style-type: square; padding-left: 20px; font-size: 0.85rem; line-height: 1.6; color: var(--accent-blue); font-family: var(--font-mono);'>
+        <li>정규식 필터: ^[A-Za-z]+-[0-9]{5}$</li>
+        <li>[DB ERROR LOG DUMP]:</li>
+        <li style='color: var(--text-muted);'>- sys-info-10023: buffer read</li>
+        <li style='color: var(--accent-magenta); font-weight: bold;'>- ORA-00600: internal error code</li>
+        <li style='color: var(--text-muted);'>- DB-CONN-5020: timeout error</li>
+    </ul>
+</div>
+                </div>
+            </main>
+
+            <!-- Right Terminal Input Area -->
+            <aside class="terminal-panel">
+                <div class="terminal-header">
+                    <div class="terminal-controls">
+                        <span class="control-dot close"></span>
+                        <span class="control-dot minimize"></span>
+                        <span class="control-dot maximize"></span>
+                    </div>
+                    <div class="terminal-title">tqo@his-system:~/incident_monitor</div>
+                </div>
+
+                <div class="terminal-body">
+                    <div class="terminal-output">
+                        <p class="system-log">HIS Incident Management Subsystem v1.0.4</p>
+                        <p class="system-log">Loading kernel security context for Stage 14...</p>
+                        <p class="system-log">Ready. Enter decrypted passcode or entity key to route next file.</p>
+                        <p style="color: var(--text-muted);">--------------------------------------------------------</p>
+                    </div>
+
+                    <div class="terminal-prompt">
+                        <span class="prompt-symbol">[root@tqo-system ~]#</span>
+                        <input type="text" class="terminal-input" placeholder="Enter key..." autofocus autocomplete="off" spellcheck="false">
+                        <button class="submit-btn">EXEC</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operation: 블랙아웃 - Stage 17</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="terminal-theme">
+    <div class="grid-bg"></div>
+    
+    <div class="app-container">
+        <!-- Common Header -->
+        <header>
+            <div class="logo-section">
+                <h1>OPERATION: BLACKOUT <span class="tqo-badge">TQO CORE</span></h1>
+            </div>
+            
+            <div class="system-status">
+                <div class="status-item">
+                    <span class="status-indicator red"></span>
+                    <span class="status-label">SYS STATUS:</span>
+                    <span class="status-value">CRITICAL EMERGENCY</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">CURR STAGE:</span>
+                    <span class="status-value">17 / 20</span>
+                </div>
+            </div>
+
+            <!-- Dynamic SLA metric widget -->
+            <div class="sla-widget">
+                <span class="sla-title">SLA RATIO</span>
+                <div class="sla-bar-container">
+                    <div class="sla-bar"></div>
+                </div>
+                <span class="sla-value" style="font-family: var(--font-mono); font-size: 0.8rem; font-weight: bold;">99.90%</span>
+            </div>
+        </header>
+
+        <!-- Stage Game Body -->
+        <div class="dashboard-grid" id="stage-container" data-stage="17" data-verify="2fac394011e7d326f9c7ff5e532316be43ce2e7d88b4f1377f585e8c8c083672">
+            <!-- Left Narrative Area -->
+            <main class="main-stage-panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        📡 DETECTED LOG FILE & SUSPECT SHIELD
+                    </div>
+                    <div class="stage-badge">
+                        STAGE 17 : SAN Storage (김진혁의 실수 2)
+                    </div>
+                </div>
+
+                <div class="story-container">
+                    <!-- Dialogue representation -->
+                    <div class="dialogue-card speaker-suspect">
+                        <div class="avatar-container">
+                            <div class="avatar-placeholder">SAN</div>
+                        </div>
+                        <div class="dialogue-body">
+                            <div class="dialogue-speaker">
+                                <span>iSCSI 연결 관리자</span>
+                                <span class="speaker-role">STORAGE LOG</span>
+                            </div>
+                            <div class="dialogue-text typing-text" data-text="서브넷 격리 사고 이후 SAN(Storage Area Network) 스토리지 모듈과 IP 통신 링크가 완전히 오프라인되었습니다. 유효 호스트 링크를 재수립하고 데이터베이스와 블록 저장소 간의 통신을 정상화시키기 위해, iSCSI 통신용 프로토콜 규격이 기본적으로 점유하여 작동시키는 전용 TCP 포트 번호를 입력하여 포트 바인딩을 허가해 주십시오.">
+                                서브넷 격리 사고 이후 SAN(Storage Area Network) 스토리지 모듈과 IP 통신 링크가 완전히 오프라인되었습니다. 유효 호스트 링크를 재수립하고 데이터베이스와 블록 저장소 간의 통신을 정상화시키기 위해, iSCSI 통신용 프로토콜 규격이 기본적으로 점유하여 작동시키는 전용 TCP 포트 번호를 입력하여 포트 바인딩을 허가해 주십시오.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gimmick HTML rendering -->
+                    <div class='puzzle-container'>
+    <div class='puzzle-title'>🔌 PROTOCOL PORT CHECK: iSCSI TARGET</div>
+    <p style='color: var(--text-muted); font-size: 0.9rem;'>인터넷 소형 컴퓨터 시스템 인터페이스(iSCSI) 통신 프로토콜의 표준 Well-known TCP 포트 번호 4자리를 도출하십시오.</p>
+</div>
+                </div>
+            </main>
+
+            <!-- Right Terminal Input Area -->
+            <aside class="terminal-panel">
+                <div class="terminal-header">
+                    <div class="terminal-controls">
+                        <span class="control-dot close"></span>
+                        <span class="control-dot minimize"></span>
+                        <span class="control-dot maximize"></span>
+                    </div>
+                    <div class="terminal-title">tqo@his-system:~/incident_monitor</div>
+                </div>
+
+                <div class="terminal-body">
+                    <div class="terminal-output">
+                        <p class="system-log">HIS Incident Management Subsystem v1.0.4</p>
+                        <p class="system-log">Loading kernel security context for Stage 17...</p>
+                        <p class="system-log">Ready. Enter decrypted passcode or entity key to route next file.</p>
+                        <p style="color: var(--text-muted);">--------------------------------------------------------</p>
+                    </div>
+
+                    <div class="terminal-prompt">
+                        <span class="prompt-symbol">[root@tqo-system ~]#</span>
+                        <input type="text" class="terminal-input" placeholder="Enter key..." autofocus autocomplete="off" spellcheck="false">
+                        <button class="submit-btn">EXEC</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operation: 블랙아웃 - Stage 10</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="terminal-theme">
+    <div class="grid-bg"></div>
+    
+    <div class="app-container">
+        <!-- Common Header -->
+        <header>
+            <div class="logo-section">
+                <h1>OPERATION: BLACKOUT <span class="tqo-badge">TQO CORE</span></h1>
+            </div>
+            
+            <div class="system-status">
+                <div class="status-item">
+                    <span class="status-indicator red"></span>
+                    <span class="status-label">SYS STATUS:</span>
+                    <span class="status-value">CRITICAL EMERGENCY</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">CURR STAGE:</span>
+                    <span class="status-value">10 / 20</span>
+                </div>
+            </div>
+
+            <!-- Dynamic SLA metric widget -->
+            <div class="sla-widget">
+                <span class="sla-title">SLA RATIO</span>
+                <div class="sla-bar-container">
+                    <div class="sla-bar"></div>
+                </div>
+                <span class="sla-value" style="font-family: var(--font-mono); font-size: 0.8rem; font-weight: bold;">99.90%</span>
+            </div>
+        </header>
+
+        <!-- Stage Game Body -->
+        <div class="dashboard-grid" id="stage-container" data-stage="10" data-verify="318fb6b0fd6eb7ef86613797123429db40159a50c0b443197c3a229ecefc07fb">
+            <!-- Left Narrative Area -->
+            <main class="main-stage-panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        📡 DETECTED LOG FILE & SUSPECT SHIELD
+                    </div>
+                    <div class="stage-badge">
+                        STAGE 10 : The Cronjob (Crontab 스케줄링)
+                    </div>
+                </div>
+
+                <div class="story-container">
+                    <!-- Dialogue representation -->
+                    <div class="dialogue-card speaker-suspect">
+                        <div class="avatar-container">
+                            <div class="avatar-placeholder">PARK_JW</div>
+                        </div>
+                        <div class="dialogue-body">
+                            <div class="dialogue-speaker">
+                                <span>박재욱 차장</span>
+                                <span class="speaker-role">DBA</span>
+                            </div>
+                            <div class="dialogue-text typing-text" data-text="억울합니다 TQO님! 저는 그날 새벽 데이터베이스 결산 백치를 수동으로 돌려 서버를 죽인 적이 없습니다. 모든 것은 시스템에 등록된 스케줄에 따라 자동화 프로그램(`backup.sh`)이 수행되었을 뿐입니다. 아래 백업 크론탭(crontab) 설정을 분석하여, 해당 백업 배치가 기동하는 정확한 시각을 24시간 표기법의 4자리 숫자(HHMM)로 기록해 제 누명을 벗겨주십시오.">
+                                억울합니다 TQO님! 저는 그날 새벽 데이터베이스 결산 백치를 수동으로 돌려 서버를 죽인 적이 없습니다. 모든 것은 시스템에 등록된 스케줄에 따라 자동화 프로그램(`backup.sh`)이 수행되었을 뿐입니다. 아래 백업 크론탭(crontab) 설정을 분석하여, 해당 백업 배치가 기동하는 정확한 시각을 24시간 표기법의 4자리 숫자(HHMM)로 기록해 제 누명을 벗겨주십시오.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gimmick HTML rendering -->
+                    <div class='puzzle-container'>
+    <div class='puzzle-title'>⏰ TARGET CRONTAB CONFIGURATION</div>
+    <div style='background: #020306; font-family: var(--font-mono); padding: 15px; border-radius: 6px; border: 1px solid var(--border-color); text-align: center; font-size: 1.1rem; color: var(--accent-blue);'>
+        45 1 * * * /usr/sbin/backup.sh
+    </div>
+    <p style='color: var(--text-muted); font-size: 0.8rem; margin-top: 10px;'>크론탭 구조: [분] [시] [일] [월] [요일] [명령어]</p>
+</div>
+                </div>
+            </main>
+
+            <!-- Right Terminal Input Area -->
+            <aside class="terminal-panel">
+                <div class="terminal-header">
+                    <div class="terminal-controls">
+                        <span class="control-dot close"></span>
+                        <span class="control-dot minimize"></span>
+                        <span class="control-dot maximize"></span>
+                    </div>
+                    <div class="terminal-title">tqo@his-system:~/incident_monitor</div>
+                </div>
+
+                <div class="terminal-body">
+                    <div class="terminal-output">
+                        <p class="system-log">HIS Incident Management Subsystem v1.0.4</p>
+                        <p class="system-log">Loading kernel security context for Stage 10...</p>
+                        <p class="system-log">Ready. Enter decrypted passcode or entity key to route next file.</p>
+                        <p style="color: var(--text-muted);">--------------------------------------------------------</p>
+                    </div>
+
+                    <div class="terminal-prompt">
+                        <span class="prompt-symbol">[root@tqo-system ~]#</span>
+                        <input type="text" class="terminal-input" placeholder="Enter key..." autofocus autocomplete="off" spellcheck="false">
+                        <button class="submit-btn">EXEC</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

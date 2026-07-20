@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operation: 블랙아웃 - Stage 07</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="terminal-theme">
+    <div class="grid-bg"></div>
+    
+    <div class="app-container">
+        <!-- Common Header -->
+        <header>
+            <div class="logo-section">
+                <h1>OPERATION: BLACKOUT <span class="tqo-badge">TQO CORE</span></h1>
+            </div>
+            
+            <div class="system-status">
+                <div class="status-item">
+                    <span class="status-indicator red"></span>
+                    <span class="status-label">SYS STATUS:</span>
+                    <span class="status-value">CRITICAL EMERGENCY</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">CURR STAGE:</span>
+                    <span class="status-value">07 / 20</span>
+                </div>
+            </div>
+
+            <!-- Dynamic SLA metric widget -->
+            <div class="sla-widget">
+                <span class="sla-title">SLA RATIO</span>
+                <div class="sla-bar-container">
+                    <div class="sla-bar"></div>
+                </div>
+                <span class="sla-value" style="font-family: var(--font-mono); font-size: 0.8rem; font-weight: bold;">99.90%</span>
+            </div>
+        </header>
+
+        <!-- Stage Game Body -->
+        <div class="dashboard-grid" id="stage-container" data-stage="7" data-verify="2841dad7e57a80b5a9fdc7cd5799e7108f394e1c6157a8feb8e83db0808d3432">
+            <!-- Left Narrative Area -->
+            <main class="main-stage-panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        📡 DETECTED LOG FILE & SUSPECT SHIELD
+                    </div>
+                    <div class="stage-badge">
+                        STAGE 07 : SLA Metric (SLA 다운타임 계산)
+                    </div>
+                </div>
+
+                <div class="story-container">
+                    <!-- Dialogue representation -->
+                    <div class="dialogue-card speaker-suspect">
+                        <div class="avatar-container">
+                            <div class="avatar-placeholder">PARK_YC</div>
+                        </div>
+                        <div class="dialogue-body">
+                            <div class="dialogue-speaker">
+                                <span>박용철 파트장</span>
+                                <span class="speaker-role">품질총괄</span>
+                            </div>
+                            <div class="dialogue-text typing-text" data-text="이보게 TQO! 우리가 이번 차세대 금융 코어 품질 보장 계약에서 약속한 연간 가동률(SLA)이 99.9%일세. 1년 365일을 기준으로 가동률 99.9%를 유지하려면 1년 동안 허용되는 최대 장애 누적 시간이 정확히 몇 '분(Minute)'인지 알고 있나? 계산 착오 예방을 위해 SLA 약식 가동률 기준값(525분)에 우리 부서 내부 통제 보정 계수인 10을 곱한 '최종 가이던스 통제 수치'를 터미널에 기재하여 보고해 주게!">
+                                이보게 TQO! 우리가 이번 차세대 금융 코어 품질 보장 계약에서 약속한 연간 가동률(SLA)이 99.9%일세. 1년 365일을 기준으로 가동률 99.9%를 유지하려면 1년 동안 허용되는 최대 장애 누적 시간이 정확히 몇 '분(Minute)'인지 알고 있나? 계산 착오 예방을 위해 SLA 약식 가동률 기준값(525분)에 우리 부서 내부 통제 보정 계수인 10을 곱한 '최종 가이던스 통제 수치'를 터미널에 기재하여 보고해 주게!
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gimmick HTML rendering -->
+                    <div class='puzzle-container'>
+    <div class='puzzle-title'>📊 SLA METRIC SHEET</div>
+    <ul style='list-style-type: square; padding-left: 20px; font-size: 0.9rem; line-height: 1.6; color: var(--text-primary);'>
+        <li>연간 기준일: 365일 (단순화)</li>
+        <li>보증 가동 범위: 99.9% (연간 최대 허용 정지 0.1%)</li>
+        <li>수치식: (365일 * 24시간 * 60분) * 0.001 = 525.6분</li>
+        <li><strong style='color: var(--accent-magenta);'>입력 요구 조건: 약식 가동 한계값(525분) * 내부 보정 계수(10)</strong></li>
+    </ul>
+</div>
+                </div>
+            </main>
+
+            <!-- Right Terminal Input Area -->
+            <aside class="terminal-panel">
+                <div class="terminal-header">
+                    <div class="terminal-controls">
+                        <span class="control-dot close"></span>
+                        <span class="control-dot minimize"></span>
+                        <span class="control-dot maximize"></span>
+                    </div>
+                    <div class="terminal-title">tqo@his-system:~/incident_monitor</div>
+                </div>
+
+                <div class="terminal-body">
+                    <div class="terminal-output">
+                        <p class="system-log">HIS Incident Management Subsystem v1.0.4</p>
+                        <p class="system-log">Loading kernel security context for Stage 07...</p>
+                        <p class="system-log">Ready. Enter decrypted passcode or entity key to route next file.</p>
+                        <p style="color: var(--text-muted);">--------------------------------------------------------</p>
+                    </div>
+
+                    <div class="terminal-prompt">
+                        <span class="prompt-symbol">[root@tqo-system ~]#</span>
+                        <input type="text" class="terminal-input" placeholder="Enter key..." autofocus autocomplete="off" spellcheck="false">
+                        <button class="submit-btn">EXEC</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operation: 블랙아웃 - Stage 16</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="terminal-theme">
+    <div class="grid-bg"></div>
+    
+    <div class="app-container">
+        <!-- Common Header -->
+        <header>
+            <div class="logo-section">
+                <h1>OPERATION: BLACKOUT <span class="tqo-badge">TQO CORE</span></h1>
+            </div>
+            
+            <div class="system-status">
+                <div class="status-item">
+                    <span class="status-indicator red"></span>
+                    <span class="status-label">SYS STATUS:</span>
+                    <span class="status-value">CRITICAL EMERGENCY</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">CURR STAGE:</span>
+                    <span class="status-value">16 / 20</span>
+                </div>
+            </div>
+
+            <!-- Dynamic SLA metric widget -->
+            <div class="sla-widget">
+                <span class="sla-title">SLA RATIO</span>
+                <div class="sla-bar-container">
+                    <div class="sla-bar"></div>
+                </div>
+                <span class="sla-value" style="font-family: var(--font-mono); font-size: 0.8rem; font-weight: bold;">99.90%</span>
+            </div>
+        </header>
+
+        <!-- Stage Game Body -->
+        <div class="dashboard-grid" id="stage-container" data-stage="16" data-verify="8527a891e224136950ff32ca212b45bc93f69fbb801c3b1ebedac52775f99e61">
+            <!-- Left Narrative Area -->
+            <main class="main-stage-panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        📡 DETECTED LOG FILE & SUSPECT SHIELD
+                    </div>
+                    <div class="stage-badge">
+                        STAGE 16 : Subnet Mistake (김진혁의 실수 1)
+                    </div>
+                </div>
+
+                <div class="story-container">
+                    <!-- Dialogue representation -->
+                    <div class="dialogue-card speaker-suspect">
+                        <div class="avatar-container">
+                            <div class="avatar-placeholder">NET</div>
+                        </div>
+                        <div class="dialogue-body">
+                            <div class="dialogue-speaker">
+                                <span>네트워크 라우팅 로그</span>
+                                <span class="speaker-role">ROUTING ERROR</span>
+                            </div>
+                            <div class="dialogue-text typing-text" data-text="김진혁 차장이 장애 발생 30분 전, 라우터 서브넷 마스크 대역을 조작하면서 실수로 CIDR 마스크 범위를 `/28` 로 지정해 버렸습니다. 이로 인해 스토리지와 서버 대역이 끊겼습니다. 서브넷 마스크 `/28` 등급 대역에서 서브넷 대표 주소(Network ID)와 브로드캐스트 주소(Broadcast)를 제외하고 장비에 유효하게 수동 분배해 줄 수 있는 최대 IP(호스트) 개수를 정수 숫자로 계산하십시오.">
+                                김진혁 차장이 장애 발생 30분 전, 라우터 서브넷 마스크 대역을 조작하면서 실수로 CIDR 마스크 범위를 `/28` 로 지정해 버렸습니다. 이로 인해 스토리지와 서버 대역이 끊겼습니다. 서브넷 마스크 `/28` 등급 대역에서 서브넷 대표 주소(Network ID)와 브로드캐스트 주소(Broadcast)를 제외하고 장비에 유효하게 수동 분배해 줄 수 있는 최대 IP(호스트) 개수를 정수 숫자로 계산하십시오.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gimmick HTML rendering -->
+                    <div class='puzzle-container'>
+    <div class='puzzle-title'>🔢 CIDR SUBMETMASK SUITE: /28</div>
+    <p style='color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;'>
+        전체 비트수: 32비트<br>
+        호스트 할당 가능 비트수: 32 - 28 = 4비트 (2^4 = 16개)<br>
+        사용 불가 특수 IP 주소 개수: 2개 (네트워크 주소 & 브로드캐스트 주소)<br>
+        <span style='color: var(--accent-magenta); font-weight: bold;'>공식: 2^(32 - Mask) - 2</span>
+    </p>
+</div>
+                </div>
+            </main>
+
+            <!-- Right Terminal Input Area -->
+            <aside class="terminal-panel">
+                <div class="terminal-header">
+                    <div class="terminal-controls">
+                        <span class="control-dot close"></span>
+                        <span class="control-dot minimize"></span>
+                        <span class="control-dot maximize"></span>
+                    </div>
+                    <div class="terminal-title">tqo@his-system:~/incident_monitor</div>
+                </div>
+
+                <div class="terminal-body">
+                    <div class="terminal-output">
+                        <p class="system-log">HIS Incident Management Subsystem v1.0.4</p>
+                        <p class="system-log">Loading kernel security context for Stage 16...</p>
+                        <p class="system-log">Ready. Enter decrypted passcode or entity key to route next file.</p>
+                        <p style="color: var(--text-muted);">--------------------------------------------------------</p>
+                    </div>
+
+                    <div class="terminal-prompt">
+                        <span class="prompt-symbol">[root@tqo-system ~]#</span>
+                        <input type="text" class="terminal-input" placeholder="Enter key..." autofocus autocomplete="off" spellcheck="false">
+                        <button class="submit-btn">EXEC</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

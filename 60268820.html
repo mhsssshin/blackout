@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operation: 블랙아웃 - Stage 19</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="terminal-theme">
+    <div class="grid-bg"></div>
+    
+    <div class="app-container">
+        <!-- Common Header -->
+        <header>
+            <div class="logo-section">
+                <h1>OPERATION: BLACKOUT <span class="tqo-badge">TQO CORE</span></h1>
+            </div>
+            
+            <div class="system-status">
+                <div class="status-item">
+                    <span class="status-indicator red"></span>
+                    <span class="status-label">SYS STATUS:</span>
+                    <span class="status-value">CRITICAL EMERGENCY</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">CURR STAGE:</span>
+                    <span class="status-value">19 / 20</span>
+                </div>
+            </div>
+
+            <!-- Dynamic SLA metric widget -->
+            <div class="sla-widget">
+                <span class="sla-title">SLA RATIO</span>
+                <div class="sla-bar-container">
+                    <div class="sla-bar"></div>
+                </div>
+                <span class="sla-value" style="font-family: var(--font-mono); font-size: 0.8rem; font-weight: bold;">99.90%</span>
+            </div>
+        </header>
+
+        <!-- Stage Game Body -->
+        <div class="dashboard-grid" id="stage-container" data-stage="19" data-verify="3a693a0e2772b93bc89e4ba6167e17118923d7bdae9e10f1857a89d30540d85f">
+            <!-- Left Narrative Area -->
+            <main class="main-stage-panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        📡 DETECTED LOG FILE & SUSPECT SHIELD
+                    </div>
+                    <div class="stage-badge">
+                        STAGE 19 : The Culprit (진범 도출)
+                    </div>
+                </div>
+
+                <div class="story-container">
+                    <!-- Dialogue representation -->
+                    <div class="dialogue-card speaker-suspect">
+                        <div class="avatar-container">
+                            <div class="avatar-placeholder">TQO</div>
+                        </div>
+                        <div class="dialogue-body">
+                            <div class="dialogue-speaker">
+                                <span>TQO 사건 합동 수사반</span>
+                                <span class="speaker-role">INVESTIGATION</span>
+                            </div>
+                            <div class="dialogue-text typing-text" data-text="모든 사실이 밝혀졌습니다! 보정된 실제 시간 타임라인 분석에 근거하면, 진범의 정체가 나옵니다. DBA 박재욱 차장은 결산 배치를 마친 뒤 02:05에 완전히 시스템에서 로그아웃하여 VDI IP를 반납했습니다. 권남훈 파트장의 IP 동적 유동 할당 규약(DHCP)에 따라 그 비어 버린 IP를 곧바로 가로채서, 02:13에 은밀하게 WAS 서버에 침투해 sqlplus로 DB를 중단시키고 서버를 강제 다운시킨 진짜 범인의 이름 3글자를 입력하십시오.">
+                                모든 사실이 밝혀졌습니다! 보정된 실제 시간 타임라인 분석에 근거하면, 진범의 정체가 나옵니다. DBA 박재욱 차장은 결산 배치를 마친 뒤 02:05에 완전히 시스템에서 로그아웃하여 VDI IP를 반납했습니다. 권남훈 파트장의 IP 동적 유동 할당 규약(DHCP)에 따라 그 비어 버린 IP를 곧바로 가로채서, 02:13에 은밀하게 WAS 서버에 침투해 sqlplus로 DB를 중단시키고 서버를 강제 다운시킨 진짜 범인의 이름 3글자를 입력하십시오.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gimmick HTML rendering -->
+                    <div class='puzzle-container'>
+    <div class='puzzle-title'>🔎 REAL-TIME TIMELINE COMPARISON</div>
+    <table style='width: 100%; border-collapse: collapse; font-size: 0.85rem; text-align: left; margin-top: 10px; color: var(--text-primary);'>
+        <tr style='border-bottom: 1px solid var(--border-color); color: var(--accent-blue);'>
+            <th style='padding: 6px;'>실제시각</th>
+            <th style='padding: 6px;'>사건/행동 기록</th>
+        </tr>
+        <tr>
+            <td style='padding: 6px;'>01:45</td>
+            <td style='padding: 6px;'>DBA 박재욱 차장, backup.sh 자동 예약 수행 시작</td>
+        </tr>
+        <tr>
+            <td style='padding: 6px;'>02:05</td>
+            <td style='padding: 6px;'>DBA 결산 완료. VDI 세션 강제 해제 및 사용 IP 반납 완료</td>
+        </tr>
+        <tr style='background: rgba(255, 0, 85, 0.08);'>
+            <td style='padding: 6px; font-weight: bold; color: var(--accent-magenta);'>02:13</td>
+            <td style='padding: 6px; font-weight: bold; color: var(--accent-magenta);'>누군가가 DBA의 유동 IP를 받아 DB를 폭파하고 WAS 중단 커맨드 실행</td>
+        </tr>
+    </table>
+    <p style='color: var(--text-muted); font-size: 0.8rem; margin-top: 10px;'>* 주요 용의자: 박용철, 권남훈, 김진혁, 박재욱, 박주암, 이재헌</p>
+</div>
+                </div>
+            </main>
+
+            <!-- Right Terminal Input Area -->
+            <aside class="terminal-panel">
+                <div class="terminal-header">
+                    <div class="terminal-controls">
+                        <span class="control-dot close"></span>
+                        <span class="control-dot minimize"></span>
+                        <span class="control-dot maximize"></span>
+                    </div>
+                    <div class="terminal-title">tqo@his-system:~/incident_monitor</div>
+                </div>
+
+                <div class="terminal-body">
+                    <div class="terminal-output">
+                        <p class="system-log">HIS Incident Management Subsystem v1.0.4</p>
+                        <p class="system-log">Loading kernel security context for Stage 19...</p>
+                        <p class="system-log">Ready. Enter decrypted passcode or entity key to route next file.</p>
+                        <p style="color: var(--text-muted);">--------------------------------------------------------</p>
+                    </div>
+
+                    <div class="terminal-prompt">
+                        <span class="prompt-symbol">[root@tqo-system ~]#</span>
+                        <input type="text" class="terminal-input" placeholder="Enter key..." autofocus autocomplete="off" spellcheck="false">
+                        <button class="submit-btn">EXEC</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

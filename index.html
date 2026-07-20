@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operation: 블랙아웃 | SRE 미궁 게임</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="terminal-theme">
+    <div class="grid-bg"></div>
+    
+    <div class="app-container" style="justify-content: center;">
+        <div class="landing-panel">
+            <div>
+                <span class="tqo-badge" style="font-size: 0.9rem; padding: 4px 12px; margin-bottom: 15px; display: inline-block;">SECURITY LEVEL: CLASSIFIED</span>
+                <h1 class="landing-title glitch" data-text="OPERATION: BLACKOUT">OPERATION: BLACKOUT</h1>
+                <p class="landing-subtitle">금융 코어 인프라 장애 긴급 분석 및 TQO 심문 모듈</p>
+            </div>
+            
+            <div style="border: 1px solid var(--border-color); padding: 20px; border-radius: 8px; background: rgba(0,0,0,0.4); text-align: left; line-height: 1.6; font-size: 0.95rem;">
+                <p style="color: var(--accent-blue); font-weight: bold; margin-bottom: 10px; font-family: var(--font-title);">[시놉시스] 새벽 02:00, 코어 WAS 다운</p>
+                <p>새벽 2시, 차세대 금융 코어 WAS 서버가 알 수 없는 명령어로 강제 종료(Shutdown)되는 대형 장애가 발생했습니다. 조직 내의 팽팽한 정치적 압박과 책임 전가 속에서, 플레이어는 TQO(Technical Quality Officer)가 되어 시스템 로그의 모순과 용의자들의 거짓 진술을 분석하여 진짜 장애 원인과 진범을 밝혀내야 합니다.</p>
+            </div>
+
+            <div>
+                <h3 style="font-family: var(--font-title); font-size: 1.1rem; color: var(--accent-blue); text-align: left; margin-bottom: 15px; border-left: 3px solid var(--accent-blue); padding-left: 10px;">주요 인물 파일</h3>
+                <div class="suspects-grid">
+                    <div class="suspect-card">
+                        <div class="suspect-name">박용철 파트장</div>
+                        <div class="suspect-role">품질총괄 (호랑이 상사)</div>
+                        <p>무결점 오픈만을 고집하며, 장애 복구 지연 시 즉각적인 징계를 경고하는 엄청난 압박감을 줍니다.</p>
+                    </div>
+                    <div class="suspect-card">
+                        <div class="suspect-name">권남훈 파트장</div>
+                        <div class="suspect-role">운영총괄 (규정 맹신자)</div>
+                        <p>망분리(VDI) 정책과 고정된 로그 데이터만을 절대적으로 신뢰하며 예외를 인정하지 않습니다.</p>
+                    </div>
+                    <div class="suspect-card">
+                        <div class="suspect-name">김진혁 차장</div>
+                        <div class="suspect-role">네트워크 담당 (라우팅 조작)</div>
+                        <p>장애 당시 T5004 장비로 무선 모니터링을 했다고 주장하며, DBA의 배치 처리에 혐의를 둡니다.</p>
+                    </div>
+                    <div class="suspect-card">
+                        <div class="suspect-name">박재욱 차장</div>
+                        <div class="suspect-role">DBA (누명 피해자)</div>
+                        <p>새벽 결산 배치를 수행하던 중 데이터베이스 파손 사고를 직격으로 맞고 독박을 쓰기 직전입니다.</p>
+                    </div>
+                    <div class="suspect-card">
+                        <div class="suspect-name">박주암 과장</div>
+                        <div class="suspect-role">WAS 담당 (현장 실무자)</div>
+                        <p>WAS 서버의 오너로서 새벽에 갑작스럽게 서버가 죽어 억울하게 경위서를 작성하고 있습니다.</p>
+                    </div>
+                    <div class="suspect-card">
+                        <div class="suspect-name">이재헌 과장</div>
+                        <div class="suspect-role">서버 담당 (NTP 미동기화)</div>
+                        <p>NTP 시간 동기화나 물리 자원 튜닝을 담당하지만 세팅을 대충 해놓아 은근히 허점이 많습니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 20px; justify-content: center; margin-top: 10px;">
+                <button onclick="startNewGame()" class="btn-cyber">작전 개시 (Start)</button>
+                <button id="resume-btn" onclick="resumeGame()" class="btn-cyber btn-secondary" style="display: none;">이어하기 (Resume)</button>
+            </div>
+            
+            <footer style="margin-top: 20px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">
+                HIS (HYPER INFORMATION SYSTEM) • TQO INCIDENT ANALYZER v1.0.4
+            </footer>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
