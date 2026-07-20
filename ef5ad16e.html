@@ -62,8 +62,8 @@
                                 <span>네트워크 라우팅 로그</span>
                                 <span class="speaker-role">ROUTING ERROR</span>
                             </div>
-                            <div class="dialogue-text typing-text" data-text="김진혁 차장이 장애 발생 30분 전, 라우터 서브넷 마스크 대역을 조작하면서 실수로 CIDR 마스크 범위를 `/28` 로 지정해 버렸습니다. 이로 인해 스토리지와 서버 대역이 끊겼습니다. 서브넷 마스크 `/28` 등급 대역에서 서브넷 대표 주소(Network ID)와 브로드캐스트 주소(Broadcast)를 제외하고 장비에 유효하게 수동 분배해 줄 수 있는 최대 IP(호스트) 개수를 정수 숫자로 계산하십시오.">
-                                김진혁 차장이 장애 발생 30분 전, 라우터 서브넷 마스크 대역을 조작하면서 실수로 CIDR 마스크 범위를 `/28` 로 지정해 버렸습니다. 이로 인해 스토리지와 서버 대역이 끊겼습니다. 서브넷 마스크 `/28` 등급 대역에서 서브넷 대표 주소(Network ID)와 브로드캐스트 주소(Broadcast)를 제외하고 장비에 유효하게 수동 분배해 줄 수 있는 최대 IP(호스트) 개수를 정수 숫자로 계산하십시오.
+                            <div class="dialogue-text typing-text" data-text="김진혁 차장이 장애 발생 30분 전,<br>라우터 서브넷 마스크 대역을 조작하면서 실수로 CIDR 마스크 범위를 `/28` 로 지정해 버렸습니다.<br>이로 인해 스토리지와 서버 대역이 끊겼습니다.<br><br>서브넷 마스크 `/28` 등급 대역에서 서브넷 대표 주소(Network ID)와 브로드캐스트 주소(Broadcast)를 제외하고<br>장비에 유효하게 수동 분배해 줄 수 있는 최대 IP(호스트) 개수를 정수 숫자로 계산하십시오.">
+                                김진혁 차장이 장애 발생 30분 전,<br>라우터 서브넷 마스크 대역을 조작하면서 실수로 CIDR 마스크 범위를 `/28` 로 지정해 버렸습니다.<br>이로 인해 스토리지와 서버 대역이 끊겼습니다.<br><br>서브넷 마스크 `/28` 등급 대역에서 서브넷 대표 주소(Network ID)와 브로드캐스트 주소(Broadcast)를 제외하고<br>장비에 유효하게 수동 분배해 줄 수 있는 최대 IP(호스트) 개수를 정수 숫자로 계산하십시오.
                             </div>
                         </div>
                     </div>
@@ -71,11 +71,11 @@
                     <!-- Gimmick HTML rendering -->
                     <div class='puzzle-container'>
     <div class='puzzle-title'>🔢 CIDR SUBMETMASK SUITE: /28</div>
-    <p style='color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;'>
-        전체 비트수: 32비트<br>
-        호스트 할당 가능 비트수: 32 - 28 = 4비트 (2^4 = 16개)<br>
-        사용 불가 특수 IP 주소 개수: 2개 (네트워크 주소 & 브로드캐스트 주소)<br>
-        <span style='color: var(--accent-magenta); font-weight: bold;'>공식: 2^(32 - Mask) - 2</span>
+    <p style='color: var(--text-muted); font-size: 0.85rem; line-height: 1.6;'>
+        - 전체 IP 주소 표현 비트: 32비트<br>
+        - 호스트 할당 비트수: 32비트 - 28비트 = 4비트 (2^4 = 총 16개 주소)<br>
+        - 사용 불가 특수한 주소: 2개 (네트워크 ID 주소 & 브로드캐스트 IP)<br>
+        - <strong style='color: var(--accent-magenta);'>계산 공식: 2^(32 - 28) - 2</strong>
     </p>
 </div>
                 </div>

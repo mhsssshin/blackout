@@ -62,8 +62,8 @@
                                 <span>박용철 파트장</span>
                                 <span class="speaker-role">품질총괄</span>
                             </div>
-                            <div class="dialogue-text typing-text" data-text="이보게 TQO! 우리가 이번 차세대 금융 코어 품질 보장 계약에서 약속한 연간 가동률(SLA)이 99.9%일세. 1년 365일을 기준으로 가동률 99.9%를 유지하려면 1년 동안 허용되는 최대 장애 누적 시간이 정확히 몇 '분(Minute)'인지 알고 있나? 계산 착오 예방을 위해 SLA 약식 가동률 기준값(525분)에 우리 부서 내부 통제 보정 계수인 10을 곱한 '최종 가이던스 통제 수치'를 터미널에 기재하여 보고해 주게!">
-                                이보게 TQO! 우리가 이번 차세대 금융 코어 품질 보장 계약에서 약속한 연간 가동률(SLA)이 99.9%일세. 1년 365일을 기준으로 가동률 99.9%를 유지하려면 1년 동안 허용되는 최대 장애 누적 시간이 정확히 몇 '분(Minute)'인지 알고 있나? 계산 착오 예방을 위해 SLA 약식 가동률 기준값(525분)에 우리 부서 내부 통제 보정 계수인 10을 곱한 '최종 가이던스 통제 수치'를 터미널에 기재하여 보고해 주게!
+                            <div class="dialogue-text typing-text" data-text="이보게 TQO! 우리가 이번 차세대 금융 코어 계약에서 약속한 연간 가동률(SLA)이 99.9%일세.<br>1년 365일 중 시스템이 멈춰 있을 수 있는 시간(장애 시간)은 단 0.1% 미만이어야 해.<br><br>그렇다면 연간 가동률 99.9%를 유지하기 위해 허용되는 연간 최대 장애 정지 시간은 총 몇 '분(Minute)'인가?<br><br>계산 오차 방지를 위해 공식으로 나온 약식 기준값(525분)에 우리 부서 내부 통제 계수인 '10'을 곱한 최종 통제 코드를 터미널에 입력하여 내게 보고해 주게!">
+                                이보게 TQO! 우리가 이번 차세대 금융 코어 계약에서 약속한 연간 가동률(SLA)이 99.9%일세.<br>1년 365일 중 시스템이 멈춰 있을 수 있는 시간(장애 시간)은 단 0.1% 미만이어야 해.<br><br>그렇다면 연간 가동률 99.9%를 유지하기 위해 허용되는 연간 최대 장애 정지 시간은 총 몇 '분(Minute)'인가?<br><br>계산 오차 방지를 위해 공식으로 나온 약식 기준값(525분)에 우리 부서 내부 통제 계수인 '10'을 곱한 최종 통제 코드를 터미널에 입력하여 내게 보고해 주게!
                             </div>
                         </div>
                     </div>
@@ -71,11 +71,11 @@
                     <!-- Gimmick HTML rendering -->
                     <div class='puzzle-container'>
     <div class='puzzle-title'>📊 SLA METRIC SHEET</div>
-    <ul style='list-style-type: square; padding-left: 20px; font-size: 0.9rem; line-height: 1.6; color: var(--text-primary);'>
-        <li>연간 기준일: 365일 (단순화)</li>
-        <li>보증 가동 범위: 99.9% (연간 최대 허용 정지 0.1%)</li>
-        <li>수치식: (365일 * 24시간 * 60분) * 0.001 = 525.6분</li>
-        <li><strong style='color: var(--accent-magenta);'>입력 요구 조건: 약식 가동 한계값(525분) * 내부 보정 계수(10)</strong></li>
+    <ul style='list-style-type: square; padding-left: 20px; font-size: 0.85rem; line-height: 1.6; color: var(--text-primary);'>
+        <li>연간 기준 시간: 365일 = 8,760시간 = 525,600분</li>
+        <li>보증 허용 정지 범위: 0.1%</li>
+        <li>수치식: 525,600분 * 0.001 = 525.6분</li>
+        <li><strong style='color: var(--accent-magenta);'>입력 요구 조건: 약식 정수 기준값(525분) * 통제 계수(10)</strong></li>
     </ul>
 </div>
                 </div>

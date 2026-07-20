@@ -62,8 +62,8 @@
                                 <span>박용철 파트장</span>
                                 <span class="speaker-role">품질총괄</span>
                             </div>
-                            <div class="dialogue-text typing-text" data-text="서버 셧다운 직전, 데이터베이스에 심각한 로지컬 블록 깨짐(Block Corruption)이 잡혔다는 보고가 있네. 아래의 타겟 정규표현식(Regex)을 이용해 아래의 내부 로그 중에서 데이터 무결성을 파괴하고 물리 손상을 가져온 오라클 핵심 내부 오류 코드 명칭을 식별해 내어 소문자로 보고하게!">
-                                서버 셧다운 직전, 데이터베이스에 심각한 로지컬 블록 깨짐(Block Corruption)이 잡혔다는 보고가 있네. 아래의 타겟 정규표현식(Regex)을 이용해 아래의 내부 로그 중에서 데이터 무결성을 파괴하고 물리 손상을 가져온 오라클 핵심 내부 오류 코드 명칭을 식별해 내어 소문자로 보고하게!
+                            <div class="dialogue-text typing-text" data-text="서버가 멈추기 직전에 데이터베이스에 심각한 블록 손상 오류가 감지되었네.<br><br>오라클 데이터베이스의 물리적 파일 파손을 일으키는 고유한 장애 에러 패턴을 정규표현식(Regex) 필터로 검출해 내려 하네.<br>아래 필터에 일치하는 로그 에러 코드 명칭을 찾아 영어 소문자로 기입해 주게.">
+                                서버가 멈추기 직전에 데이터베이스에 심각한 블록 손상 오류가 감지되었네.<br><br>오라클 데이터베이스의 물리적 파일 파손을 일으키는 고유한 장애 에러 패턴을 정규표현식(Regex) 필터로 검출해 내려 하네.<br>아래 필터에 일치하는 로그 에러 코드 명칭을 찾아 영어 소문자로 기입해 주게.
                             </div>
                         </div>
                     </div>
@@ -72,11 +72,11 @@
                     <div class='puzzle-container'>
     <div class='puzzle-title'>🔍 CORRUPTION PATTERN DETECTION FILTER</div>
     <ul style='list-style-type: square; padding-left: 20px; font-size: 0.85rem; line-height: 1.6; color: var(--accent-blue); font-family: var(--font-mono);'>
-        <li>정규식 필터: ^[A-Za-z]+-[0-9]{5}$</li>
+        <li>정규식 필터 패턴: ^[A-Za-z]+-[0-9]{5}$ (영문 단어 + 붙임표 + 정확히 5자리 숫자)</li>
         <li>[DB ERROR LOG DUMP]:</li>
-        <li style='color: var(--text-muted);'>- sys-info-10023: buffer read</li>
-        <li style='color: var(--accent-magenta); font-weight: bold;'>- ORA-00600: internal error code</li>
-        <li style='color: var(--text-muted);'>- DB-CONN-5020: timeout error</li>
+        <li style='color: var(--text-muted);'>- sys-info-10023</li>
+        <li style='color: var(--text-primary); font-weight: bold;'>- ORA-00600 (internal error)</li>
+        <li style='color: var(--text-muted);'>- DB-CONN-5020</li>
     </ul>
 </div>
                 </div>

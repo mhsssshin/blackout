@@ -62,8 +62,8 @@
                                 <span>스토리지 커널 감사 로그</span>
                                 <span class="speaker-role">AUDITOR</span>
                             </div>
-                            <div class="dialogue-text typing-text" data-text="권남훈 파트장은 모든 결산 데이터 디렉토리 파일들이 규정에 부합하는 표준 권한 마스크(rwxr-xr-x)를 갖고 있다고 주장했습니다. 그러나 감사 결과 단 하나의 백업 파일이 타인에게 쓰기/읽기 권한이 탈취될 수 있는 취약한 권한(rwxr-xr--)으로 잘못 배포되었습니다. 스크롤을 내려 유일한 에러 권한 파일을 찾아 3자리 8진수 권한 값으로 입력하십시오.">
-                                권남훈 파트장은 모든 결산 데이터 디렉토리 파일들이 규정에 부합하는 표준 권한 마스크(rwxr-xr-x)를 갖고 있다고 주장했습니다. 그러나 감사 결과 단 하나의 백업 파일이 타인에게 쓰기/읽기 권한이 탈취될 수 있는 취약한 권한(rwxr-xr--)으로 잘못 배포되었습니다. 스크롤을 내려 유일한 에러 권한 파일을 찾아 3자리 8진수 권한 값으로 입력하십시오.
+                            <div class="dialogue-text typing-text" data-text="권남훈 파트장은 모든 백업 파일들이 규정에 맞춰 정상 권한(rwxr-xr-x)을 가지고 있다고 주장했습니다.<br><br>그러나 스캔 감사 결과, 단 하나의 백업 파일이 권한 관리 부주의로 인해 취약한 설정(rwxr-xr--)으로 배포된 것이 확인되었습니다.<br><br>마우스 스크롤을 이용해 수많은 파일 리스트 중에서 이 잘못 설정된 파일을 찾아내십시오.<br>그 후 아래 규칙에 따라 3자리 8진수 숫자로 변환하여 입력해 주십시오.<br><br>[권한 변환 규칙]<br>r = 4, w = 2, x = 1, - = 0<br>각 문자군(rwx / xr- / xr-)의 숫자를 합산하여 3자리 숫자로 만듭니다.<br>예시: rwxr-xr-x = (4+2+1)(4+0+1)(4+0+1) = 755">
+                                권남훈 파트장은 모든 백업 파일들이 규정에 맞춰 정상 권한(rwxr-xr-x)을 가지고 있다고 주장했습니다.<br><br>그러나 스캔 감사 결과, 단 하나의 백업 파일이 권한 관리 부주의로 인해 취약한 설정(rwxr-xr--)으로 배포된 것이 확인되었습니다.<br><br>마우스 스크롤을 이용해 수많은 파일 리스트 중에서 이 잘못 설정된 파일을 찾아내십시오.<br>그 후 아래 규칙에 따라 3자리 8진수 숫자로 변환하여 입력해 주십시오.<br><br>[권한 변환 규칙]<br>r = 4, w = 2, x = 1, - = 0<br>각 문자군(rwx / xr- / xr-)의 숫자를 합산하여 3자리 숫자로 만듭니다.<br>예시: rwxr-xr-x = (4+2+1)(4+0+1)(4+0+1) = 755
                             </div>
                         </div>
                     </div>
@@ -345,7 +345,7 @@
         <div class='log-flood-line'>-rwxr-xr-x  1 tqo_ops  staff  4096 Jul 21 02:00 file_270.bin</div>
         <div class='log-flood-line'>-rwxr-xr-x  1 tqo_ops  staff  4096 Jul 21 02:00 file_271.bin</div>
         <div class='log-flood-line'>-rwxr-xr-x  1 tqo_ops  staff  4096 Jul 21 02:00 file_272.bin</div>
-        <div class='log-flood-line log-target'>-rwxr-xr--  1 tqo_ops  staff  8204 Jul 21 01:45 backup_corrupt.bin  &lt;-- WARNING!</div>
+        <div class='log-flood-line log-target'>-rwxr-xr--  1 tqo_ops  staff  8204 Jul 21 01:45 backup_corrupt.bin</div>
         <div class='log-flood-line'>-rwxr-xr-x  1 tqo_ops  staff  4096 Jul 21 02:00 file_274.bin</div>
         <div class='log-flood-line'>-rwxr-xr-x  1 tqo_ops  staff  4096 Jul 21 02:00 file_275.bin</div>
         <div class='log-flood-line'>-rwxr-xr-x  1 tqo_ops  staff  4096 Jul 21 02:00 file_276.bin</div>
@@ -573,7 +573,10 @@
         <div class='log-flood-line'>-rwxr-xr-x  1 tqo_ops  staff  4096 Jul 21 02:00 file_498.bin</div>
         <div class='log-flood-line'>-rwxr-xr-x  1 tqo_ops  staff  4096 Jul 21 02:00 file_499.bin</div>
     </div>
-    <p style='color: var(--text-muted); font-size: 0.8rem; margin-top: 10px;'>참고: 8진수 표기법 (r=4, w=2, x=1. 예: rwxr-xr-x = 755)</p>
+    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.5;'>
+        힌트: 수백 줄의 리스트 속에서 무언가 다른 파일 하나가 숨어 있습니다.<br>
+        찾아낸 취약 마스크(rwxr-xr--) 값을 위의 변환식에 대입하십시오.
+    </p>
 </div>
                 </div>
             </main>

@@ -62,8 +62,8 @@
                                 <span>네트워크 패킷 스니퍼</span>
                                 <span class="speaker-role">PACKET MONITOR</span>
                             </div>
-                            <div class="dialogue-text typing-text" data-text="권남훈 파트장의 보안 단말기(VDI)로 전송된 내부 사설 포트 전송 패킷이 캡처되었습니다. 권 파트장의 망분리 정책에 따라 데이터 페이로드는 64진법 텍스트로 인코딩되어 있습니다. 이 인코딩 패킷을 복호화하여 평문 내에 숨겨진 포트 번호를 도출하십시오.">
-                                권남훈 파트장의 보안 단말기(VDI)로 전송된 내부 사설 포트 전송 패킷이 캡처되었습니다. 권 파트장의 망분리 정책에 따라 데이터 페이로드는 64진법 텍스트로 인코딩되어 있습니다. 이 인코딩 패킷을 복호화하여 평문 내에 숨겨진 포트 번호를 도출하십시오.
+                            <div class="dialogue-text typing-text" data-text="권남훈 파트장의 보안 단말기(VDI)로 전송된 내부 사설 포트 전송 패킷이 캡처되었습니다.<br><br>이 데이터는 문자나 숫자를 안전하게 전송하기 위해 64진법 텍스트로 인코딩되어 있습니다.<br>인터넷의 Base64 디코더 등을 활용해 이 값을 원래대로 풀어내면,<br>비밀 사설 포트 번호 4자리가 나옵니다.">
+                                권남훈 파트장의 보안 단말기(VDI)로 전송된 내부 사설 포트 전송 패킷이 캡처되었습니다.<br><br>이 데이터는 문자나 숫자를 안전하게 전송하기 위해 64진법 텍스트로 인코딩되어 있습니다.<br>인터넷의 Base64 디코더 등을 활용해 이 값을 원래대로 풀어내면,<br>비밀 사설 포트 번호 4자리가 나옵니다.
                             </div>
                         </div>
                     </div>
@@ -71,8 +71,11 @@
                     <!-- Gimmick HTML rendering -->
                     <div class='puzzle-container'>
     <div class='puzzle-title'>📡 PACKET PAYLOAD DUMP</div>
-    <p style='font-family: var(--font-mono); color: var(--accent-magenta); font-size: 1.1rem; text-align: center; padding: 10px; background: rgba(0,0,0,0.5); border-radius: 4px; letter-spacing: 1px;'>UG9ydCAyMzIx</p>
-    <p style='color: var(--text-muted); font-size: 0.8rem; margin-top: 10px;'>힌트: Base64 형식으로 인코딩된 포트 번호 페이로드입니다.</p>
+    <p style='font-family: var(--font-mono); color: var(--accent-magenta); font-size: 1.2rem; text-align: center; padding: 15px; background: rgba(0,0,0,0.5); border-radius: 4px; letter-spacing: 1px;'>UG9ydCAyMzIx</p>
+    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.5;'>
+        힌트: Base64 형식으로 변환된 포트 정보 페이로드입니다.<br>
+        디코딩 시 문자 뒤에 기재된 숫자 4자리를 찾아 입력하십시오.
+    </p>
 </div>
                 </div>
             </main>

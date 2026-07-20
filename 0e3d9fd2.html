@@ -62,8 +62,8 @@
                                 <span>iSCSI 연결 관리자</span>
                                 <span class="speaker-role">STORAGE LOG</span>
                             </div>
-                            <div class="dialogue-text typing-text" data-text="서브넷 격리 사고 이후 SAN(Storage Area Network) 스토리지 모듈과 IP 통신 링크가 완전히 오프라인되었습니다. 유효 호스트 링크를 재수립하고 데이터베이스와 블록 저장소 간의 통신을 정상화시키기 위해, iSCSI 통신용 프로토콜 규격이 기본적으로 점유하여 작동시키는 전용 TCP 포트 번호를 입력하여 포트 바인딩을 허가해 주십시오.">
-                                서브넷 격리 사고 이후 SAN(Storage Area Network) 스토리지 모듈과 IP 통신 링크가 완전히 오프라인되었습니다. 유효 호스트 링크를 재수립하고 데이터베이스와 블록 저장소 간의 통신을 정상화시키기 위해, iSCSI 통신용 프로토콜 규격이 기본적으로 점유하여 작동시키는 전용 TCP 포트 번호를 입력하여 포트 바인딩을 허가해 주십시오.
+                            <div class="dialogue-text typing-text" data-text="서브넷 격리 사고 이후 스토리지(SAN)와 데이터베이스 간의 블록 데이터 통신 연결이 오프라인되었습니다.<br><br>스토리지와 서버 간의 디스크 읽기/쓰기 채널을 재연결하고 iSCSI 프로토콜 통신을 정상화시키기 위해, 네트워크 장비가 사용하는 기본 표준 TCP 포트 번호 4자리를 기입해 주십시오.">
+                                서브넷 격리 사고 이후 스토리지(SAN)와 데이터베이스 간의 블록 데이터 통신 연결이 오프라인되었습니다.<br><br>스토리지와 서버 간의 디스크 읽기/쓰기 채널을 재연결하고 iSCSI 프로토콜 통신을 정상화시키기 위해, 네트워크 장비가 사용하는 기본 표준 TCP 포트 번호 4자리를 기입해 주십시오.
                             </div>
                         </div>
                     </div>
@@ -71,7 +71,9 @@
                     <!-- Gimmick HTML rendering -->
                     <div class='puzzle-container'>
     <div class='puzzle-title'>🔌 PROTOCOL PORT CHECK: iSCSI TARGET</div>
-    <p style='color: var(--text-muted); font-size: 0.9rem;'>인터넷 소형 컴퓨터 시스템 인터페이스(iSCSI) 통신 프로토콜의 표준 Well-known TCP 포트 번호 4자리를 도출하십시오.</p>
+    <p style='color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;'>
+        힌트: 인터넷 소형 컴퓨터 시스템 인터페이스(iSCSI) 통신 프로토콜이 표준으로 점유하여 사용하는 포트 번호입니다.
+    </p>
 </div>
                 </div>
             </main>
