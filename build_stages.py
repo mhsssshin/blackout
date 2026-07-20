@@ -10,7 +10,7 @@ stages = [
         "speaker": "시스템 인가 모듈",
         "role": "SYSTEM LOBBY",
         "avatar": "SYS",
-        "dialogue": "TQO 터미널 단말기 부팅이 완료되었습니다.\n\n시스템 분석 모드로 진입하기 위해서는 권남훈 파트장의 인가 코드가 필요합니다.\n본 화면에는 노출된 단서가 없습니다.\n\n시스템 구조의 원천 설계 코드(HTML 소스) 내부를 분석해 보십시오.\n그곳에 개발자가 적어둔 마스터 비밀 번호(KEY) 3자리 숫자가 기록되어 있을 것입니다.",
+        "dialogue": "TQO 터미널 단말기 부팅이 완료되었습니다.\n\n시스템 분석 모드로 진입하기 위해서는 박용철 파트장의 인가 코드가 필요합니다.\n본 화면에는 노출된 단서가 없습니다.\n\n시스템 구조의 원천 설계 코드(HTML 소스) 내부를 분석해 보십시오.\n그곳에 개발자가 적어둔 마스터 비밀 번호(KEY) 3자리 숫자가 기록되어 있을 것입니다.",
         "gimmick_html": "<!-- KEY: 179 -->\n<div class='puzzle-container'>\n    <div class='puzzle-title'>🔒 ACCESS PROTECTION KEY</div>\n    <p style='color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;'>\n        인가 토큰이 보안 커널에 의해 물리 차단되었습니다.<br>\n        F12(개발자 도구)를 통해 HTML 소스코드의 주석을 분석하고 백업 마스터 키를 찾아 터미널에 입력하십시오.\n    </p>\n</div>"
     },
     {
