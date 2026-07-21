@@ -13,7 +13,7 @@ for i in range(1, 101):
         stage3_files.append({
             "name": "backup_corrupt.bin",
             "type": "file",
-            "content": "FILE_NAME: backup_corrupt.bin\nOWNER: tqo_ops\nSIZE: 8204 bytes\nPERMISSIONS: -rwxr-xr--\nSTATUS: Anomalous Permission Mask Detected."
+            "content": "FILE_NAME: backup_corrupt.bin\nOWNER: tqo_ops\nSIZE: 8204 bytes\nPERMISSIONS: -rwxrwxrwx\nSTATUS: Critical Security Hazard: Full Public Write Access Enabled."
         })
     else:
         stage3_files.append({
@@ -210,13 +210,13 @@ stage3_html = f"""<div class='puzzle-container' style='position: relative;'>
         </div>
         <div class='cli-btn-group' style='display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap;'>
             <button onclick="runCliMacro('ls')" class='copy-btn' style='font-size: 0.78rem;'>ls -la var/www/backups/</button>
-            <button onclick="runCliMacro('find')" class='copy-btn' style='font-size: 0.78rem; border-color: var(--accent-green); color: var(--accent-green);'>find var/www/backups -perm 754</button>
-            <button onclick="runCliMacro('grep')" class='copy-btn' style='font-size: 0.78rem;'>grep -rn 'Anomalous' var/www/</button>
+            <button onclick="runCliMacro('find')" class='copy-btn' style='font-size: 0.78rem; border-color: var(--accent-green); color: var(--accent-green);'>find var/www/backups ! -perm 755</button>
+            <button onclick="runCliMacro('grep')" class='copy-btn' style='font-size: 0.78rem;'>grep -rn 'Hazard' var/www/</button>
         </div>
     </div>
 
     <p style='color: var(--text-muted); font-size: 0.82rem; margin-top: 12px; line-height: 1.5;'>
-        힌트: 취약 권한 마스크(rwxr-xr--)를 지닌 파일을 찾아 8진수 합산식(r=4, w=2, x=1, -=0)에 대입하십시오.
+        힌트: 보안 경고가 터진 취약 파일(rwxrwxrwx)의 8진수 권한 마스크(r=4, w=2, x=1 합산) 3자리를 구하십시오.
     </p>
 </div>
 <script>
@@ -258,15 +258,15 @@ stage3_html = f"""<div class='puzzle-container' style='position: relative;'>
                 lines.push("-rwxr-xr-x  1 tqo_ops  staff  4096 Jul 21 02:00 file_00" + i + ".bin");
             }}
             lines.push("... (skipped 94 normal files) ...");
-            lines.push("<strong style='color: var(--accent-magenta);'>-rwxr-xr--  1 tqo_ops  staff  8204 Jul 21 01:45 backup_corrupt.bin</strong>");
+            lines.push("<strong style='color: var(--accent-magenta);'>-rwxrwxrwx  1 tqo_ops  staff  8204 Jul 21 01:45 backup_corrupt.bin</strong>");
             lines.push("-rwxr-xr-x  1 tqo_ops  staff  4096 Jul 21 02:00 file_100.bin");
             outputText = lines.join("<br>");
         }} else if (type === 'find') {{
-            cmdText = "find var/www/backups -perm 754";
-            outputText = "<span style='color: var(--accent-green);'>./var/www/backups/backup_corrupt.bin  (permission matches 754)</span>";
+            cmdText = "find var/www/backups ! -perm 755";
+            outputText = "<span style='color: var(--accent-green);'>./var/www/backups/backup_corrupt.bin  (permission mismatch: expected 755)</span>";
         }} else if (type === 'grep') {{
-            cmdText = "grep -rn 'Anomalous' var/www/";
-            outputText = "<span style='color: var(--accent-green);'>var/www/backups/backup_corrupt.bin:4: STATUS: Anomalous Permission Mask Detected.</span>";
+            cmdText = "grep -rn 'Hazard' var/www/";
+            outputText = "<span style='color: var(--accent-green);'>var/www/backups/backup_corrupt.bin:5: STATUS: Critical Security Hazard: Full Public Write Access Enabled.</span>";
         }}
 
         // Remove old cursor
@@ -415,7 +415,7 @@ stages = [
                 "speaker": "권남훈 파트장",
                 "role": "운영총괄 (예민한 리더)",
                 "avatar": "avatar_kwon_nh.png",
-                "text": "말도 안 되는 소리! 박 파트장의 말은 신뢰하기 어렵습니다. 즉시 스토리지의 디렉토리 권한 감사 덤프를 전수 스캔하십시오.\n\n관리 소홀로 인해 쓰기 권한이 허용된 비정상 파일(rwxr-xr--)을 가려내야 합니다. 찾아내서 수치값으로 변환해 주십시오!"
+                "text": "말도 안 되는 소리! 박 파트장의 말은 신뢰하기 어렵습니다. 즉시 스토리지의 디렉토리 권한 감사 덤프를 전수 스캔하십시오.\n\n쓰기 권한이 임의로 허용되어 누구나 수정 가능한 위험천만한 비정상 파일(rwxrwxrwx)이 숨겨져 있을 수 있습니다. 해당 취약 파일의 8진수 권한 코드를 찾아내십시오!"
             }
         ],
         "gimmick_html": stage3_html
@@ -902,7 +902,7 @@ stages = [
 answers = [
     "179",
     "2321",
-    "754",
+    "777",
     "pdu02",  
     "666568",
     "shutdown",

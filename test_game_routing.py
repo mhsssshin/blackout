@@ -5,7 +5,7 @@ import hashlib
 answers = [
     "179",
     "2321",
-    "754",
+    "777",
     "pdu02",
     "666568",
     "shutdown",
