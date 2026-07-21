@@ -8,13 +8,13 @@ stages = [
         "title": "System Boot (F12)",
         "filename": "a7f93b2c.html",
         "verify_hash": "",
-        "narrative": "금융 코어 WAS 서버가 알 수 없는 명령어로 강제 종료된 대형 장애 현장. 부서장과 본부장의 압박 속에 박용철 파트장이 단말기 제어 콘솔을 켜고 다급히 움직이기 시작합니다.",
+        "narrative": "금융 코어 WAS 서버가 알 수 없는 명령어로 강제 종료된 대형 장애 현장. 부서장과 본부장의 압박 속에 권남훈 파트장이 단말기 제어 콘솔을 켜고 다급히 움직이기 시작합니다.",
         "dialogue_list": [
             {
-                "speaker": "박용철 파트장",
-                "role": "품질총괄 (예민한 리더)",
-                "avatar": "avatar_park_yc.png",
-                "text": "부팅 인가 코드가 막혀 있군요. 권남훈 파트장이 VDI 보안 정책을 잠가둔 모양인데, 언제 정식 결재 올리고 승인 대기합니까!\n\n당장 F12(개발자 도구)를 열어 소스코드의 백업용 주석 키를 찾아 로그인 절차를 돌파하십시오!"
+                "speaker": "권남훈 파트장",
+                "role": "운영총괄 (예민한 리더)",
+                "avatar": "avatar_kwon_nh.png",
+                "text": "부팅 인가 코드가 막혀 있군요. 박용철 파트장이 VDI 보안 정책을 잠가둔 모양인데, 언제 정식 결재 올리고 승인 대기합니까!\n\n당장 F12(개발자 도구)를 열어 소스코드의 백업용 주석 키를 찾아 로그인 절차를 돌파하십시오!"
             }
         ],
         "gimmick_html": "<!-- KEY: 179 -->\n<div class='puzzle-container'>\n    <div class='puzzle-title'>🔒 ACCESS PROTECTION KEY</div>\n    <p style='color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;'>\n        인가 토큰이 보안 커널에 의해 물리 차단되었습니다.<br>\n        F12(개발자 도구)를 통해 HTML 소스코드의 주석을 분석하고 백업 마스터 키를 찾아 터미널에 입력하십시오.\n    </p>\n</div>"
@@ -24,24 +24,24 @@ stages = [
         "title": "Encrypted Packet (Base64)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "터미널 부팅에 성공하자마자 권남훈 파트장이 다가와 방어적인 경고를 보내고, 박용철 파트장이 격렬하게 언성을 높입니다.",
+        "narrative": "터미널 부팅에 성공하자마자 박용철 파트장이 다가와 방어적인 경고를 보내고, 권남훈 파트장이 격렬하게 언성을 높입니다.",
         "dialogue_list": [
             {
-                "speaker": "권남훈 파트장",
-                "role": "운영총괄 (규정 맹신자)",
-                "avatar": "avatar_kwon_nh.png",
+                "speaker": "박용철 파트장",
+                "role": "품질총괄 (규정 맹신자)",
+                "avatar": "avatar_park_yc.png",
                 "text": "정식 승인 절차 없는 임의 시스템 조작은 심각한 규정 위반입니다. 당장 로그 분석을 중단하십시오."
             },
             {
-                "speaker": "박용철 파트장",
-                "role": "품질총괄 (예민한 리더)",
-                "avatar": "avatar_park_yc.png",
-                "text": "권 파트장! 지금 본사 임원들 불호령이 안 들립니까? 규정 타령할 때가 아니니 비켜서세요!"
+                "speaker": "권남훈 파트장",
+                "role": "운영총괄 (예민한 리더)",
+                "avatar": "avatar_kwon_nh.png",
+                "text": "박 파트장! 지금 본사 임원들 불호령이 안 들립니까? 규정 타령할 때가 아니니 비켜서세요!"
             },
             {
-                "speaker": "권남훈 파트장",
-                "role": "운영총괄 (규정 맹신자)",
-                "avatar": "avatar_kwon_nh.png",
+                "speaker": "박용철 파트장",
+                "role": "품질총괄 (규정 맹신자)",
+                "avatar": "avatar_park_yc.png",
                 "text": "좋습니다. 그렇다면 우선 망의 무결성을 입증하기 위해, VDI 단말에 기록된 암호화 패킷 페이로드부터 해독해 보십시오. Base64 데이터를 디코딩해 당시 사용한 포트 번호를 입력해 인증 세션을 성립해야 수사를 승인하겠습니다."
             }
         ],
@@ -52,19 +52,19 @@ stages = [
         "title": "Log Flood (권한 검색)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "권남훈 파트장의 장담과 달리, 파일 배포 프로세스 상에 허점이 감지됩니다.",
+        "narrative": "박용철 파트장의 장담과 달리, 파일 배포 프로세스 상에 허점이 감지됩니다.",
         "dialogue_list": [
             {
-                "speaker": "권남훈 파트장",
-                "role": "운영총괄 (규정 맹신자)",
-                "avatar": "avatar_kwon_nh.png",
+                "speaker": "박용철 파트장",
+                "role": "품질총괄 (규정 맹신자)",
+                "avatar": "avatar_park_yc.png",
                 "text": "표준 형상 배포 도구인 rwxr-xr-x(755) 권한 규격에 맞춰 전개했기 때문에, 배포 디렉토리 보안은 완전무결합니다."
             },
             {
-                "speaker": "박용철 파트장",
-                "role": "품질총괄 (예민한 리더)",
-                "avatar": "avatar_park_yc.png",
-                "text": "말도 안 되는 소리! 권 파트장의 말은 신뢰하기 어렵습니다. 즉시 스토리지의 디렉토리 권한 감사 덤프를 전수 스캔하십시오.\n\n관리 소홀로 인해 쓰기 권한이 허용된 비정상 파일(rwxr-xr--)을 가려내야 합니다. 찾아내서 수치값으로 변환해 주십시오!"
+                "speaker": "권남훈 파트장",
+                "role": "운영총괄 (예민한 리더)",
+                "avatar": "avatar_kwon_nh.png",
+                "text": "말도 안 되는 소리! 박 파트장의 말은 신뢰하기 어렵습니다. 즉시 스토리지의 디렉토리 권한 감사 덤프를 전수 스캔하십시오.\n\n관리 소홀로 인해 쓰기 권한이 허용된 비정상 파일(rwxr-xr--)을 가려내야 합니다. 찾아내서 수치값으로 변환해 주십시오!"
             }
         ],
         "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>📂 DIRECTORY PERMISSIONS SCAN</div>\n    <div class='log-flood-area'>\n" + "\n".join([f"        <div class='log-flood-line'>-rwxr-xr-x  1 tqo_ops  staff  4096 Jul 21 02:00 file_{i:03d}.bin</div>" if i != 273 else "        <div class='log-flood-line log-target'>-rwxr-xr--  1 tqo_ops  staff  8204 Jul 21 01:45 backup_corrupt.bin</div>" for i in range(500)]) + "\n    </div>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.5;'>\n        힌트: 수백 줄의 리스트 속에서 무언가 다른 파일 하나가 숨어 있습니다.<br>\n        찾아낸 취약 마스크(rwxr-xr--) 값을 8진수 변환식(r=4, w=2, x=1, -=0 합산)에 대입하십시오.\n    </p>\n</div>"
@@ -133,21 +133,21 @@ stages = [
         "narrative": "콘솔 메모리 버퍼가 복구되자, OS Syslog에서 결정적인 기동 중단 감사 흔적이 관측됩니다.",
         "dialogue_list": [
             {
-                "speaker": "박용철 파트장",
-                "role": "품질총괄 (예민한 리더)",
-                "avatar": "avatar_park_yc.png",
-                "text": "권 파트장, 이 로그를 보십시오! 셧다운 직전인 02시 13분, 누군가가 root 권한 세션을 획득해 프로세스 가동을 강제로 차단하고 커널을 Halt시키는 바이너리를 호출했습니다. 이건 고의적인 테러입니다!"
+                "speaker": "권남훈 파트장",
+                "role": "운영총괄 (예민한 리더)",
+                "avatar": "avatar_kwon_nh.png",
+                "text": "박 파트장, 이 로그를 보십시오! 셧다운 직전인 02시 13분, 누군가가 root 권한 세션을 획득해 프로세스 가동을 강제로 차단하고 커널을 Halt시키는 바이너리를 호출했습니다. 이건 고의적인 테러입니다!"
             },
             {
-                "speaker": "권남훈 파트장",
-                "role": "운영총괄 (규정 맹신자)",
-                "avatar": "avatar_kwon_nh.png",
+                "speaker": "박용철 파트장",
+                "role": "품질총괄 (규정 맹신자)",
+                "avatar": "avatar_park_yc.png",
                 "text": "단순 장비 노후화로 인한 전원 서지일 수도 있습니다. 정밀 규격부터 맞춰 대조하시죠."
             },
             {
-                "speaker": "박용철 파트장",
-                "role": "품질총괄 (예민한 리더)",
-                "avatar": "avatar_park_yc.png",
+                "speaker": "권남훈 파트장",
+                "role": "운영총괄 (예민한 리더)",
+                "avatar": "avatar_kwon_nh.png",
                 "text": "우길 걸 우겨야지! 공격자가 서버 자체를 완전히 정지시키기 위해 실행한 UNIX/Linux 표준 시스템 종료 명령어(영문 소문자 8자)를 식별하십시오!"
             }
         ],
@@ -161,9 +161,9 @@ stages = [
         "narrative": "시스템 가동이 중단되기 직전, 물리 자원을 독점하여 과부하를 가하던 프로세스 내역이 발견됩니다.",
         "dialogue_list": [
             {
-                "speaker": "박용철 파트장",
-                "role": "품질총괄 (예민한 리더)",
-                "avatar": "avatar_park_yc.png",
+                "speaker": "권남훈 파트장",
+                "role": "운영총괄 (예민한 리더)",
+                "avatar": "avatar_kwon_nh.png",
                 "text": "이재헌 과장! 서버가 강제 종료되기 직전에 CPU를 98% 이상 과독점하며 인프라 마비를 유도한 백그라운드 프로세스가 기동 중이었습니다. 평소에 프로세스 모니터링도 안 하고 뭐 한 겁니까!"
             },
             {
@@ -173,9 +173,9 @@ stages = [
                 "text": "억울합니다 파트장님! 당시 결산 배치 스레드 외에는 특별한 명령을 인가한 적이 없습니다. 시스템의 정상 부하 분산 범위였습니다."
             },
             {
-                "speaker": "박용철 파트장",
-                "role": "품질총괄 (예민한 리더)",
-                "avatar": "avatar_park_yc.png",
+                "speaker": "권남훈 파트장",
+                "role": "운영총괄 (예민한 리더)",
+                "avatar": "avatar_kwon_nh.png",
                 "text": "입 다물고 당시 CPU 점유율을 비정상적으로 과점하며 시스템 리소스를 잠식한 주범 프로세스의 PID(프로세스 ID) 4자리를 프로세스 활성 로그(top/ps)에서 식별하십시오!"
             }
         ],
@@ -186,24 +186,24 @@ stages = [
         "title": "Governance (IT 거버넌스 규정)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "박용철 파트장이 일방적인 일정 독촉 속에서 조사를 밀어붙이자, 권남훈 파트장이 정식 통제 절차의 당위성을 들고 나옵니다.",
+        "narrative": "권남훈 파트장이 일방적인 일정 독촉 속에서 조사를 밀어붙이자, 박용철 파트장이 정식 통제 절차의 당위성을 들고 나옵니다.",
         "dialogue_list": [
             {
-                "speaker": "권남훈 파트장",
-                "role": "운영총괄 (규정 맹신자)",
-                "avatar": "avatar_kwon_nh.png",
+                "speaker": "박용철 파트장",
+                "role": "품질총괄 (규정 맹신자)",
+                "avatar": "avatar_park_yc.png",
                 "text": "정형화된 절차를 우회하는 임의 조사는 명백한 규정 위반입니다. 장애 상황 관리 시에는 임시 조치 단계부터 근본 문제(Problem)를 정식 식별하여 등록해야 합니다."
             },
             {
-                "speaker": "박용철 파트장",
-                "role": "품질총괄 (예민한 리더)",
-                "avatar": "avatar_park_yc.png",
-                "text": "권 파트장, 이 난리에 거버넌스 절차가 밥을 먹여줍니까? 당장 문제 해결이 우선이지!"
+                "speaker": "권남훈 파트장",
+                "role": "운영총괄 (예민한 리더)",
+                "avatar": "avatar_kwon_nh.png",
+                "text": "박 파트장, 이 난리에 거버넌스 절차가 밥을 먹여줍니까? 당장 문제 해결이 우선이지!"
             },
             {
-                "speaker": "권남훈 파트장",
-                "role": "운영총괄 (규정 맹신자)",
-                "avatar": "avatar_kwon_nh.png",
+                "speaker": "박용철 파트장",
+                "role": "품질총괄 (규정 맹신자)",
+                "avatar": "avatar_park_yc.png",
                 "text": "무작정 들쑤시는 건 장애를 더 키울 뿐입니다. 품질 보증 표준 프로세스를 승인하기 위해, 사내 거버넌스가 따르는 정식 IT 서비스 관리 프레임워크의 영문 소문자 4글자 약어를 터미널에 입력하십시오."
             }
         ],
@@ -214,18 +214,18 @@ stages = [
         "title": "Physical Device Map (물리 인프라 맵 감사)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "DBA 박재욱 차장이 스토리지 네트워크 단절 가능성을 공식적으로 제기하고 나서자, 권남훈 파트장이 네트워크 담당 김진혁 차장에게 결선 물리 식별 확인을 현장 요구합니다.",
+        "narrative": "DBA 박재욱 차장이 스토리지 네트워크 단절 가능성을 공식적으로 제기하고 나서자, 박용철 파트장이 네트워크 담당 김진혁 차장에게 결선 물리 식별 확인을 현장 요구합니다.",
         "dialogue_list": [
             {
                 "speaker": "박재욱 차장",
                 "role": "DBA (억울한 실무자)",
                 "avatar": "avatar_park_jw.png",
-                "text": "권 파트장님, WAS 셧다운 직전에 금융 DB 스토리지 동기화 데몬이 I/O 디스크 오류로 끊겼습니다. 이건 제 쿼리 작업 실수가 아니라 백업 스토리지 물리망이 단절된 게 확실합니다!"
+                "text": "박 파트장님, WAS 셧다운 직전에 금융 DB 스토리지 동기화 데몬이 I/O 디스크 오류로 끊겼습니다. 이건 제 쿼리 작업 실수가 아니라 백업 스토리지 물리망이 단절된 게 확실합니다!"
             },
             {
-                "speaker": "권남훈 파트장",
-                "role": "운영총괄 (규정 맹신자)",
-                "avatar": "avatar_kwon_nh.png",
+                "speaker": "박용철 파트장",
+                "role": "품질총괄 (규정 맹신자)",
+                "avatar": "avatar_park_yc.png",
                 "text": "스토리지망 물리적 단절이라고요? 김 차장, 박 차장 말이 사실인지 검증해야겠네. 티켓 조회를 기동할 테니 스토리지 장비가 보관된 랙 번호 2자리(Rack ID)와 결선된 스위치 포트 번호 2자리(Port ID)를 조합한 4자리 물리 감사 코드를 대조해 보게."
             },
             {
@@ -307,15 +307,15 @@ stages = [
                 "text": "장애 시각, 저는 휴게실에서 노트북으로 기계실 랙에 적재된 라우터 허브 장비의 무선 전파 신호를 수신해 모니터링 중이었습니다. 접속 장애는 전혀 없었습니다."
             },
             {
-                "speaker": "박용철 파트장",
-                "role": "품질총괄 (예민한 리더)",
-                "avatar": "avatar_park_yc.png",
+                "speaker": "권남훈 파트장",
+                "role": "운영총괄 (예민한 리더)",
+                "avatar": "avatar_kwon_nh.png",
                 "text": "거짓말 마십시오! 기계실 단말의 T5004 라우터 장비 도면을 분석해 보니, 이 장비는 무선 모듈 자체가 아예 탑재되어 있지 않은 물리적 유선 전용 허브입니다!"
             },
             {
-                "speaker": "박용철 파트장",
-                "role": "품질총괄 (예민한 리더)",
-                "avatar": "avatar_park_yc.png",
+                "speaker": "권남훈 파트장",
+                "role": "운영총괄 (예민한 리더)",
+                "avatar": "avatar_kwon_nh.png",
                 "text": "김 차장님, 무선 신호를 수신해 접속했다는 당시 진술은 물리적으로 불가능합니다. 김 차장이 모니터링에 썼다고 주장한 이 거짓말 속의 무선 인터넷 기술 명칭(영문 소문자 4자)을 밝히십시오!"
             }
         ],
@@ -330,20 +330,20 @@ stages = [
         "dialogue_list": [
             {
                 "speaker": "이재헌 과장",
-                "role": "서载헌 과장",
+                "role": "서버 담당 (가상화 엔지니어)",
                 "avatar": "avatar_lee_jh.png",
                 "text": "물리 서버 자원은 평소에 아주 풍부하게 할당해 두어 넉넉한 상태였습니다. 자원 부족으로 죽은 게 절대 아닙니다!"
             },
             {
-                "speaker": "박용철 파트장",
-                "role": "품질총괄 (예민한 리더)",
-                "avatar": "avatar_park_yc.png",
+                "speaker": "권남훈 파트장",
+                "role": "운영총괄 (예민한 리더)",
+                "avatar": "avatar_kwon_nh.png",
                 "text": "이 과장님, 메인 WAS 인스턴스의 자원 상태 명세를 보십시오. CPU 점유율이 99.6%에 육박해 여유 마진이 0.4%밖에 남지 않았습니다!"
             },
             {
-                "speaker": "박용철 파트장",
-                "role": "품질총괄 (예민한 리더)",
-                "avatar": "avatar_park_yc.png",
+                "speaker": "권남훈 파트장",
+                "role": "운영총괄 (예민한 리더)",
+                "avatar": "avatar_kwon_nh.png",
                 "text": "리소스가 고갈 직전이어서 물리 장비의 숨통만 겨우 붙여놓은 이 과장님의 방만한 한계 튜닝 상태를 가리키는 IT 업계 전문 용어(영문 소문자 7자)를 기입하십시오!"
             }
         ],
@@ -351,27 +351,27 @@ stages = [
     },
     {
         "stage": 14,
-        "title": "The Motivation (박용철 총괄)",
+        "title": "The Motivation (권남훈 총괄)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "서버의 극심한 과부하 정황이 드러나자, 박용철 파트장이 스토리지 단절 당시 터진 DB 무결성 오류 코드를 특정하자고 나섭니다.",
+        "narrative": "서버의 극심한 과부하 정황이 드러나자, 권남훈 파트장이 스토리지 단절 당시 터진 DB 무결성 오류 코드를 특정하자고 나섭니다.",
         "dialogue_list": [
             {
-                "speaker": "박용철 파트장",
-                "role": "품질총괄 (예민한 리더)",
-                "avatar": "avatar_park_yc.png",
+                "speaker": "권남훈 파트장",
+                "role": "운영총괄 (예민한 리더)",
+                "avatar": "avatar_kwon_nh.png",
                 "text": "리소스 부족에 따른 데이터베이스 파손 정황을 입증해야 합니다. 스토리지 단절 시점의 디스크 물리 무결성 실패 로그부터 분석하시죠."
             },
             {
-                "speaker": "권남훈 파트장",
-                "role": "운영총괄 (규정 맹신자)",
-                "avatar": "avatar_kwon_nh.png",
+                "speaker": "박용철 파트장",
+                "role": "품질총괄 (규정 맹신자)",
+                "avatar": "avatar_park_yc.png",
                 "text": "정규표현식 패턴 필터링을 사용하면 감사 로그 상의 오류 코드를 정확히 식별해 낼 수 있겠군요."
             },
             {
-                "speaker": "박용철 파트장",
-                "role": "품질총괄 (예민한 리더)",
-                "avatar": "avatar_park_yc.png",
+                "speaker": "권남훈 파트장",
+                "role": "운영총괄 (예민한 리더)",
+                "avatar": "avatar_kwon_nh.png",
                 "text": "그렇습니다. 제시된 정규표현식 검출 필터를 로그 덤프에 매칭해, 디스크 파손을 유발한 오라클 내부의 치명적 에러 코드 명칭을 소문자로 기입하십시오."
             }
         ],
@@ -379,27 +379,27 @@ stages = [
     },
     {
         "stage": 15,
-        "title": "The VDI Rule (권남훈 총괄)",
+        "title": "The VDI Rule (박용철 총괄)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "데이터베이스 단절 에러가 특정되었음에도, 권남훈 운영파트장은 외부 무단 침입 가능성을 강하게 부정합니다.",
+        "narrative": "데이터베이스 단절 에러가 특정되었음에도, 박용철 품질파트장은 외부 무단 침입 가능성을 강하게 부정합니다.",
         "dialogue_list": [
             {
-                "speaker": "권남훈 파트장",
-                "role": "운영총괄 (규정 맹신자)",
-                "avatar": "avatar_kwon_nh.png",
+                "speaker": "박용철 파트장",
+                "role": "품질총괄 (규정 맹신자)",
+                "avatar": "avatar_park_yc.png",
                 "text": "VDI 보안 정책 하에서는 타인의 IP를 탈취해 무단 상주하는 행위가 원천 불가능합니다. 사용자가 세션을 종료하는 즉시 할당되어 있던 사설 IP 주소는 풀에 회수되며 즉각 다른 사람에게 순차 배분됩니다."
             },
             {
                 "speaker": "박재욱 차장",
                 "role": "DBA (울분을 토하는 실무자)",
                 "avatar": "avatar_park_jw.png",
-                "text": "권 파트장님, 만약 로그아웃된 IP가 곧바로 공격자에게 재할당되어 악용되었다면 주소 도용이 성립할 수도 있는 것 아닙니까?"
+                "text": "박 파트장님, 만약 로그아웃된 IP가 곧바로 공격자에게 재할당되어 악용되었다면 주소 도용이 성립할 수도 있는 것 아닙니까?"
             },
             {
-                "speaker": "권남훈 파트장",
-                "role": "운영총괄 (규정 맹신자)",
-                "avatar": "avatar_kwon_nh.png",
+                "speaker": "박용철 파트장",
+                "role": "품질총괄 (규정 맹신자)",
+                "avatar": "avatar_park_yc.png",
                 "text": "음... 그렇다면 IP 주소의 동적 배분을 담당하는 이 자동 할당 네트워크 규약 약어(H C P D)의 아나그램을 풀어 회수 규칙의 맹점을 추론해 보십시오."
             }
         ],
@@ -413,9 +413,9 @@ stages = [
         "narrative": "스위치 콘솔 로그를 상세 조회하던 중, 스토리지 연결이 단절되도록 유도한 결정적인 조작 실수 흔적이 드러납니다.",
         "dialogue_list": [
             {
-                "speaker": "박용철 파트장",
-                "role": "품질총괄 (예민한 리더)",
-                "avatar": "avatar_park_yc.png",
+                "speaker": "권남훈 파트장",
+                "role": "운영총괄 (예민한 리더)",
+                "avatar": "avatar_kwon_nh.png",
                 "text": "김진혁 차장! 장애 30분 전, 백업망 라우팅 대역 테이블을 임의 조작하다가 CIDR 서브넷 마스크 대역 폭을 `/28` 로 잘못 격리했더군요. 이것 때문에 스토리지 물리 볼륨 통신이 모조리 끊긴 겁니다!"
             },
             {
@@ -425,9 +425,9 @@ stages = [
                 "text": "아... 단순 라우팅 경로 복구를 위한 테스트 단계에서 비트 연산 실수로 오설정이 들어간 모양입니다. 의도한 것은 아닙니다."
             },
             {
-                "speaker": "박용철 파트장",
-                "role": "품질총괄 (예민한 리더)",
-                "avatar": "avatar_park_yc.png",
+                "speaker": "권남훈 파트장",
+                "role": "운영총괄 (예민한 리더)",
+                "avatar": "avatar_kwon_nh.png",
                 "text": "변명은 필요 없고, 서브넷 마스크 `/28` 등급 대역에서 예약 주소 2개를 제외하고 실제 내부 장비들에 유효하게 분배할 수 있는 최대 호스트 IP 개수를 산출해 보십시오!"
             }
         ],
@@ -475,9 +475,9 @@ stages = [
                 "text": "파트장님, 대단히 죄송합니다! 인프라 증설 당시에 시간 동기화 데몬(NTP) 동작 설정을 수동으로 누락하여, WAS 서버들의 시스템 시간이 실제 세상 표준시보다 정확히 '15분 느리게' 가동 중인 것을 발견했습니다."
             },
             {
-                "speaker": "박용철 파트장",
-                "role": "품질총괄 (예민한 리더)",
-                "avatar": "avatar_park_yc.png",
+                "speaker": "권남훈 파트장",
+                "role": "운영총괄 (예민한 리더)",
+                "avatar": "avatar_kwon_nh.png",
                 "text": "이 과장! 자네 진짜 제정신인가! 타임스탬프 동기화도 안 맞춰놓다니!"
             },
             {
@@ -497,9 +497,9 @@ stages = [
         "narrative": "서버의 느린 클럭 오차를 보정한 진짜 셧다운 명령 구동 시간은 실제 시간 기준으로 정확히 '02:13'이었습니다. DBA 박재욱 차장은 '02:05'에 공식 로그아웃하여 세션을 해제하고 사용하던 IP를 반납했습니다.",
         "dialogue_list": [
             {
-                "speaker": "권남훈 파트장",
-                "role": "운영총괄 (규정 맹신자)",
-                "avatar": "avatar_kwon_nh.png",
+                "speaker": "박용철 파트장",
+                "role": "품질총괄 (규정 맹신자)",
+                "avatar": "avatar_park_yc.png",
                 "text": "박 차장님이 02시 05분에 로그아웃하여 IP를 반납한 뒤, DHCP 재분배 규칙에 따라 그 IP는 즉각 풀에 회수되었겠군요."
             },
             {
@@ -509,9 +509,9 @@ stages = [
                 "text": "확실히 그렇습니다! 그리고 단 8분 뒤인 02시 13분에 누군가 제가 사용하던 그 똑같은 IP 주소를 DHCP 시스템을 통해 동적 할당받아 WAS 강제 셧다운 명령을 내렸습니다. 02시 13분에 그 IP로 접속해 있던 자가 진짜 범인입니다!"
             },
             {
-                "speaker": "권남훈 파트장",
-                "role": "운영총괄 (규정 맹신자)",
-                "avatar": "avatar_kwon_nh.png",
+                "speaker": "박용철 파트장",
+                "role": "품질총괄 (규정 맹신자)",
+                "avatar": "avatar_park_yc.png",
                 "text": "당일 라우터의 무선(wifi) 신호로 접속하여 노트북으로 안전하게 모니터링 중이었다고 거짓 기술 진술을 한 인물이 범인으로 좁혀집니다. 그 진짜 범인의 이름을 기입하십시오."
             }
         ],
@@ -531,15 +531,15 @@ stages = [
                 "text": "죄송합니다... 라우팅 CIDR 오설정 실수를 조용히 메우려다 일이 이렇게 커질 줄 몰랐습니다. 책임을 회피하기 위해 DBA 박 차장의 세션을 유도하고 WAS를 강제 정지시켰습니다."
             },
             {
-                "speaker": "박용철 파트장",
-                "role": "품질총괄 (예민한 리더)",
-                "avatar": "avatar_park_yc.png",
+                "speaker": "권남훈 파트장",
+                "role": "운영총괄 (예민한 리더)",
+                "avatar": "avatar_kwon_nh.png",
                 "text": "본인 설정을 덮기 위해 코어 인프라를 마비시키고 동료에게 누명까지 씌우다니! 엄중한 처벌을 받게 될 겁니다."
             },
             {
-                "speaker": "권남훈 파트장",
-                "role": "운영총괄 (규정 맹신자)",
-                "avatar": "avatar_kwon_nh.png",
+                "speaker": "박용철 파트장",
+                "role": "품질총괄 (규정 맹신자)",
+                "avatar": "avatar_park_yc.png",
                 "text": "장애 수사 및 음모 규명이 완료되었습니다. 최종 승인 확인 키 [ done ]를 기입하여 이 새벽의 장애 인시던트 티켓을 공식 클리어하고 종결 처리하십시오."
             }
         ],
