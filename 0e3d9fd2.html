@@ -53,9 +53,9 @@
 
                 <div class="story-container">
                     <!-- 3rd-person neutral narrative text block -->
-                    <div class="narrative-panel" style="background: rgba(0, 229, 255, 0.03); border-left: 3px solid var(--accent-blue); padding: 12px 16px; margin-bottom: 20px; font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); border-radius: 0 4px 4px 0; font-family: var(--font-sans); white-space: pre-wrap;">
-                        김 차장의 서브넷 라우팅 오설정이 스토리지 통신 단절을 일으키고, 그로 인해 결산 DB 데이터가 연쇄 파손되었음이 물리적으로 실증되었습니다.
-박용철 파트장이 분개하자 김 차장은 일시적인 복구 테스트 중 발생한 설정 편차라며 얼버무립니다.
+                    <div class="narrative-panel" style="background: rgba(0, 229, 255, 0.07); border-left: 4px solid var(--accent-blue); box-shadow: -5px 0 15px rgba(0, 229, 255, 0.15); padding: 16px; margin-bottom: 20px; font-size: 0.95rem; line-height: 1.6; color: var(--text-primary); border-radius: 0 6px 6px 0; font-family: var(--font-sans); white-space: pre-wrap;">
+                        <div style="font-family: var(--font-title); font-size: 0.75rem; color: var(--accent-blue); font-weight: bold; letter-spacing: 1px; margin-bottom: 6px; text-transform: uppercase;">📡 SITUATION BRIEFING</div>
+                        김 차장의 서브넷 오설정이 스토리지 통신 단절을 일으키고, 그로 인해 결산 DB 데이터가 연쇄 파손되었음이 물리적으로 실증되었습니다.
                     </div>
 
                     <!-- Pure character dialogue feed -->
@@ -65,15 +65,19 @@
                         </div>
                         <div class="dialogue-body">
                             <div class="dialogue-speaker">
-                                <span>박재욱 차장</span>
-                                <span class="speaker-role">DBA</span>
+                                <span>박재욱 & 김진혁</span>
+                                <span class="speaker-role">iSCSI 채널 복구 명령</span>
                             </div>
-                            <div class="dialogue-text typing-text" data-text="끊겨버린 스토리지 연결 경로의 즉각적인 수동 복구가 요구됩니다.
+                            <div class="dialogue-text typing-text" data-text="[박재욱]: 김 차장님의 O설정으로 인해 제 결산 백업 중에 DB가 파손된 것이 밝혀졌습니다. 당장 끊긴 블록 스토리지 연결부터 긴급 복구해 주십시오!
 
-iSCSI 프로토콜 통신 채널 복구를 위해, 해당 스토리지 장치 결선에 기본적으로 할당되어 가동되는 TCP 표준 포트 번호 4자리를 기입하십시오.">
-                                끊겨버린 스토리지 연결 경로의 즉각적인 수동 복구가 요구됩니다.
+[김진혁]: 크흠... 알겠습니다. 단순 실수였으니 바로 프로토콜 수동 연결 절차를 기동하겠습니다.
 
-iSCSI 프로토콜 통신 채널 복구를 위해, 해당 스토리지 장치 결선에 기본적으로 할당되어 가동되는 TCP 표준 포트 번호 4자리를 기입하십시오.
+[박재욱]: iSCSI 프로토콜 통신 채널을 수동 결선하여 동작을 복구하기 위해, 해당 스토리지 장비가 기본 점유하여 사용하는 표준 TCP 포트 번호 4자리를 도출하십시오!">
+                                [박재욱]: 김 차장님의 O설정으로 인해 제 결산 백업 중에 DB가 파손된 것이 밝혀졌습니다. 당장 끊긴 블록 스토리지 연결부터 긴급 복구해 주십시오!
+
+[김진혁]: 크흠... 알겠습니다. 단순 실수였으니 바로 프로토콜 수동 연결 절차를 기동하겠습니다.
+
+[박재욱]: iSCSI 프로토콜 통신 채널을 수동 결선하여 동작을 복구하기 위해, 해당 스토리지 장비가 기본 점유하여 사용하는 표준 TCP 포트 번호 4자리를 도출하십시오!
                             </div>
                         </div>
                     </div>

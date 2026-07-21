@@ -53,7 +53,8 @@
 
                 <div class="story-container">
                     <!-- 3rd-person neutral narrative text block -->
-                    <div class="narrative-panel" style="background: rgba(0, 229, 255, 0.03); border-left: 3px solid var(--accent-blue); padding: 12px 16px; margin-bottom: 20px; font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); border-radius: 0 4px 4px 0; font-family: var(--font-sans); white-space: pre-wrap;">
+                    <div class="narrative-panel" style="background: rgba(0, 229, 255, 0.07); border-left: 4px solid var(--accent-blue); box-shadow: -5px 0 15px rgba(0, 229, 255, 0.15); padding: 16px; margin-bottom: 20px; font-size: 0.95rem; line-height: 1.6; color: var(--text-primary); border-radius: 0 6px 6px 0; font-family: var(--font-sans); white-space: pre-wrap;">
+                        <div style="font-family: var(--font-title); font-size: 0.75rem; color: var(--accent-blue); font-weight: bold; letter-spacing: 1px; margin-bottom: 6px; text-transform: uppercase;">📡 SITUATION BRIEFING</div>
                         콘솔 메모리 버퍼가 복구되자, OS Syslog에서 결정적인 기동 중단 감사 흔적이 관측됩니다.
                     </div>
 
@@ -64,15 +65,19 @@
                         </div>
                         <div class="dialogue-body">
                             <div class="dialogue-speaker">
-                                <span>박용철 파트장</span>
-                                <span class="speaker-role">품질총괄 (예민한 리더)</span>
+                                <span>박용철 & 권남훈</span>
+                                <span class="speaker-role">서버 중단 원인 논쟁</span>
                             </div>
-                            <div class="dialogue-text typing-text" data-text="셧다운 직전인 02시 13분, 누군가가 root 권한 세션을 획득해 프로세스 가동을 강제로 차단하고 커널을 Halt시키는 바이너리를 실행한 흔적이 포착되었습니다.
+                            <div class="dialogue-text typing-text" data-text="[박용철]: 권 파트장, 이 로그를 보십시오! 셧다운 직전인 02시 13분, 누군가가 root 권한 세션을 획득해 프로세스 가동을 강제로 차단하고 커널을 Halt시키는 바이너리를 호출했습니다. 이건 고의적인 테러입니다!
 
-공격자가 서버 자체를 완전히 정지시켜 물리 분석을 무력화하기 위해 실행한 UNIX/Linux 표준 시스템 종료 명령어(영문 소문자 8자)를 파악하십시오.">
-                                셧다운 직전인 02시 13분, 누군가가 root 권한 세션을 획득해 프로세스 가동을 강제로 차단하고 커널을 Halt시키는 바이너리를 실행한 흔적이 포착되었습니다.
+[권남훈]: 단순 장비 노후화로 인한 전원 서지일 수도 있습니다. 정밀 규격부터 맞춰 대조하시죠.
 
-공격자가 서버 자체를 완전히 정지시켜 물리 분석을 무력화하기 위해 실행한 UNIX/Linux 표준 시스템 종료 명령어(영문 소문자 8자)를 파악하십시오.
+[박용철]: 우길 걸 우겨야지! 공격자가 서버 자체를 완전히 정지시키기 위해 실행한 UNIX/Linux 표준 시스템 종료 명령어(영문 소문자 8자)를 식별하십시오!">
+                                [박용철]: 권 파트장, 이 로그를 보십시오! 셧다운 직전인 02시 13분, 누군가가 root 권한 세션을 획득해 프로세스 가동을 강제로 차단하고 커널을 Halt시키는 바이너리를 호출했습니다. 이건 고의적인 테러입니다!
+
+[권남훈]: 단순 장비 노후화로 인한 전원 서지일 수도 있습니다. 정밀 규격부터 맞춰 대조하시죠.
+
+[박용철]: 우길 걸 우겨야지! 공격자가 서버 자체를 완전히 정지시키기 위해 실행한 UNIX/Linux 표준 시스템 종료 명령어(영문 소문자 8자)를 식별하십시오!
                             </div>
                         </div>
                     </div>

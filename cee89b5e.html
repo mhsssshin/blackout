@@ -53,8 +53,9 @@
 
                 <div class="story-container">
                     <!-- 3rd-person neutral narrative text block -->
-                    <div class="narrative-panel" style="background: rgba(0, 229, 255, 0.03); border-left: 3px solid var(--accent-blue); padding: 12px 16px; margin-bottom: 20px; font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); border-radius: 0 4px 4px 0; font-family: var(--font-sans); white-space: pre-wrap;">
-                        권남훈 파트장이 소명서 승인을 조건으로 장비 배치 관리 대장의 고유 식별 코드를 대라며 앞길을 막아 세우고 있습니다.
+                    <div class="narrative-panel" style="background: rgba(0, 229, 255, 0.07); border-left: 4px solid var(--accent-blue); box-shadow: -5px 0 15px rgba(0, 229, 255, 0.15); padding: 16px; margin-bottom: 20px; font-size: 0.95rem; line-height: 1.6; color: var(--text-primary); border-radius: 0 6px 6px 0; font-family: var(--font-sans); white-space: pre-wrap;">
+                        <div style="font-family: var(--font-title); font-size: 0.75rem; color: var(--accent-blue); font-weight: bold; letter-spacing: 1px; margin-bottom: 6px; text-transform: uppercase;">📡 SITUATION BRIEFING</div>
+                        권남훈 운영파트장이 데이터베이스 파손의 원인을 DBA의 작업 과실로 모아가며 압박하자, 박재욱 차장이 억울함을 호소합니다.
                     </div>
 
                     <!-- Pure character dialogue feed -->
@@ -65,16 +66,18 @@
                         <div class="dialogue-body">
                             <div class="dialogue-speaker">
                                 <span>권남훈 & 박재욱</span>
-                                <span class="speaker-role">파트장 vs DBA (대립 관계)</span>
+                                <span class="speaker-role">파트장 vs DBA (소명 요구)</span>
                             </div>
-                            <div class="dialogue-text typing-text" data-text="소명 티켓 접수를 위해서는 실제 동기화 오류를 일으킨 스토리지 장비가 보관된 랙 식별 번호 2자리(Rack ID)와 결선된 라우터 광포트 번호 2자리(Port ID)를 조합한 4자리 장비 관리 코드를 대셔야 합니다.
+                            <div class="dialogue-text typing-text" data-text="[권남훈]: 박 차장님의 억지 소명을 접수해 검토는 해 보겠으나, 실제 오류 대상인 스토리지 장비가 보관된 랙 식별 번호 2자리(Rack ID)와 결선된 라우터 광포트 번호 2자리(Port ID)를 조합한 4자리 물리 관리 코드를 제출해 보십시오.
 
-이 새벽에 그런 복잡한 대장 번호를 다 외우는 것은 불가능합니다.
-기계실 단말기에 기록된 물리 장비 배치 맵과 광 스위치 포트 인터페이스 상태 로그를 대조해 4자리 장비 식별자(8204)를 확인하십시오.">
-                                소명 티켓 접수를 위해서는 실제 동기화 오류를 일으킨 스토리지 장비가 보관된 랙 식별 번호 2자리(Rack ID)와 결선된 라우터 광포트 번호 2자리(Port ID)를 조합한 4자리 장비 관리 코드를 대셔야 합니다.
+[박재욱]: 권 파트장님, 새벽에 갑자기 하드웨어 물리 포트 대장 번호까지 대라니 치졸한 방해 공작입니다!
 
-이 새벽에 그런 복잡한 대장 번호를 다 외우는 것은 불가능합니다.
-기계실 단말기에 기록된 물리 장비 배치 맵과 광 스위치 포트 인터페이스 상태 로그를 대조해 4자리 장비 식별자(8204)를 확인하십시오.
+[박재욱]: 기계실 단말기에 기록된 물리 장비 배치 맵과 광 스위치 포트 인터페이스 상태 로그를 대조해, 스토리지 랙 번호(2자리)와 스토리지 광 연결 포트 번호(2자리)를 조합한 4자리 장비 식별자(8204)를 찾아 주십시오!">
+                                [권남훈]: 박 차장님의 억지 소명을 접수해 검토는 해 보겠으나, 실제 오류 대상인 스토리지 장비가 보관된 랙 식별 번호 2자리(Rack ID)와 결선된 라우터 광포트 번호 2자리(Port ID)를 조합한 4자리 물리 관리 코드를 제출해 보십시오.
+
+[박재욱]: 권 파트장님, 새벽에 갑자기 하드웨어 물리 포트 대장 번호까지 대라니 치졸한 방해 공작입니다!
+
+[박재욱]: 기계실 단말기에 기록된 물리 장비 배치 맵과 광 스위치 포트 인터페이스 상태 로그를 대조해, 스토리지 랙 번호(2자리)와 스토리지 광 연결 포트 번호(2자리)를 조합한 4자리 장비 식별자(8204)를 찾아 주십시오!
                             </div>
                         </div>
                     </div>
