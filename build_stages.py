@@ -11,9 +11,9 @@ stage3_files = []
 for i in range(1, 101):
     if i == 74: # Hide the target anomaly at index 74
         stage3_files.append({
-            "name": "backup_corrupt.bin",
+            "name": "file_074.bin",
             "type": "file",
-            "content": "FILE_NAME: backup_corrupt.bin\nOWNER: tqo_ops\nSIZE: 8204 bytes\nPERMISSIONS: -rwxrwxrwx\nSTATUS: Critical Security Hazard: Full Public Write Access Enabled."
+            "content": "FILE_NAME: file_074.bin\nOWNER: tqo_ops\nSIZE: 8204 bytes\nPERMISSIONS: -rwxrwxrwx\nSTATUS: Critical Security Hazard: Full Public Write Access Enabled."
         })
     else:
         stage3_files.append({
@@ -216,7 +216,7 @@ stage3_html = f"""<div class='puzzle-container' style='position: relative;'>
     </div>
 
     <p style='color: var(--text-muted); font-size: 0.82rem; margin-top: 12px; line-height: 1.5;'>
-        힌트: 보안 경고가 터진 취약 파일(rwxrwxrwx)의 8진수 권한 마스크(r=4, w=2, x=1 합산) 3자리를 구하십시오.
+        힌트: 다른 파일들과 다른 권한을 지닌 취약 파일을 찾아 그 8진수 권한 마스크(r=4, w=2, x=1 합산) 3자리를 구하십시오.
     </p>
 </div>
 <script>
@@ -258,15 +258,15 @@ stage3_html = f"""<div class='puzzle-container' style='position: relative;'>
                 lines.push("-rwxr-xr-x  1 tqo_ops  staff  4096 Jul 21 02:00 file_00" + i + ".bin");
             }}
             lines.push("... (skipped 94 normal files) ...");
-            lines.push("<strong style='color: var(--accent-magenta);'>-rwxrwxrwx  1 tqo_ops  staff  8204 Jul 21 01:45 backup_corrupt.bin</strong>");
+            lines.push("-rwxrwxrwx  1 tqo_ops  staff  8204 Jul 21 01:45 file_074.bin");
             lines.push("-rwxr-xr-x  1 tqo_ops  staff  4096 Jul 21 02:00 file_100.bin");
             outputText = lines.join("<br>");
         }} else if (type === 'find') {{
             cmdText = "find var/www/backups ! -perm 755";
-            outputText = "<span style='color: var(--accent-green);'>./var/www/backups/backup_corrupt.bin  (permission mismatch: expected 755)</span>";
+            outputText = "<span style='color: var(--accent-green);'>./var/www/backups/file_074.bin  (permission mismatch: expected 755)</span>";
         }} else if (type === 'grep') {{
             cmdText = "grep -rn 'Hazard' var/www/";
-            outputText = "<span style='color: var(--accent-green);'>var/www/backups/backup_corrupt.bin:5: STATUS: Critical Security Hazard: Full Public Write Access Enabled.</span>";
+            outputText = "<span style='color: var(--accent-green);'>var/www/backups/file_074.bin:5: STATUS: Critical Security Hazard: Full Public Write Access Enabled.</span>";
         }}
 
         // Remove old cursor
