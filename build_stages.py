@@ -189,7 +189,7 @@ stages = [
         "narrative": "악성 프로세스 구동 정황이 밝혀지며 긴급 조치가 전개되자, 품질총괄 박용철 파트장이 수사 절차의 공식 IT 서비스 거버넌스 등록을 완강히 요구하고 나섭니다.",
         "dialogue_list": [
             {
-                "speaker": "박용철 파트장",
+                "speaker": "박용철 파特장",
                 "role": "품질총괄 (규정 맹신자)",
                 "avatar": "avatar_park_yc.png",
                 "text": "정형화된 절차를 우회하는 임의 조사는 명백한 규정 위반입니다. 장애 상황 관리 시에는 임시 조치 단계부터 근본 문제(Problem)를 정식 식별하여 등록해야 합니다."
@@ -232,7 +232,7 @@ stages = [
                 "speaker": "김진혁 차장",
                 "role": "네트워크 담당 (능글맞은 엔지니어)",
                 "avatar": "avatar_kim_jh.png",
-                "text": "물리 결선 정보 대장은 기계실 콘솔 단말의 배치 맵과 광 스위치 포트 로그를 대조해 보면 바로 나옵니다. 랙 ID(2자리)와 포트(2자리)를 합친 코드(8204)를 입력하시면 즉시 스위치 상태를 모니터링하겠습니다."
+                "text": "물리 결선 정보 대장은 기계실 콘솔 단말의 배치 맵과 광 스위치 포트 로그를 대조해 보면 바로 나옵니다. 랙 ID(2자리)와 포트(2자리)를 합친 4자리 감사 코드를 입력하시면 즉시 스위치 상태를 모니터링하겠습니다."
             }
         ],
         "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>⚙️ PHYSICAL SERVER ROOM RACK MAP</div>\n    <div class='ascii-diagram' style='text-align: left; font-size: 0.8rem; line-height: 1.5; background: rgba(0,0,0,0.5); padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); color: var(--text-primary);'>\n+-------------------------------------------------------------+\n|  [SERVER ROOM ZONE A - RACK ARRANGEMENT]                    |\n|                                                             |\n|  [Rack 80] : L4 load balancer VIP suite                     |\n|  [Rack 81] : Financial Core WAS clusters (01-08)            |\n|  [Rack 82] : SAN Storage Target controller units            |\n|  [Rack 83] : Oracle RAC database engine nodes               |\n+-------------------------------------------------------------+\n    </div>\n    \n    <div class='puzzle-title' style='margin-top: 15px;'>📡 SWITCH ROUTER PORT INTERFACE LOG</div>\n    <div style='background: rgba(0,0,0,0.6); padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.6; text-align: left; color: var(--text-primary);'>\n        [Port 01] - LINK UP   - target: Core-WAS-Switch<br>\n        [Port 02] - LINK UP   - target: Enterprise-Backbone<br>\n        [Port 03] - LINK DOWN - target: Internal-VDI-Hub<br>\n        [Port 04] - LINK UP   - target: SAN-Storage-Fibre-Switch\n    </div>\n    \n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 12px; line-height: 1.5;'>\n        힌트: 배치 맵에서 'SAN Storage' 장비가 속한 랙 번호 2자리와 스위치 로그에서 'SAN-Storage-Fibre-Switch'가 결선된 포트 번호 2자리를 찾아 차례대로 조합하십시오.\n    </p>\n</div>"
@@ -323,7 +323,7 @@ stages = [
     },
     {
         "stage": 13,
-        "title": "The Server Margin (서버 마진 고갈)",
+        "title": "The Server Overload (서버 과부하 발생)",
         "filename": "",
         "verify_hash": "",
         "narrative": "네트워크 무선 거짓 진술이 발각된 와중, 서버 담당 이재헌 과장이 가상화 서버 자원 분배는 지극히 풍부하고 넉넉한 상태였다고 다급히 주장하기 시작합니다.",
@@ -344,10 +344,10 @@ stages = [
                 "speaker": "권남훈 파트장",
                 "role": "운영총괄 (예민한 리더)",
                 "avatar": "avatar_kwon_nh.png",
-                "text": "갑작스러운 트래픽 폭주(Spike)나 백업 부하에 완충 작용을 하도록 서버 설계 단계에서 반드시 확보해 두어야 하는 '자원의 물리 여유 용량 마진'을 뜻하는 SRE 전문 용어(영문 소문자 8자)를 기입하십시오!"
+                "text": "CPU 점유율이 임계치를 초과하여 시스템의 동작이 심각하게 마비되거나 다운되는 '치명적 과부하' 상태를 일컫는 대표적인 IT 용어(영문 소문자 8자)를 기입하십시오!"
             }
         ],
-        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>⚙️ VM INSTANCE SPECIFICATION OVERVIEW</div>\n    <div class='cpu-widget'>\n        <div>INSTANCE_NAME: Core-WAS-01</div>\n        <div class='cpu-bar'>CPU USAGE: [██████████] 99.6% (Overload)</div>\n        <div style='color: var(--accent-magenta); margin-top: 5px;'>AVAILABLE_MARGIN: 0.4%</div>\n    </div>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.6;'>\n        CPU 여유 마진이 0.4%밖에 되지 않는 위태로운 상태입니다.<br>\n        트래픽 변동성이나 이상 작동 시 시스템이 즉각 불능 상태에 빠지지 않도록 아키텍처 설계 시 확보해 두는 최소한의 여유 가용 공간(마진)을 뜻하는 SRE 전문 용어(H로 시작하는 영문 소문자 8자)를 기입하십시오.\n    </p>\n</div>"
+        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>⚙️ VM INSTANCE SPECIFICATION OVERVIEW</div>\n    <div class='cpu-widget'>\n        <div>INSTANCE_NAME: Core-WAS-01</div>\n        <div class='cpu-bar'>CPU USAGE: [██████████] 99.6% (Critical Limit)</div>\n        <div style='color: var(--accent-magenta); margin-top: 5px;'>AVAILABLE_MARGIN: 0.4%</div>\n    </div>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.6;'>\n        CPU 여유 마진이 0.4%밖에 되지 않는 위태로운 상태입니다.<br>\n        시스템 자원이 허용 한도를 초과해 극도의 과부하에 직면한 상태를 뜻하는 영문 소문자 8자 단어를 기입하십시오.\n    </p>\n</div>"
     },
     {
         "stage": 14,
@@ -375,7 +375,7 @@ stages = [
                 "text": "그렇습니다. 제시된 정규표현식 검출 필터를 로그 덤프에 매칭해, 디스크 파손을 유발한 오라클 내부의 치명적 에러 코드 명칭을 소문자로 기입하십시오."
             }
         ],
-        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>🔍 CORRUPTION PATTERN DETECTION FILTER</div>\n    <ul style='list-style-type: square; padding-left: 20px; font-size: 0.85rem; line-height: 1.6; color: var(--accent-blue); font-family: var(--font-mono);'>\n        <li>정규식 필터 패턴: ^[A-Za-z]+-[0-9]{5}$ (영문 단어 + 붙임표 + 정확히 5자리 숫자)</li>\n        <li>[DB ERROR LOG DUMP]:</li>\n        <li style='color: var(--text-muted);'>- sys-info-10023</li>\n        <li style='color: var(--text-primary); font-weight: bold;'>- ORA-00600 (internal error)</li>\n        <li style='color: var(--text-muted);'>- DB-CONN-5020</li>\n    </ul>\n</div>"
+        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>🔍 CORRUPTION PATTERN DETECTION FILTER</div>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px; line-height: 1.5;'>\n        아래 로그 덤프에서 정규식 패턴 <strong>^[A-Za-z]+-[0-9]{{5}}$</strong> 에 완벽히 부합하는 오라클 치명적 오류 코드를 식별하여 소문자로 입력하십시오.\n    </p>\n    <ul style='list-style-type: square; padding-left: 20px; font-size: 0.85rem; line-height: 1.8; color: var(--text-primary); font-family: var(--font-mono); text-align: left;'>\n        <li>sys-info-10023</li>\n        <li>ORA-9941</li>\n        <li>ERR-DB-CONN-5020</li>\n        <li>ORA-00600</li>\n        <li>oracle-752119</li>\n    </ul>\n</div>"
     },
     {
         "stage": 15,
@@ -561,7 +561,7 @@ answers = [
     "0145",
     "sysdba",  
     "wifi",
-    "headroom",  # Updated target answer
+    "overload",  # Updated target answer
     "ora00600",
     "dhcp",
     "14",

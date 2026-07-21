@@ -111,12 +111,15 @@
                     <!-- Gimmick HTML rendering -->
                     <div class='puzzle-container'>
     <div class='puzzle-title'>🔍 CORRUPTION PATTERN DETECTION FILTER</div>
-    <ul style='list-style-type: square; padding-left: 20px; font-size: 0.85rem; line-height: 1.6; color: var(--accent-blue); font-family: var(--font-mono);'>
-        <li>정규식 필터 패턴: ^[A-Za-z]+-[0-9]{5}$ (영문 단어 + 붙임표 + 정확히 5자리 숫자)</li>
-        <li>[DB ERROR LOG DUMP]:</li>
-        <li style='color: var(--text-muted);'>- sys-info-10023</li>
-        <li style='color: var(--text-primary); font-weight: bold;'>- ORA-00600 (internal error)</li>
-        <li style='color: var(--text-muted);'>- DB-CONN-5020</li>
+    <p style='color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px; line-height: 1.5;'>
+        아래 로그 덤프에서 정규식 패턴 <strong>^[A-Za-z]+-[0-9]{{5}}$</strong> 에 완벽히 부합하는 오라클 치명적 오류 코드를 식별하여 소문자로 입력하십시오.
+    </p>
+    <ul style='list-style-type: square; padding-left: 20px; font-size: 0.85rem; line-height: 1.8; color: var(--text-primary); font-family: var(--font-mono); text-align: left;'>
+        <li>sys-info-10023</li>
+        <li>ORA-9941</li>
+        <li>ERR-DB-CONN-5020</li>
+        <li>ORA-00600</li>
+        <li>oracle-752119</li>
     </ul>
 </div>
                 </div>
