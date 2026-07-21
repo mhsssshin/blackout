@@ -59,14 +59,14 @@ stages = [
     },
     {
         "stage": 6,
-        "title": "Caesar Cipher (시저 암호)",
+        "title": "System Halt Signal (시스템 종료 명령어)",
         "filename": "db590ac0.html",
         "verify_hash": "08434ba9cdf55a02284e2913400586cd289878e0f055f7bb0b07ce392caeb989",
         "speaker": "박용철 파트장",
         "role": "품질총괄 (예민한 리더)",
         "avatar": "PARK_YC",
-        "dialogue": "자, 메모리가 복구되었으니 즉시 셧다운 원인 파일부터 뜯어보시죠!\n\n여기를 보세요. 침입 세션의 공격자가 WAS 서버를 폭파하기 전 입력한 시스템 커맨드가 포착되었습니다.\n하지만 녀석이 철저하게 알파벳을 3칸씩 뒤로 밀어 적어 암호화(시저 암호)를 해뒀네요.\n\n[HINT: -3 Shift]\n암호 텍스트: vkXwgrzq\n\n지체할 시간이 없습니다! 당장 이 암호문을 원래 문자로 3칸씩 당겨 해독해 주십시오.\n대체 녀석이 내린 물리적 강제 중단 명령의 실체가 무엇이었는지 터미널에 입력해 입증하세요!",
-        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>🔐 DECRYPTION KEY: -3 Shift (Caesar)</div>\n    <div style='background: rgba(0,0,0,0.5); padding: 15px; border-radius: 6px; border: 1px solid var(--border-color); font-family: var(--font-mono); display: flex; gap: 15px; align-items: center; justify-content: center;'>\n        <p style='color: var(--accent-magenta); font-size: 1.2rem; letter-spacing: 2px;'>vkXwgrzq</p>\n        <button class='copy-btn' onclick=\"copyToClipboard('vkXwgrzq', this)\">COPY</button>\n    </div>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.5;'>\n        알파벳 순서: a b c d e f g h i j k l m n o p q r s t u v w x y z<br>\n        예를 들어, 'v'에서 앞으로 3칸 이동하면 's'가 됩니다.\n    </p>\n</div>"
+        "dialogue": "조사관님! 셧다운 원인 로그를 커널 레벨부터 정밀 검토하던 중, OS Syslog에서 결정적인 공격 흔적을 포착했습니다.\n\n시스템이 완전히 암전되기 직전인 02시 13분, 누군가가 root 권한 세션을 획득해 프로세스 기동을 강제로 중단시키고 커널을 Halt시키는 시스템 제어 바이너리를 구동한 흔적이 남아 있습니다.\n\n이 공격자가 서버를 물리적으로 꺼버려 증거를 인멸하고 우리 복구를 지연시키기 위해 실행한 UNIX/Linux 표준 시스템 종료 명령어(영문 소문자 8자)를 터미널에 입력해 당시 가동된 바이너리 파일을 실증하십시오!",
+        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>⚙️ UNIX/Linux SYSTEM LOG DUMP</div>\n    <div style='background: rgba(0,0,0,0.6); padding: 15px; border-radius: 6px; border: 1px solid var(--border-color); font-family: var(--font-mono); font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); text-align: left;'>\n        <span style='color: var(--text-muted);'>[Jul 21 02:13:05] authpriv.info sudo: root : TTY=pts/0 ; PWD=/ ; USER=root ; COMMAND=/sbin/XXXXXXXX</span><br>\n        <span style='color: var(--accent-magenta);'>[Jul 21 02:13:08] kern.info kernel: System is going down for halt NOW!</span><br>\n        <span style='color: var(--accent-red);'>[Jul 21 02:13:10] systemd[1]: Sent signal SIGTERM to all processes...</span>\n    </div>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.5;'>\n        힌트: `/sbin/` 경로 하위에서 호출되어 운영체제를 강제 종료시키는 대표적인 8글자 Linux 표준 명령어(영문 소문자)를 식별하십시오.\n    </p>\n</div>"
     },
     {
         "stage": 7,
