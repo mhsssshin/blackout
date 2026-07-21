@@ -52,7 +52,7 @@ stages = [
         "title": "Log Flood (권한 검색)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "박용철 파트장의 장담과 달리, 파일 배포 프로세스 상에 허점이 감지됩니다.",
+        "narrative": "품질총괄 박용철 파트장의 완고한 원칙 고수와 달리, 파일 배포 프로세스 상에 심각한 보안 허점이 감지됩니다.",
         "dialogue_list": [
             {
                 "speaker": "박용철 파트장",
@@ -74,25 +74,25 @@ stages = [
         "title": "PDU Power Overload (PDU 전력 임계치 초과 적발)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "[위이이이잉- 삐- 삐-] 서버실 내부의 전압 경보 장치가 작동하며 갑작스럽게 단말기 모니터 화면의 신호가 끊어집니다. 비상 전압 차단기(Circuit Breaker)가 강제 작동하며 시스템이 완전히 정전 상태에 직면합니다.",
+        "narrative": "권남훈 파트장이 스토리지 블록 전체에 대규모 동시 디렉토리 권한 스캔을 가동시키자, 백업 전력망 선로에 급격한 과전류 오버헤드가 발생합니다. 정전 경보 장치가 작동하며 제어 터미널 화면 신호가 끊어지고 서버실 전체가 암전 상태에 직면합니다.",
         "dialogue_list": [
             {
                 "speaker": "이재헌 과장",
                 "role": "서버 담당 (가상화 엔지니어)",
                 "avatar": "avatar_lee_jh.png",
-                "text": "으악! 전압 경보가 울리더니 정전이 터졌습니다. 비상 발전기가 돌기 전에 분전반 차단기가 강제 트립된 것 같습니다!"
+                "text": "으악! 권 파트장님이 실행하신 권한 스캔 명령어 과부하 때문인지 주 차단기(Circuit Breaker)가 강제 트립되어 정전이 터졌습니다!"
             },
             {
                 "speaker": "박주암 과장",
                 "role": "WAS 담당 (실무 운영자)",
                 "avatar": "avatar_park_ja.png",
-                "text": "각 PDU(전력 분배 장치)의 단일 라인 한계 정격 전류는 최대 80A입니다. 이 과장님, 정전 직전에 결선되어 있던 각 장비들의 전류 소모량 합계를 PDU별로 감사해 보십시오."
+                "text": "각 PDU(전력 분배 장치)의 단일 라인 한계 정격 전류는 최대 80A입니다. 이 과장님, 정전 직전에 결선되어 부하를 가하던 각 장비들의 전류 소모량 합계를 PDU별로 감사해 보십시오."
             },
             {
                 "speaker": "이재헌 과장",
                 "role": "서버 담당 (가상화 엔지니어)",
                 "avatar": "avatar_lee_jh.png",
-                "text": "아! 임계치 80A를 단독으로 초과해 서지 부하를 가하고 셧다운을 유도한 범인 PDU의 식별 코드(pdu01, pdu02, pdu03 중 하나)를 찾아 터미널에 입력하십시오!"
+                "text": "아! 임계치 80A를 단독으로 초과해 서지 부하를 가하고 전체 정전을 유도한 범인 PDU의 식별 코드(pdu01, pdu02, pdu03 중 하나)를 찾아 터미널에 입력하십시오!"
             }
         ],
         "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>🔌 PDU CURRENT LOAD INVENTORY (80A MAX LIMIT)</div>\n    <div style='display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 10px;'>\n        <div style='background: rgba(0,0,0,0.5); padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); text-align: left;'>\n            <h4 style='color: var(--accent-blue); margin-bottom: 8px;'>[PDU-01]</h4>\n            <ul style='list-style: none; font-family: var(--font-mono); font-size: 0.8rem; padding: 0; line-height: 1.6;'>\n                <li>- Core-WAS-01 : 25A</li>\n                <li>- Core-WAS-02 : 25A</li>\n                <li>- L4-LoadBalancer : 10A</li>\n                <li>- Switch-Hub-01 : 15A</li>\n            </ul>\n        </div>\n        <div style='background: rgba(0,0,0,0.5); padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); text-align: left;'>\n            <h4 style='color: var(--accent-blue); margin-bottom: 8px;'>[PDU-02]</h4>\n            <ul style='list-style: none; font-family: var(--font-mono); font-size: 0.8rem; padding: 0; line-height: 1.6;'>\n                <li>- DB-Oracle-Node1 : 35A</li>\n                <li>- DB-Oracle-Node2 : 35A</li>\n                <li>- SAN-Fibre-Switch : 12A</li>\n            </ul>\n        </div>\n        <div style='background: rgba(0,0,0,0.5); padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); text-align: left;'>\n            <h4 style='color: var(--accent-blue); margin-bottom: 8px;'>[PDU-03]</h4>\n            <ul style='list-style: none; font-family: var(--font-mono); font-size: 0.8rem; padding: 0; line-height: 1.6;'>\n                <li>- Web-Server-01 : 15A</li>\n                <li>- Web-Server-02 : 15A</li>\n                <li>- NAS-Storage-Unit : 20A</li>\n                <li>- Dev-VM-Host : 15A</li>\n            </ul>\n        </div>\n    </div>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 15px; line-height: 1.5;'>\n        힌트: 각 PDU 분전반 하위에 가동되던 장비의 전류 소모량 합산값을 계산하여, 80A 허용 상한선을 홀로 위반하여 차단기 트립을 초래한 분전반 식별 기호(pdu01, pdu02, pdu03)를 입력하십시오.\n    </p>\n</div>"
@@ -102,7 +102,7 @@ stages = [
         "title": "Zalgo Text (글자 깨짐)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "정전의 여파로 서버 콘솔 메모리 버퍼 영역 전체가 완전히 깨진 특수문자 노이즈로 덮여 복구가 난해해진 상황입니다.",
+        "narrative": "정전된 터미널이 비상 UPS 라인으로 임시 구동되었으나, 메모리 버퍼 영역 전체가 완전히 깨진 특수문자 노이즈로 덮여 복구가 난해한 상황입니다.",
         "dialogue_list": [
             {
                 "speaker": "이재헌 과장",
@@ -130,13 +130,13 @@ stages = [
         "title": "System Halt Signal (시스템 종료 명령어)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "콘솔 메모리 버퍼가 복구되자, OS Syslog에서 결정적인 기동 중단 감사 흔적이 관측됩니다.",
+        "narrative": "비상 전원 하에서 콘솔 메모리 버퍼가 복구되자, 권남훈 파트장이 사고 서버의 OS Syslog에서 정전 발생 직전 시각(01시 58분)에 구동된 결정적인 기동 중단 감사 흔적을 관측해 냅니다.",
         "dialogue_list": [
             {
                 "speaker": "권남훈 파트장",
                 "role": "운영총괄 (예민한 리더)",
                 "avatar": "avatar_kwon_nh.png",
-                "text": "박 파트장, 이 로그를 보십시오! 셧다운 직전인 02시 13분, 누군가가 root 권한 세션을 획득해 프로세스 가동을 강제로 차단하고 커널을 Halt시키는 바이너리를 호출했습니다. 이건 고의적인 테러입니다!"
+                "text": "박 파트장, 이 로그를 보십시오! 셧다운 감사 시각인 01시 58분, 누군가가 root 권한 세션을 획득해 프로세스 가동을 강제로 차단하고 커널을 Halt시키는 바이너리를 호출했습니다. 이건 고의적인 테러입니다!"
             },
             {
                 "speaker": "박용철 파트장",
@@ -151,14 +151,14 @@ stages = [
                 "text": "우길 걸 우겨야지! 공격자가 서버 자체를 완전히 정지시키기 위해 실행한 UNIX/Linux 표준 시스템 종료 명령어(영문 소문자 8자)를 식별하십시오!"
             }
         ],
-        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>⚙️ UNIX/Linux SYSTEM LOG DUMP</div>\n    <div style='background: rgba(0,0,0,0.6); padding: 15px; border-radius: 6px; border: 1px solid var(--border-color); font-family: var(--font-mono); font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); text-align: left;'>\n        <span style='color: var(--text-muted);'>[Jul 21 02:13:05] authpriv.info sudo: root : TTY=pts/0 ; PWD=/ ; USER=root ; COMMAND=/sbin/XXXXXXXX</span><br>\n        <span style='color: var(--accent-magenta);'>[Jul 21 02:13:08] kern.info kernel: System is going down for halt NOW!</span><br>\n        <span style='color: var(--accent-red);'>[Jul 21 02:13:10] systemd[1]: Sent signal SIGTERM to all processes...</span>\n    </div>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.5;'>\n        힌트: `/sbin/` 경로 하위에서 호출되어 운영체제를 강제 종료시키는 대표적인 8글자 Linux 표준 명령어(영문 소문자)를 식별하십시오.\n    </p>\n</div>"
+        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>⚙️ UNIX/Linux SYSTEM LOG DUMP</div>\n    <div style='background: rgba(0,0,0,0.6); padding: 15px; border-radius: 6px; border: 1px solid var(--border-color); font-family: var(--font-mono); font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); text-align: left;'>\n        <span style='color: var(--text-muted);'>[Jul 21 01:58:05] authpriv.info sudo: root : TTY=pts/0 ; PWD=/ ; USER=root ; COMMAND=/sbin/shutdown</span><br>\n        <span style='color: var(--accent-magenta);'>[Jul 21 01:58:08] kern.info kernel: System is going down for halt NOW!</span><br>\n        <span style='color: var(--accent-red);'>[Jul 21 01:58:10] systemd[1]: Sent signal SIGTERM to all processes...</span>\n    </div>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.5;'>\n        힌트: `/sbin/` 경로 하위에서 호출되어 운영체제를 강제 종료시키는 대표적인 8글자 Linux 표준 명령어(영문 소문자)를 식별하십시오.\n    </p>\n</div>"
     },
     {
         "stage": 7,
         "title": "CPU Overload PID (악성 프로세스 PID 추적)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "시스템 가동이 중단되기 직전, 물리 자원을 독점하여 과부하를 가하던 프로세스 내역이 발견됩니다.",
+        "narrative": "강제 종료 명령어가 호출되기 바로 직전, 물리 서버 자원을 강제로 고갈시켜 인프라 응답 불능 상태를 유도한 백그라운드 공격 프로세스의 활성 기록이 발견됩니다.",
         "dialogue_list": [
             {
                 "speaker": "권남훈 파트장",
@@ -186,7 +186,7 @@ stages = [
         "title": "Governance (IT 거버넌스 규정)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "권남훈 파트장이 일방적인 일정 독촉 속에서 조사를 밀어붙이자, 박용철 파트장이 정식 통제 절차의 당위성을 들고 나옵니다.",
+        "narrative": "악성 프로세스 구동 정황이 밝혀지며 긴급 조치가 전개되자, 품질총괄 박용철 파트장이 수사 절차의 공식 IT 서비스 거버넌스 등록을 완강히 요구하고 나섭니다.",
         "dialogue_list": [
             {
                 "speaker": "박용철 파트장",
@@ -214,13 +214,13 @@ stages = [
         "title": "Physical Device Map (물리 인프라 맵 감사)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "DBA 박재욱 차장이 스토리지 네트워크 단절 가능성을 공식적으로 제기하고 나서자, 박용철 파트장이 네트워크 담당 김진혁 차장에게 결선 물리 식별 확인을 현장 요구합니다.",
+        "narrative": "장애 수사가 정식 인시던트로 등록되자, DBA 박재욱 차장이 데이터베이스 스토리지 연결망의 물리적 단절(I/O error)을 주장하며 품질총괄 박용철 파트장에게 결선 상태 조사를 긴급 요구합니다.",
         "dialogue_list": [
             {
                 "speaker": "박재욱 차장",
                 "role": "DBA (억울한 실무자)",
                 "avatar": "avatar_park_jw.png",
-                "text": "박 파트장님, WAS 셧다운 직전에 금융 DB 스토리지 동기화 데몬이 I/O 디스크 오류로 끊겼습니다. 이건 제 쿼리 작업 실수가 아니라 백업 스토리지 물리망이 단절된 게 확실합니다!"
+                "text": "박 파트장님, WAS 셧다운 직전에 금융 DB 스토리지 동기화 데몬이 I/O 디스크 오류로 끊겼습니다. 이건 제 쿼리 작업 실수가 아니라 백업 스토리지 물리망 연결 장치 자체의 단절입니다!"
             },
             {
                 "speaker": "박용철 파트장",
@@ -242,7 +242,7 @@ stages = [
         "title": "The Cronjob (Crontab 스케줄링)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "네트워크 담당 김진혁 차장이 개입하여 박재욱 차장의 임의 수동 조작 혐의를 주장하고 나섭니다. 박 차장은 수동 가동 사실이 없음을 해명합니다.",
+        "narrative": "스토리지 단절 시점과 백업 작업 동작 시각이 겹친다는 네트워크 담당 김진혁 차장의 주장에 대해, DBA 박재욱 차장은 백업이 임의 수동 조작이 아닌 정상적인 예약 배치 스케줄러 기동이었음을 밝혀내려 합니다.",
         "dialogue_list": [
             {
                 "speaker": "김진혁 차장",
@@ -270,13 +270,13 @@ stages = [
         "title": "The Command (박주암 과장)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "결산 백업의 단순 과부하가 셧다운을 직접 유도한 원인이 아니라는 정황이 WAS 로그에서 마침내 실증됩니다.",
+        "narrative": "정상적인 백업 배치 기동이었음이 실증되자, WAS 담당 박주암 과장이 명령어 이력에서 또 다른 중대한 모순을 포착합니다. 정격 백업 중 누군가 계정을 탈취해 데이터베이스 기동 강제 종료 명령을 직접 인가한 것입니다.",
         "dialogue_list": [
             {
                 "speaker": "박주암 과장",
                 "role": "WAS 담당 (실무 운영자)",
                 "avatar": "avatar_park_ja.png",
-                "text": "백업 배치 과부하 때문에 죽은 게 아닙니다! 단말기 명령어 히스토리를 보니 셧다운 직전인 02시 13분경, 누군가 제 WAS 관리자 ID를 무단 도용해 DB 관리 클라이언트를 실행했습니다!"
+                "text": "백업 배치 과부하 때문에 죽은 게 아닙니다! 단말기 명령어 히스토리를 보니 셧다운 직전인 01시 58분경, 누군가 제 WAS 관리자 ID를 무단 도용해 DB 관리 클라이언트를 실행했습니다!"
             },
             {
                 "speaker": "김진혁 차장",
@@ -291,14 +291,14 @@ stages = [
                 "text": "그건 차차 규명할 일이고, 침입자가 데이터베이스를 강제로 즉시 종료시키기(SHUTDOWN IMMEDIATE) 위해 기동한 이 오라클 전용 쿼리 클라이언트 명령어(영문 소문자)를 파악하십시오!"
             }
         ],
-        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>💻 INCIDENT COMMAND HISTORY DUMP</div>\n    <p style='font-family: var(--font-mono); color: var(--text-primary); font-size: 0.95rem; line-height: 1.6;'>\n        $ cd /u01/app/oracle/product/12.1.0/dbhome_1/bin<br>\n        $ ./sqlplus / as sysdba<br>\n        &gt; SHUTDOWN IMMEDIATE;<br>\n        <span style='color: var(--accent-red);'>[02:13:21] DISCONNECTED FROM DATABASE.</span>\n    </p>\n</div>"
+        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>💻 INCIDENT COMMAND HISTORY DUMP</div>\n    <p style='font-family: var(--font-mono); color: var(--text-primary); font-size: 0.95rem; line-height: 1.6;'>\n        $ cd /u01/app/oracle/product/12.1.0/dbhome_1/bin<br>\n        $ ./sqlplus / as sysdba<br>\n        &gt; SHUTDOWN IMMEDIATE;<br>\n        <span style='color: var(--accent-red);'>[01:58:21] DISCONNECTED FROM DATABASE.</span>\n    </p>\n</div>"
     },
     {
         "stage": 12,
         "title": "The Network Lie (김진혁 차장)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "김진혁 차장은 당시 본인의 모니터링 접속 환경이 철저하게 보장되었음을 강변하지만, 기술적 모순이 드러납니다.",
+        "narrative": "누군가 무단으로 데이터베이스 클라이언트를 인가한 시각, 네트워크 담당 김진혁 차장은 본인이 휴게실에서 안전하게 원격 무선 전파 신호로 모니터링을 수행하고 있었다고 강변하지만 하드웨어적 모순이 드러납니다.",
         "dialogue_list": [
             {
                 "speaker": "김진혁 차장",
@@ -326,7 +326,7 @@ stages = [
         "title": "The Server Lie (이재헌 과장)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "김 차장의 거짓말이 포착된 가운데, 서버 담당 이재헌 과장이 자원 튜닝 무결성을 강력하게 어필합니다.",
+        "narrative": "네트워크 무선 거짓 진술이 발각된 와중, 서버 담당 이재헌 과장이 가상화 서버 자원 분배는 지극히 풍부하고 넉넉한 상태였다고 다급히 주장하기 시작합니다.",
         "dialogue_list": [
             {
                 "speaker": "이재헌 과장",
@@ -354,13 +354,13 @@ stages = [
         "title": "The Motivation (권남훈 총괄)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "서버의 극심한 과부하 정황이 드러나자, 권남훈 파트장이 스토리지 단절 당시 터진 DB 무결성 오류 코드를 특정하자고 나섭니다.",
+        "narrative": "극심한 자원 고갈 속에서 스토리지 단절이 덮쳐옴에 따라 발생한 데이터베이스 내부의 치명적 무결성 깨짐(Block Corruption) 오류 코드가 식별됩니다. 범인은 이 심각한 장애 원인을 덮고 책임을 회피하기 위해 강제 셧다운을 내린 동기가 포착됩니다.",
         "dialogue_list": [
             {
                 "speaker": "권남훈 파트장",
                 "role": "운영총괄 (예민한 리더)",
                 "avatar": "avatar_kwon_nh.png",
-                "text": "리소스 부족에 따른 데이터베이스 파손 정황을 입증해야 합니다. 스토리지 단절 시점의 디스크 물리 무결성 실패 로그부터 분석하시죠."
+                "text": "리소스 부족 상태에서 스토리지 물리 볼륨이 통째로 이탈하며 DB에 복구 불가능한 블록 깨짐 흔적이 터졌습니다. 이 치명적인 내부 감사 오류 코드를 특정하십시오."
             },
             {
                 "speaker": "박용철 파트장",
@@ -382,7 +382,7 @@ stages = [
         "title": "The VDI Rule (박용철 총괄)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "데이터베이스 단절 에러가 특정되었음에도, 박용철 품질파트장은 외부 무단 침입 가능성을 강하게 부정합니다.",
+        "narrative": "무단 종료 접속이 기록된 IP가 DBA 박재욱 차장의 VDI 할당 IP로 밝혀지자, 박용철 파트장이 VDI 세션 종료 즉시 수행되는 IP 회수 정책의 메커니즘을 들어 IP 도용 가능성을 진단합니다.",
         "dialogue_list": [
             {
                 "speaker": "박용철 파트장",
@@ -394,7 +394,7 @@ stages = [
                 "speaker": "박재욱 차장",
                 "role": "DBA (울분을 토하는 실무자)",
                 "avatar": "avatar_park_jw.png",
-                "text": "박 파트장님, 만약 로그아웃된 IP가 곧바로 공격자에게 재할당되어 악용되었다면 주소 도용이 성립할 수도 있는 것 아닙니까?"
+                "text": "박 파트장님, 만약 로그아웃된 IP가 즉시 공격자에게 재할당되어 악용되었다면 주소 도용이 성립할 수도 있는 것 아닙니까?"
             },
             {
                 "speaker": "박용철 파트장",
@@ -410,7 +410,7 @@ stages = [
         "title": "Subnet Mistake (김진혁의 실수 1)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "스위치 콘솔 로그를 상세 조회하던 중, 스토리지 연결이 단절되도록 유도한 결정적인 조작 실수 흔적이 드러납니다.",
+        "narrative": "스토리지 물리 단절의 근본 원인을 파악하기 위해 네트워크 라우터 콘솔 로그를 파고든 결과, 네트워크 담당 김진혁 차장이 설정 변경 중 대역폭 마스크를 잘못 격리하여 스토리지가 끊겨나간 결정적인 조작 실책이 발각됩니다.",
         "dialogue_list": [
             {
                 "speaker": "권남훈 파트장",
@@ -438,7 +438,7 @@ stages = [
         "title": "SAN Storage (김진혁의 실수 2)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "김 차장의 서브넷 오설정이 스토리지 통신 단절을 일으키고, 그로 인해 결산 DB 데이터가 연쇄 파손되었음이 물리적으로 실증되었습니다.",
+        "narrative": "김 차장의 서브넷 오설정이 스토리지 통신 물리 단절을 유발하고, 그에 따른 ORA-00600 에러를 숨기고자 무단 종료를 유도했음이 최종 입증됩니다. DBA 박 차장은 격리된 스토리지 복구를 긴급히 독촉합니다.",
         "dialogue_list": [
             {
                 "speaker": "박재욱 차장",
@@ -466,7 +466,7 @@ stages = [
         "title": "Time Drift (이재헌의 실수)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "스토리지 연결 복구 작업이 수립된 가운데, 서버 담당 이재헌 과장이 추가적인 설정 결함을 실토합니다.",
+        "narrative": "스토리지 프로토콜 복구 선로를 재결선한 순간, 서버 담당 이재헌 과장이 셧다운 기록 분석을 뒤흔든 결정적인 시간 설정 결함(Time Drift)을 실토합니다.",
         "dialogue_list": [
             {
                 "speaker": "이재헌 과장",
@@ -494,7 +494,7 @@ stages = [
         "title": "The Culprit (진범 도출)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "서버의 느린 클럭 오차를 보정한 진짜 셧다운 명령 구동 시간은 실제 시간 기준으로 정확히 '02:13'이었습니다. DBA 박재욱 차장은 '02:05'에 공식 로그아웃하여 세션을 해제하고 사용하던 IP를 반납했습니다.",
+        "narrative": "서버의 느린 클럭 오차를 보정한 진짜 셧다운 명령 구동 시간은 실제 시간 기준으로 정확히 '02:13'이었습니다. DBA 박재욱 차장은 '02:05'에 공식 로그아웃하여 세션을 해제하고 사용하던 IP를 이미 반납해 둔 상태였습니다.",
         "dialogue_list": [
             {
                 "speaker": "박용철 파트장",

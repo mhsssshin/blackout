@@ -55,7 +55,7 @@
                     <!-- 3rd-person neutral narrative text block -->
                     <div class="narrative-panel" style="background: rgba(0, 229, 255, 0.07); border-left: 4px solid var(--accent-blue); box-shadow: -5px 0 15px rgba(0, 229, 255, 0.15); padding: 16px; margin-bottom: 20px; font-size: 0.95rem; line-height: 1.6; color: var(--text-primary); border-radius: 0 6px 6px 0; font-family: var(--font-sans);">
                         <div style="font-family: var(--font-title); font-size: 0.75rem; color: var(--accent-blue); font-weight: bold; letter-spacing: 1px; margin-bottom: 8px; text-transform: uppercase;">📡 SITUATION BRIEFING</div>
-                        <div style="white-space: pre-wrap; margin: 0; padding: 0;">[위이이이잉- 삐- 삐-] 서버실 내부의 전압 경보 장치가 작동하며 갑작스럽게 단말기 모니터 화면의 신호가 끊어집니다. 비상 전압 차단기(Circuit Breaker)가 강제 작동하며 시스템이 완전히 정전 상태에 직면합니다.</div>
+                        <div style="white-space: pre-wrap; margin: 0; padding: 0;">권남훈 파트장이 스토리지 블록 전체에 대규모 동시 디렉토리 권한 스캔을 가동시키자, 백업 전력망 선로에 급격한 과전류 오버헤드가 발생합니다. 정전 경보 장치가 작동하며 제어 터미널 화면 신호가 끊어지고 서버실 전체가 암전 상태에 직면합니다.</div>
                     </div>
 
                     <!-- Pure character dialogue feed (KakaoTalk / Chat style list) -->
@@ -70,8 +70,8 @@
                     <span>이재헌 과장</span>
                     <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">서버 담당 (가상화 엔지니어)</span>
                 </div>
-                <div class="dialogue-text typing-text" data-text="으악! 전압 경보가 울리더니 정전이 터졌습니다. 비상 발전기가 돌기 전에 분전반 차단기가 강제 트립된 것 같습니다!" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
-                    으악! 전압 경보가 울리더니 정전이 터졌습니다. 비상 발전기가 돌기 전에 분전반 차단기가 강제 트립된 것 같습니다!
+                <div class="dialogue-text typing-text" data-text="으악! 권 파트장님이 실행하신 권한 스캔 명령어 과부하 때문인지 주 차단기(Circuit Breaker)가 강제 트립되어 정전이 터졌습니다!" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    으악! 권 파트장님이 실행하신 권한 스캔 명령어 과부하 때문인지 주 차단기(Circuit Breaker)가 강제 트립되어 정전이 터졌습니다!
                 </div>
             </div>
         </div>
@@ -85,8 +85,8 @@
                     <span>박주암 과장</span>
                     <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">WAS 담당 (실무 운영자)</span>
                 </div>
-                <div class="dialogue-text typing-text" data-text="각 PDU(전력 분배 장치)의 단일 라인 한계 정격 전류는 최대 80A입니다. 이 과장님, 정전 직전에 결선되어 있던 각 장비들의 전류 소모량 합계를 PDU별로 감사해 보십시오." style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
-                    각 PDU(전력 분배 장치)의 단일 라인 한계 정격 전류는 최대 80A입니다. 이 과장님, 정전 직전에 결선되어 있던 각 장비들의 전류 소모량 합계를 PDU별로 감사해 보십시오.
+                <div class="dialogue-text typing-text" data-text="각 PDU(전력 분배 장치)의 단일 라인 한계 정격 전류는 최대 80A입니다. 이 과장님, 정전 직전에 결선되어 부하를 가하던 각 장비들의 전류 소모량 합계를 PDU별로 감사해 보십시오." style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    각 PDU(전력 분배 장치)의 단일 라인 한계 정격 전류는 최대 80A입니다. 이 과장님, 정전 직전에 결선되어 부하를 가하던 각 장비들의 전류 소모량 합계를 PDU별로 감사해 보십시오.
                 </div>
             </div>
         </div>
@@ -100,8 +100,8 @@
                     <span>이재헌 과장</span>
                     <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">서버 담당 (가상화 엔지니어)</span>
                 </div>
-                <div class="dialogue-text typing-text" data-text="아! 임계치 80A를 단독으로 초과해 서지 부하를 가하고 셧다운을 유도한 범인 PDU의 식별 코드(pdu01, pdu02, pdu03 중 하나)를 찾아 터미널에 입력하십시오!" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
-                    아! 임계치 80A를 단독으로 초과해 서지 부하를 가하고 셧다운을 유도한 범인 PDU의 식별 코드(pdu01, pdu02, pdu03 중 하나)를 찾아 터미널에 입력하십시오!
+                <div class="dialogue-text typing-text" data-text="아! 임계치 80A를 단독으로 초과해 서지 부하를 가하고 전체 정전을 유도한 범인 PDU의 식별 코드(pdu01, pdu02, pdu03 중 하나)를 찾아 터미널에 입력하십시오!" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    아! 임계치 80A를 단독으로 초과해 서지 부하를 가하고 전체 정전을 유도한 범인 PDU의 식별 코드(pdu01, pdu02, pdu03 중 하나)를 찾아 터미널에 입력하십시오!
                 </div>
             </div>
         </div>

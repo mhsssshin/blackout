@@ -55,7 +55,7 @@
                     <!-- 3rd-person neutral narrative text block -->
                     <div class="narrative-panel" style="background: rgba(0, 229, 255, 0.07); border-left: 4px solid var(--accent-blue); box-shadow: -5px 0 15px rgba(0, 229, 255, 0.15); padding: 16px; margin-bottom: 20px; font-size: 0.95rem; line-height: 1.6; color: var(--text-primary); border-radius: 0 6px 6px 0; font-family: var(--font-sans);">
                         <div style="font-family: var(--font-title); font-size: 0.75rem; color: var(--accent-blue); font-weight: bold; letter-spacing: 1px; margin-bottom: 8px; text-transform: uppercase;">📡 SITUATION BRIEFING</div>
-                        <div style="white-space: pre-wrap; margin: 0; padding: 0;">결산 백업의 단순 과부하가 셧다운을 직접 유도한 원인이 아니라는 정황이 WAS 로그에서 마침내 실증됩니다.</div>
+                        <div style="white-space: pre-wrap; margin: 0; padding: 0;">정상적인 백업 배치 기동이었음이 실증되자, WAS 담당 박주암 과장이 명령어 이력에서 또 다른 중대한 모순을 포착합니다. 정격 백업 중 누군가 계정을 탈취해 데이터베이스 기동 강제 종료 명령을 직접 인가한 것입니다.</div>
                     </div>
 
                     <!-- Pure character dialogue feed (KakaoTalk / Chat style list) -->
@@ -70,8 +70,8 @@
                     <span>박주암 과장</span>
                     <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">WAS 담당 (실무 운영자)</span>
                 </div>
-                <div class="dialogue-text typing-text" data-text="백업 배치 과부하 때문에 죽은 게 아닙니다! 단말기 명령어 히스토리를 보니 셧다운 직전인 02시 13분경, 누군가 제 WAS 관리자 ID를 무단 도용해 DB 관리 클라이언트를 실행했습니다!" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
-                    백업 배치 과부하 때문에 죽은 게 아닙니다! 단말기 명령어 히스토리를 보니 셧다운 직전인 02시 13분경, 누군가 제 WAS 관리자 ID를 무단 도용해 DB 관리 클라이언트를 실행했습니다!
+                <div class="dialogue-text typing-text" data-text="백업 배치 과부하 때문에 죽은 게 아닙니다! 단말기 명령어 히스토리를 보니 셧다운 직전인 01시 58분경, 누군가 제 WAS 관리자 ID를 무단 도용해 DB 관리 클라이언트를 실행했습니다!" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    백업 배치 과부하 때문에 죽은 게 아닙니다! 단말기 명령어 히스토리를 보니 셧다운 직전인 01시 58분경, 누군가 제 WAS 관리자 ID를 무단 도용해 DB 관리 클라이언트를 실행했습니다!
                 </div>
             </div>
         </div>
@@ -115,7 +115,7 @@
         $ cd /u01/app/oracle/product/12.1.0/dbhome_1/bin<br>
         $ ./sqlplus / as sysdba<br>
         &gt; SHUTDOWN IMMEDIATE;<br>
-        <span style='color: var(--accent-red);'>[02:13:21] DISCONNECTED FROM DATABASE.</span>
+        <span style='color: var(--accent-red);'>[01:58:21] DISCONNECTED FROM DATABASE.</span>
     </p>
 </div>
                 </div>

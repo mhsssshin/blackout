@@ -55,7 +55,7 @@
                     <!-- 3rd-person neutral narrative text block -->
                     <div class="narrative-panel" style="background: rgba(0, 229, 255, 0.07); border-left: 4px solid var(--accent-blue); box-shadow: -5px 0 15px rgba(0, 229, 255, 0.15); padding: 16px; margin-bottom: 20px; font-size: 0.95rem; line-height: 1.6; color: var(--text-primary); border-radius: 0 6px 6px 0; font-family: var(--font-sans);">
                         <div style="font-family: var(--font-title); font-size: 0.75rem; color: var(--accent-blue); font-weight: bold; letter-spacing: 1px; margin-bottom: 8px; text-transform: uppercase;">📡 SITUATION BRIEFING</div>
-                        <div style="white-space: pre-wrap; margin: 0; padding: 0;">DBA 박재욱 차장이 스토리지 네트워크 단절 가능성을 공식적으로 제기하고 나서자, 박용철 파트장이 네트워크 담당 김진혁 차장에게 결선 물리 식별 확인을 현장 요구합니다.</div>
+                        <div style="white-space: pre-wrap; margin: 0; padding: 0;">장애 수사가 정식 인시던트로 등록되자, DBA 박재욱 차장이 데이터베이스 스토리지 연결망의 물리적 단절(I/O error)을 주장하며 품질총괄 박용철 파트장에게 결선 상태 조사를 긴급 요구합니다.</div>
                     </div>
 
                     <!-- Pure character dialogue feed (KakaoTalk / Chat style list) -->
@@ -70,8 +70,8 @@
                     <span>박재욱 차장</span>
                     <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">DBA (억울한 실무자)</span>
                 </div>
-                <div class="dialogue-text typing-text" data-text="박 파트장님, WAS 셧다운 직전에 금융 DB 스토리지 동기화 데몬이 I/O 디스크 오류로 끊겼습니다. 이건 제 쿼리 작업 실수가 아니라 백업 스토리지 물리망이 단절된 게 확실합니다!" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
-                    박 파트장님, WAS 셧다운 직전에 금융 DB 스토리지 동기화 데몬이 I/O 디스크 오류로 끊겼습니다. 이건 제 쿼리 작업 실수가 아니라 백업 스토리지 물리망이 단절된 게 확실합니다!
+                <div class="dialogue-text typing-text" data-text="박 파트장님, WAS 셧다운 직전에 금융 DB 스토리지 동기화 데몬이 I/O 디스크 오류로 끊겼습니다. 이건 제 쿼리 작업 실수가 아니라 백업 스토리지 물리망 연결 장치 자체의 단절입니다!" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    박 파트장님, WAS 셧다운 직전에 금융 DB 스토리지 동기화 데몬이 I/O 디스크 오류로 끊겼습니다. 이건 제 쿼리 작업 실수가 아니라 백업 스토리지 물리망 연결 장치 자체의 단절입니다!
                 </div>
             </div>
         </div>
