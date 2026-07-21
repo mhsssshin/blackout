@@ -267,10 +267,10 @@ stages = [
     },
     {
         "stage": 11,
-        "title": "The Command (박주암 과장)",
+        "title": "The Privilege Role (권한 롤 식별)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "정상적인 백업 배치 기동이었음이 실증되자, WAS 담당 박주암 과장이 명령어 이력에서 또 다른 중대한 모순을 포착합니다. 정격 백업 중 누군가 계정을 탈취해 데이터베이스 기동 강제 종료 명령을 직접 인가한 것입니다.",
+        "narrative": "정상적인 백업 배치 기동이었음이 실증되자, WAS 담당 박주암 과장이 명령어 이력에서 또 다른 결정적인 모순을 포착합니다. 자동 백업 도중 누군가 관리자 권한을 도용해 최고 권한 DB 관리 롤로 강제 종료를 호출한 것입니다.",
         "dialogue_list": [
             {
                 "speaker": "박주암 과장",
@@ -288,10 +288,10 @@ stages = [
                 "speaker": "박주암 과장",
                 "role": "WAS 담당 (실무 운영자)",
                 "avatar": "avatar_park_ja.png",
-                "text": "그건 차차 규명할 일이고, 침입자가 데이터베이스를 강제로 즉시 종료시키기(SHUTDOWN IMMEDIATE) 위해 기동한 이 오라클 전용 쿼리 클라이언트 명령어(영문 소문자)를 파악하십시오!"
+                "text": "그건 차차 규명할 일이고, 침입자가 데이터베이스를 강제로 즉시 종료시키기(SHUTDOWN IMMEDIATE) 위해 무단 도용한 이 오라클 최고 권한 관리자 롤(Role) 명칭(영문 소문자 6자)을 식별하십시오!"
             }
         ],
-        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>💻 INCIDENT COMMAND HISTORY DUMP</div>\n    <p style='font-family: var(--font-mono); color: var(--text-primary); font-size: 0.95rem; line-height: 1.6;'>\n        $ cd /u01/app/oracle/product/12.1.0/dbhome_1/bin<br>\n        $ ./sqlplus / as sysdba<br>\n        &gt; SHUTDOWN IMMEDIATE;<br>\n        <span style='color: var(--accent-red);'>[01:58:21] DISCONNECTED FROM DATABASE.</span>\n    </p>\n</div>"
+        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>💻 INCIDENT COMMAND HISTORY DUMP</div>\n    <p style='font-family: var(--font-mono); color: var(--text-primary); font-size: 0.95rem; line-height: 1.6;'>\n        $ cd /u01/app/oracle/product/12.1.0/dbhome_1/bin<br>\n        $ ./sqlplus / as [ MASKED_ROLE ]<br>\n        &gt; SHUTDOWN IMMEDIATE;<br>\n        <span style='color: var(--accent-red);'>[01:58:21] DISCONNECTED FROM DATABASE.</span>\n    </p>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.5;'>\n        힌트: 데이터베이스의 커널 상태를 직접 제어하고 종료하기 위해 사용하는 오라클의 대표적인 최고 시스템 권한 관리자 롤 명칭(영문 소문자 6자)을 입력하십시오.\n    </p>\n</div>"
     },
     {
         "stage": 12,
@@ -552,14 +552,14 @@ answers = [
     "179",
     "2321",
     "754",
-    "pdu02",  # Stage 4 new answer
+    "pdu02",  
     "666568",
     "shutdown",
     "5250",
     "itil",
     "8204",
     "0145",
-    "sqlplus",
+    "sysdba",  # Dynamic Chain Automatically synchronizes this value
     "wifi",
     "minimum",
     "ora00600",

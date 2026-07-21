@@ -13,7 +13,7 @@ answers = [
     "itil",
     "8204",
     "0145",
-    "sqlplus",
+    "sysdba",
     "wifi",
     "minimum",
     "ora00600",
