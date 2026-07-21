@@ -52,7 +52,12 @@
                 </div>
 
                 <div class="story-container">
-                    <!-- Dialogue representation -->
+                    <!-- 3rd-person neutral narrative text block -->
+                    <div class="narrative-panel" style="background: rgba(0, 229, 255, 0.03); border-left: 3px solid var(--accent-blue); padding: 12px 16px; margin-bottom: 20px; font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); border-radius: 0 4px 4px 0; font-family: var(--font-sans);">
+                        스토리지 연결 복구 작업이 수립된 가운데, 서버 담당 이재헌 과장이 추가적인 설정 결함을 보고해 옵니다.
+                    </div>
+
+                    <!-- Pure character dialogue feed -->
                     <div class="dialogue-card speaker-suspect">
                         <div class="avatar-container">
                             <img src="avatar_lee_jh.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px; border: 1px solid var(--border-color); box-shadow: 0 0 10px rgba(0,229,255,0.2);">
@@ -62,16 +67,8 @@
                                 <span>이재헌 과장</span>
                                 <span class="speaker-role">서버 담당 (죄인 모드)</span>
                             </div>
-                            <div class="dialogue-text typing-text" data-text="스토리지 연결 복구 작업이 수립된 가운데, 서버 담당 이재헌 과장이 추가적인 설정 결함을 보고해 옵니다.
-
-인프라 증설 단계에서 시간 동기화 데몬(NTP) 동작 설정을 수동으로 누락한 결과, WAS 물리 서버의 시스템 내부 시간이 실제 세상 표준시보다 정확히 '15분 느리게' 흘러가고 있음이 파악되었습니다.
-WAS의 감사 기록 상 강제 중단 명령어(`sqlplus`)가 구동된 서버 타임 스탬프는 '01:58'로 확인됩니다.
-이 15분의 오차를 물리적으로 정상 환산하여 보정한, 실제 세상의 실제 셧다운 구동 표준 시각(24시간 형식 4자리 HHMM)을 도출하십시오.">
-                                스토리지 연결 복구 작업이 수립된 가운데, 서버 담당 이재헌 과장이 추가적인 설정 결함을 보고해 옵니다.
-
-인프라 증설 단계에서 시간 동기화 데몬(NTP) 동작 설정을 수동으로 누락한 결과, WAS 물리 서버의 시스템 내부 시간이 실제 세상 표준시보다 정확히 '15분 느리게' 흘러가고 있음이 파악되었습니다.
-WAS의 감사 기록 상 강제 중단 명령어(`sqlplus`)가 구동된 서버 타임 스탬프는 '01:58'로 확인됩니다.
-이 15분의 오차를 물리적으로 정상 환산하여 보정한, 실제 세상의 실제 셧다운 구동 표준 시각(24시간 형식 4자리 HHMM)을 도출하십시오.
+                            <div class="dialogue-text typing-text" data-text="인프라 증설 단계에서 시간 동기화 데몬(NTP) 동작 설정을 수동으로 누락한 결과, WAS 물리 서버의 시스템 내부 시간이 실제 세상 표준시보다 정확히 '15분 느리게' 흘러가고 있음이 파악되었습니다. WAS의 감사 기록 상 강제 중단 명령어(`sqlplus`)가 구동된 서버 타임 스탬프는 '01:58'로 확인됩니다. 이 15분의 오차를 물리적으로 정상 환산하여 보정한, 실제 세상의 실제 셧다운 구동 표준 시각(24시간 형식 4자리 HHMM)을 도출하십시오.">
+                                인프라 증설 단계에서 시간 동기화 데몬(NTP) 동작 설정을 수동으로 누락한 결과, WAS 물리 서버의 시스템 내부 시간이 실제 세상 표준시보다 정확히 '15분 느리게' 흘러가고 있음이 파악되었습니다. WAS의 감사 기록 상 강제 중단 명령어(`sqlplus`)가 구동된 서버 타임 스탬프는 '01:58'로 확인됩니다. 이 15분의 오차를 물리적으로 정상 환산하여 보정한, 실제 세상의 실제 셧다운 구동 표준 시각(24시간 형식 4자리 HHMM)을 도출하십시오.
                             </div>
                         </div>
                     </div>

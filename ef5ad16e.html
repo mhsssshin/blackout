@@ -52,7 +52,12 @@
                 </div>
 
                 <div class="story-container">
-                    <!-- Dialogue representation -->
+                    <!-- 3rd-person neutral narrative text block -->
+                    <div class="narrative-panel" style="background: rgba(0, 229, 255, 0.03); border-left: 3px solid var(--accent-blue); padding: 12px 16px; margin-bottom: 20px; font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); border-radius: 0 4px 4px 0; font-family: var(--font-sans);">
+                        네트워크 스위치 콘솔 로그를 상세 조회하던 중, 스토리지 관리 권한에서 중대한 작업 조작 실수의 흔적이 발견됩니다. 김진혁 차장이 장애 발생 30분 전, 백업 보강용 라우팅 대역 테이블을 조작하다가 실수로 CIDR 마스크 대역 폭을 `/28` 로 잘못 격리해 스토리지 통신 연결이 차단된 것입니다.
+                    </div>
+
+                    <!-- Pure character dialogue feed -->
                     <div class="dialogue-card speaker-suspect">
                         <div class="avatar-container">
                             <div class="avatar-placeholder" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0,229,255,0.1); border: 1px solid var(--border-color); border-radius: 4px; font-family: var(--font-mono); font-weight: bold; color: var(--accent-blue);">NET</div>
@@ -62,16 +67,8 @@
                                 <span>스토리지 스위치 라우팅 로그</span>
                                 <span class="speaker-role">SYSTEM SYSTEM</span>
                             </div>
-                            <div class="dialogue-text typing-text" data-text="권남훈 파트장이 제시한 DHCP 유동 IP 재배포 규칙이 오히려 새로운 수사 실마리를 던져줍니다.
-네트워크 스위치 콘솔 로그를 상세 조회하던 중, 스토리지 관리 권한에서 중대한 작업 조작 실수의 흔적이 발견됩니다.
-
-김진혁 차장이 장애 발생 30분 전, 백업 보강용 라우팅 대역 테이블을 조작하다가 실수로 CIDR 마스크 대역 폭을 `/28` 로 잘못 격리한 내역이 입증됩니다. 이로 인해 스토리지 통신 연결이 차단된 것입니다.
-서브넷 마스크 `/28` 등급 대역에서 시스템 예약 주소 2개를 제외하고 실제 내부 장비들에 유효하게 분배해 줄 수 있는 최대 IP(호스트) 개수를 계산하여 입력하십시오.">
-                                권남훈 파트장이 제시한 DHCP 유동 IP 재배포 규칙이 오히려 새로운 수사 실마리를 던져줍니다.
-네트워크 스위치 콘솔 로그를 상세 조회하던 중, 스토리지 관리 권한에서 중대한 작업 조작 실수의 흔적이 발견됩니다.
-
-김진혁 차장이 장애 발생 30분 전, 백업 보강용 라우팅 대역 테이블을 조작하다가 실수로 CIDR 마스크 대역 폭을 `/28` 로 잘못 격리한 내역이 입증됩니다. 이로 인해 스토리지 통신 연결이 차단된 것입니다.
-서브넷 마스크 `/28` 등급 대역에서 시스템 예약 주소 2개를 제외하고 실제 내부 장비들에 유효하게 분배해 줄 수 있는 최대 IP(호스트) 개수를 계산하여 입력하십시오.
+                            <div class="dialogue-text typing-text" data-text="서브넷 마스크 `/28` 등급 대역에서 시스템 예약 주소 2개를 제외하고 실제 내부 장비들에 유효하게 분배해 줄 수 있는 최대 IP(호스트) 개수를 계산하여 입력하십시오.">
+                                서브넷 마스크 `/28` 등급 대역에서 시스템 예약 주소 2개를 제외하고 실제 내부 장비들에 유효하게 분배해 줄 수 있는 최대 IP(호스트) 개수를 계산하여 입력하십시오.
                             </div>
                         </div>
                     </div>
