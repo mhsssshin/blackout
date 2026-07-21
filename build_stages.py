@@ -181,19 +181,107 @@ stage18_fs = {
 def escape_fs_data(fs_dict):
     return json.dumps(fs_dict).replace("'", "&#39;").replace('"', "&quot;")
 
-stage3_html = f"""<div class='puzzle-container'>
-    <div class='puzzle-title'>📁 VIRTUAL FILE EXPLORER: BROWSE BACKUPS</div>
-    <p style='color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px; line-height: 1.5;'>
-        배포 스토리지 백업 경로를 정밀 진단하십시오. 더블클릭하여 디렉토리(<span style='color: var(--accent-magenta);'>/var/www/backups</span>)로 깊숙이 이동한 다음, 파일을 더블클릭하여 세부 권한을 검사하십시오.
-    </p>
-    <div id='file-explorer-widget' data-files='{escape_fs_data(stage3_fs)}'>
-        <div class='explorer-path'>Path: /</div>
-        <div class='explorer-grid'></div>
+stage3_html = f"""<div class='puzzle-container' style='position: relative;'>
+    <div class='puzzle-title' style='display: flex; justify-content: space-between; align-items: center; width: 100%;'>
+        <span>📁 VIRTUAL FILE EXPLORER / TERMINAL</span>
+        <button id='toggle-mode-btn' onclick='toggleStage3Mode()' class='copy-btn' style='border-color: var(--accent-magenta); color: var(--accent-magenta);'>💻 커맨드 모드로 전환</button>
     </div>
+    
+    <!-- Mode A: Explorer Grid -->
+    <div id='stage3-explorer-view'>
+        <p style='color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px; line-height: 1.5;'>
+            배포 스토리지 백업 경로를 정밀 진단하십시오. 더블클릭하여 디렉토리(<span style='color: var(--accent-magenta);'>/var/www/backups</span>)로 깊숙이 이동한 다음, 파일을 더블클릭하여 세부 권한을 검사하십시오. (파일 개수가 많아 노가다가 번거롭다면 상단의 커맨드 모드로 전환하십시오!)
+        </p>
+        <div id='file-explorer-widget' data-files='{escape_fs_data(stage3_fs)}'>
+            <div class='explorer-path'>Path: /</div>
+            <div class='explorer-grid'></div>
+        </div>
+    </div>
+
+    <!-- Mode B: CLI Shell Simulator -->
+    <div id='stage3-cli-view' style='display: none;'>
+        <p style='color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px; line-height: 1.5;'>
+            가상 셸 터미널 매크로 명령어를 실행하여 대량의 디렉토리 파일 중 조건에 부합하는 보안 취약 대상을 신속히 필터링하십시오.
+        </p>
+        <div style='background: #020306; border: 1px solid var(--border-color); border-radius: 6px; padding: 12px; height: 180px; overflow-y: auto; font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.6; color: #a3b8cc; text-align: left;' id='cli-screen'>
+            <span style='color: var(--text-muted);'>HIS Terminal Shell Emulator v1.0.0</span><br>
+            <span style='color: var(--text-muted);'>Type or click one of the quick macro commands below.</span><br>
+            <span>[guest@his-server ~]$ </span><span class='cursor-blink'></span>
+        </div>
+        <div class='cli-btn-group' style='display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap;'>
+            <button onclick='runCliMacro(&quot;ls&quot;)' class='copy-btn' style='font-size: 0.78rem;'>ls -la var/www/backups/</button>
+            <button onclick='runCliMacro(&quot;find&quot;)' class='copy-btn' style='font-size: 0.78rem; border-color: var(--accent-green); color: var(--accent-green);'>find var/www/backups -perm 754</button>
+            <button onclick='runCliMacro(&quot;grep&quot;)' class='copy-btn' style='font-size: 0.78rem;'>grep -rn 'Anomalous' var/www/</button>
+        </div>
+    </div>
+
     <p style='color: var(--text-muted); font-size: 0.82rem; margin-top: 12px; line-height: 1.5;'>
         힌트: 취약 권한 마스크(rwxr-xr--)를 지닌 파일을 찾아 8진수 합산식(r=4, w=2, x=1, -=0)에 대입하십시오.
     </p>
-</div>"""
+</div>
+<script>
+    let currentMode = &quot;explorer&quot;;
+    function toggleStage3Mode() {{
+        const expView = document.getElementById(&quot;stage3-explorer-view&quot;);
+        const cliView = document.getElementById(&quot;stage3-cli-view&quot;);
+        const toggleBtn = document.getElementById(&quot;toggle-mode-btn&quot;);
+        if (currentMode === &quot;explorer&quot;) {{
+            expView.style.display = &quot;none&quot;;
+            cliView.style.display = &quot;block&quot;;
+            toggleBtn.textContent = &quot;📁 탐색기 모드로 전환&quot;;
+            toggleBtn.style.borderColor = &quot;var(--accent-blue)&quot;;
+            toggleBtn.style.color = &quot;var(--accent-blue)&quot;;
+            currentMode = &quot;cli&quot;;
+        }} else {{
+            expView.style.display = &quot;block&quot;;
+            cliView.style.display = &quot;none&quot;;
+            toggleBtn.textContent = &quot;💻 커맨드 모드로 전환&quot;;
+            toggleBtn.style.borderColor = &quot;var(--accent-magenta)&quot;;
+            toggleBtn.style.color = &quot;var(--accent-magenta)&quot;;
+            currentMode = &quot;explorer&quot;;
+        }}
+        if (typeof playBeep === 'function') playBeep(500, 60);
+    }}
+
+    function runCliMacro(type) {{
+        const screen = document.getElementById(&quot;cli-screen&quot;);
+        if (!screen) return;
+        if (typeof playBeep === 'function') playBeep(650, 40);
+
+        let cmdText = &quot;&quot;;
+        let outputText = &quot;&quot;;
+
+        if (type === 'ls') {{
+            cmdText = &quot;ls -la var/www/backups/&quot;;
+            let lines = [];
+            for (let i = 1; i <= 5; i++) {{
+                lines.push(&quot;-rwxr-xr-x  1 tqo_ops  staff  4096 Jul 21 02:00 file_00&quot; + i + &quot;.bin&quot;);
+            }}
+            lines.push(&quot;... (skipped 94 normal files) ...&quot;);
+            lines.push(&quot;<strong style='color: var(--accent-magenta);'>-rwxr-xr--  1 tqo_ops  staff  8204 Jul 21 01:45 backup_corrupt.bin</strong>&quot;);
+            lines.push(&quot;-rwxr-xr-x  1 tqo_ops  staff  4096 Jul 21 02:00 file_100.bin&quot;);
+            outputText = lines.join(&quot;<br>&quot;);
+        }} else if (type === 'find') {{
+            cmdText = &quot;find var/www/backups -perm 754&quot;;
+            outputText = &quot;<span style='color: var(--accent-green);'>./var/www/backups/backup_corrupt.bin  (permission matches 754)</span>&quot;;
+        }} else if (type === 'grep') {{
+            cmdText = &quot;grep -rn 'Anomalous' var/www/&quot;;
+            outputText = &quot;<span style='color: var(--accent-green);'>var/www/backups/backup_corrupt.bin:4: STATUS: Anomalous Permission Mask Detected.</span>&quot;;
+        }}
+
+        // Remove old cursor
+        const blinkCursor = screen.querySelector('.cursor-blink');
+        if (blinkCursor) blinkCursor.remove();
+
+        screen.innerHTML += cmdText + &quot;<br>&quot;;
+        
+        setTimeout(() => {{
+            screen.innerHTML += outputText + &quot;<br><br>[guest@his-server ~]$ <span class='cursor-blink'></span>&quot;;
+            screen.scrollTop = screen.scrollHeight;
+            if (typeof playBeep === 'function') playBeep(800, 80);
+        }}, 200);
+    }}
+</script>"""
 
 stage6_html = f"""<div class='puzzle-container'>
     <div class='puzzle-title'>📁 VIRTUAL FILE EXPLORER: OS DIAGNOSTICS</div>
