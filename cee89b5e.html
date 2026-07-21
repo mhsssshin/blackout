@@ -59,19 +59,27 @@
                         </div>
                         <div class="dialogue-body">
                             <div class="dialogue-speaker">
-                                <span>박재욱 차장</span>
-                                <span class="speaker-role">DBA (울분을 터뜨리는 실무자)</span>
+                                <span>권남훈 & 박재욱</span>
+                                <span class="speaker-role">파트장 vs DBA (대립 관계)</span>
                             </div>
-                            <div class="dialogue-text typing-text" data-text="억울합니다 조사관님! 권 파트장님은 자꾸 규정 타령만 하시며 제가 백업 배치를 돌리다가 데이터베이스 블록을 깨먹고 장애를 냈다고 독박을 씌우고 계십니다!
+                            <div class="dialogue-text typing-text" data-text="VDI 로그상 박 차장의 백업 기동과 DB 블록 파손 시각이 겹친다며 권남훈 파트장이 압박을 해오기 시작합니다.
 
-하지만 저는 당시 결산 백업 중에 하부 스토리지 물리 볼륨 동기화가 먼저 실패하면서 DB 데이터가 연쇄 파손된 것을 확인했습니다. 스토리지 장비가 깨진 게 먼저란 말입니다!
+[권남훈]: VDI 보안 로그는 완벽합니다. 본인이 백업 명령 수동으로 날려 과부하로 디스크 깬 것이니 징계 절차 밟으시죠.
 
-사내 지식 관리 포털에서 '스토리지 동기화 실패로 인한 DB 파손 대응 매뉴얼'의 문서 코드를 찾아 주십시오. 스토리지 문제임을 명백히 증명해 제 누명을 벗겨주셔야 합니다!">
-                                억울합니다 조사관님! 권 파트장님은 자꾸 규정 타령만 하시며 제가 백업 배치를 돌리다가 데이터베이스 블록을 깨먹고 장애를 냈다고 독박을 씌우고 계십니다!
+[박재욱]: 권 파트장님! 억울합니다! VDI 접속도 전에 하부 스토리지 물리 볼륨 복제가 먼저 깨져서 DB 데이터가 파손된 겁니다!
 
-하지만 저는 당시 결산 백업 중에 하부 스토리지 물리 볼륨 동기화가 먼저 실패하면서 DB 데이터가 연쇄 파손된 것을 확인했습니다. 스토리지 장비가 깨진 게 먼저란 말입니다!
+[권남훈]: 그럼 지식 관리 포털(KB)에서 그 주장을 증명할 정식 장애 대응 매뉴얼 코드를 대십시오. 못 대면 독박입니다.
 
-사내 지식 관리 포털에서 '스토리지 동기화 실패로 인한 DB 파손 대응 매뉴얼'의 문서 코드를 찾아 주십시오. 스토리지 문제임을 명백히 증명해 제 누명을 벗겨주셔야 합니다!
+[박재욱]: 조사관님! 지식 포털에서 '스토리지 동기화 실패로 인한 DB 파손 대응 매뉴얼'의 문서 코드 4자리를 찾아 저들의 주장을 꺾어주십시오!">
+                                VDI 로그상 박 차장의 백업 기동과 DB 블록 파손 시각이 겹친다며 권남훈 파트장이 압박을 해오기 시작합니다.
+
+[권남훈]: VDI 보안 로그는 완벽합니다. 본인이 백업 명령 수동으로 날려 과부하로 디스크 깬 것이니 징계 절차 밟으시죠.
+
+[박재욱]: 권 파트장님! 억울합니다! VDI 접속도 전에 하부 스토리지 물리 볼륨 복제가 먼저 깨져서 DB 데이터가 파손된 겁니다!
+
+[권남훈]: 그럼 지식 관리 포털(KB)에서 그 주장을 증명할 정식 장애 대응 매뉴얼 코드를 대십시오. 못 대면 독박입니다.
+
+[박재욱]: 조사관님! 지식 포털에서 '스토리지 동기화 실패로 인한 DB 파손 대응 매뉴얼'의 문서 코드 4자리를 찾아 저들의 주장을 꺾어주십시오!
                             </div>
                         </div>
                     </div>
@@ -79,24 +87,58 @@
                     <!-- Gimmick HTML rendering -->
                     <div class='puzzle-container'>
     <div class='puzzle-title'>🔍 KNOWLEDGEBASE DOCUMENT LIST</div>
-    <table style='width: 100%; border-collapse: collapse; font-size: 0.85rem; text-align: left; margin-top: 10px; color: var(--text-primary);'>
-        <tr style='border-bottom: 1px solid var(--border-color); color: var(--accent-blue);'>
-            <th style='padding: 6px;'>문서코드</th>
-            <th style='padding: 6px;'>주제</th>
-        </tr>
-        <tr>
-            <td style='padding: 6px;'>KB-7108</td>
-            <td style='padding: 6px;'>웹 애플리케이션 서버 커널 튜닝 규격</td>
-        </tr>
-        <tr>
-            <td style='padding: 6px;'>KB-8204</td>
-            <td style='padding: 6px;'>스토리지 동기화 실패로 인한 DB 파손 대응 매뉴얼</td>
-        </tr>
-        <tr>
-            <td style='padding: 6px;'>KB-9321</td>
-            <td style='padding: 6px;'>L4 네트워크 로드밸런서 VIP 이중화 스키마</td>
-        </tr>
-    </table>
+    <div style='max-height: 200px; overflow-y: auto; border: 1px solid var(--border-color); border-radius: 4px; background: rgba(0,0,0,0.45); text-align: left;'>
+        <table style='width: 100%; border-collapse: collapse; font-size: 0.8rem; color: var(--text-primary);'>
+            <tr style='position: sticky; top: 0; background: #080b11; color: var(--accent-blue); border-bottom: 1px solid var(--border-color); font-weight: bold;'>
+                <th style='padding: 6px;'>문서코드</th>
+                <th style='padding: 6px;'>기술 문서 주제</th>
+            </tr>
+            <tr style='border-bottom: 1px solid rgba(0,229,255,0.05);'>
+                <td style='padding: 5px 6px;'>KB-1042</td>
+                <td style='padding: 5px 6px;'>L4 로드밸런싱 가용성 튜닝 규격</td>
+            </tr>
+            <tr style='border-bottom: 1px solid rgba(0,229,255,0.05);'>
+                <td style='padding: 5px 6px;'>KB-3129</td>
+                <td style='padding: 5px 6px;'>코어 WAS JVM 가비지 컬렉터(GC) 상세 파라미터</td>
+            </tr>
+            <tr style='border-bottom: 1px solid rgba(0,229,255,0.05);'>
+                <td style='padding: 5px 6px;'>KB-4021</td>
+                <td style='padding: 5px 6px;'>방화벽 포트 접근제어 규칙 설계지침</td>
+            </tr>
+            <tr style='border-bottom: 1px solid rgba(0,229,255,0.05);'>
+                <td style='padding: 5px 6px;'>KB-5509</td>
+                <td style='padding: 5px 6px;'>내부망 VDI 세션 세그먼테이션 규정집</td>
+            </tr>
+            <tr style='border-bottom: 1px solid rgba(0,229,255,0.05);'>
+                <td style='padding: 5px 6px;'>KB-6102</td>
+                <td style='padding: 5px 6px;'>리눅스 커널 패닉 인터럽트 시그널 복구 프로세스</td>
+            </tr>
+            <tr style='border-bottom: 1px solid rgba(0,229,255,0.05);'>
+                <td style='padding: 5px 6px;'>KB-7108</td>
+                <td style='padding: 5px 6px;'>웹 애플리케이션 서버 커널 시스템 세팅 규격</td>
+            </tr>
+            <tr style='border-bottom: 1px solid rgba(0,229,255,0.05);'>
+                <td style='padding: 5px 6px; color: var(--text-primary); font-weight: normal;'>KB-8204</td>
+                <td style='padding: 5px 6px;'>스토리지 동기화 실패로 인한 DB 파손 대응 매뉴얼</td>
+            </tr>
+            <tr style='border-bottom: 1px solid rgba(0,229,255,0.05);'>
+                <td style='padding: 5px 6px;'>KB-8890</td>
+                <td style='padding: 5px 6px;'>도커 컨테이너 라이프사이클 관리 표준 가이드</td>
+            </tr>
+            <tr style='border-bottom: 1px solid rgba(0,229,255,0.05);'>
+                <td style='padding: 5px 6px;'>KB-9112</td>
+                <td style='padding: 5px 6px;'>액티브-액티브 DB 이중화 동기화 복구 표준</td>
+            </tr>
+            <tr style='border-bottom: 1px solid rgba(0,229,255,0.05);'>
+                <td style='padding: 5px 6px;'>KB-9321</td>
+                <td style='padding: 5px 6px;'>L4 네트워크 로드밸런서 VIP 이중화 스키마</td>
+            </tr>
+            <tr>
+                <td style='padding: 5px 6px;'>KB-9854</td>
+                <td style='padding: 5px 6px;'>외부 침입 차단 시그니처 룰셋 설계서</td>
+            </tr>
+        </table>
+    </div>
 </div>
                 </div>
             </main>
