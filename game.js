@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             if (!val) return;
             
             terminalInput.value = ''; // Clear prompt
-            appendLog(`tqo@his-system:~$ ${val}`, 'system-log');
+            appendLog(`investigator@his-system:~$ ${val}`, 'system-log');
             
             // Normalize: lowercase, remove spaces
             const normalizedVal = val.toLowerCase().replace(/\s+/g, '');
