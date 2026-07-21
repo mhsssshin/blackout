@@ -79,7 +79,10 @@
                     <!-- Gimmick HTML rendering -->
                     <div class='puzzle-container'>
     <div class='puzzle-title'>📡 PACKET PAYLOAD DUMP</div>
-    <p style='font-family: var(--font-mono); color: var(--accent-magenta); font-size: 1.2rem; text-align: center; padding: 15px; background: rgba(0,0,0,0.5); border-radius: 4px; letter-spacing: 1px;'>UG9ydCAyMzIx</p>
+    <div style='display: flex; gap: 15px; align-items: center; justify-content: center; background: rgba(0,0,0,0.5); padding: 15px; border-radius: 4px;'>
+        <p style='font-family: var(--font-mono); color: var(--accent-magenta); font-size: 1.25rem; letter-spacing: 1px;'>UG9ydCAyMzIx</p>
+        <button class='copy-btn' onclick="copyToClipboard('UG9ydCAyMzIx', this)">COPY</button>
+    </div>
     <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.5;'>
         힌트: Base64 형식으로 변환된 포트 정보 페이로드입니다.<br>
         디코딩 시 문자 뒤에 기재된 숫자 4자리를 찾아 입력하십시오.

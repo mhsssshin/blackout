@@ -266,3 +266,50 @@ function checkResumeAvailable() {
 document.addEventListener('DOMContentLoaded', () => {
     checkResumeAvailable();
 });
+
+// Clipboard Copy Helper with visual feedback and sound
+function copyToClipboard(text, btn) {
+    if (!text) return;
+    
+    function showFeedback() {
+        playBeep(700, 60); // Soft beep
+        const originalText = btn.textContent;
+        btn.textContent = 'COPIED!';
+        btn.style.borderColor = 'var(--accent-green)';
+        btn.style.color = 'var(--accent-green)';
+        
+        setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.borderColor = '';
+            btn.style.color = '';
+        }, 1200);
+    }
+
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(showFeedback).catch(err => {
+            console.error('Failed to copy using clipboard API: ', err);
+            fallbackCopy(text);
+        });
+    } else {
+        fallbackCopy(text);
+    }
+    
+    function fallbackCopy(val) {
+        const textArea = document.createElement("textarea");
+        textArea.value = val;
+        textArea.style.top = "0";
+        textArea.style.left = "0";
+        textArea.style.position = "fixed";
+        textArea.style.opacity = "0";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+            document.execCommand('copy');
+            showFeedback();
+        } catch (err) {
+            console.error('Fallback copy failed: ', err);
+        }
+        document.body.removeChild(textArea);
+    }
+}

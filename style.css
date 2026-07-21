@@ -738,3 +738,25 @@ header::after {
     0% { clip: rect(70px, 9999px, 105px, 0); }
     100% { clip: rect(12px, 9999px, 85px, 0); }
 }
+
+/* Copy Button Styling */
+.copy-btn {
+    background: transparent;
+    border: 1px solid var(--accent-blue);
+    color: var(--accent-blue);
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-shadow: none;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+.copy-btn:hover {
+    background: rgba(0, 229, 255, 0.1);
+    box-shadow: var(--shadow-blue);
+}
+

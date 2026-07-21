@@ -22,7 +22,7 @@ stages = [
         "role": "PACKET MONITOR",
         "avatar": "NET",
         "dialogue": "권남훈 파트장의 보안 단말기(VDI)로 전송된 내부 사설 포트 전송 패킷이 캡처되었습니다.\n\n이 데이터는 문자나 숫자를 안전하게 전송하기 위해 64진법 텍스트로 인코딩되어 있습니다.\n인터넷의 Base64 디코더 등을 활용해 이 값을 원래대로 풀어내면,\n비밀 사설 포트 번호 4자리가 나옵니다.",
-        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>📡 PACKET PAYLOAD DUMP</div>\n    <p style='font-family: var(--font-mono); color: var(--accent-magenta); font-size: 1.2rem; text-align: center; padding: 15px; background: rgba(0,0,0,0.5); border-radius: 4px; letter-spacing: 1px;'>UG9ydCAyMzIx</p>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.5;'>\n        힌트: Base64 형식으로 변환된 포트 정보 페이로드입니다.<br>\n        디코딩 시 문자 뒤에 기재된 숫자 4자리를 찾아 입력하십시오.\n    </p>\n</div>"
+        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>📡 PACKET PAYLOAD DUMP</div>\n    <div style='display: flex; gap: 15px; align-items: center; justify-content: center; background: rgba(0,0,0,0.5); padding: 15px; border-radius: 4px;'>\n        <p style='font-family: var(--font-mono); color: var(--accent-magenta); font-size: 1.25rem; letter-spacing: 1px;'>UG9ydCAyMzIx</p>\n        <button class='copy-btn' onclick=\"copyToClipboard('UG9ydCAyMzIx', this)\">COPY</button>\n    </div>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.5;'>\n        힌트: Base64 형식으로 변환된 포트 정보 페이로드입니다.<br>\n        디코딩 시 문자 뒤에 기재된 숫자 4자리를 찾아 입력하십시오.\n    </p>\n</div>"
     },
     {
         "stage": 3,
@@ -66,7 +66,7 @@ stages = [
         "role": "SECURITY ENGIN",
         "avatar": "SEC",
         "dialogue": "서버를 다운시킨 침입자의 명령어가 세션 암호 로그에 복착되었습니다.\n침입자는 각 글자를 알파벳 순서상 뒤로 3칸씩 밀어 적는 간단한 암호(시저 암호)를 적용해 두었습니다.\n\n[복구 힌트: -3 Shift]\n암호문: vkXwgrzq\n\n모든 문자를 알파벳 순서상 앞으로 3칸씩 당겨 복구하십시오.\n(예: d -> a, k -> h, X -> u ...)\n최종 도출되는 영어 소문자 명령어를 입력하십시오.",
-        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>🔐 DECRYPTION KEY: -3 Shift (Caesar)</div>\n    <div style='background: rgba(0,0,0,0.5); padding: 15px; border-radius: 6px; border: 1px solid var(--border-color); font-family: var(--font-mono); text-align: center;'>\n        <p style='color: var(--accent-magenta); font-size: 1.2rem; letter-spacing: 2px;'>vkXwgrzq</p>\n    </div>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.5;'>\n        알파벳 순서: a b c d e f g h i j k l m n o p q r s t u v w x y z<br>\n        예를 들어, 'v'에서 앞으로 3칸 이동하면 's'가 됩니다.\n    </p>\n</div>"
+        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>🔐 DECRYPTION KEY: -3 Shift (Caesar)</div>\n    <div style='background: rgba(0,0,0,0.5); padding: 15px; border-radius: 6px; border: 1px solid var(--border-color); font-family: var(--font-mono); display: flex; gap: 15px; align-items: center; justify-content: center;'>\n        <p style='color: var(--accent-magenta); font-size: 1.2rem; letter-spacing: 2px;'>vkXwgrzq</p>\n        <button class='copy-btn' onclick=\"copyToClipboard('vkXwgrzq', this)\">COPY</button>\n    </div>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.5;'>\n        알파벳 순서: a b c d e f g h i j k l m n o p q r s t u v w x y z<br>\n        예를 들어, 'v'에서 앞으로 3칸 이동하면 's'가 됩니다.\n    </p>\n</div>"
     },
     {
         "stage": 7,
