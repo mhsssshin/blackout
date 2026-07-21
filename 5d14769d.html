@@ -100,8 +100,8 @@
                     <span>박용철 파트장</span>
                     <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">품질총괄 (규정 맹신자)</span>
                 </div>
-                <div class="dialogue-text typing-text" data-text="장애 수사 및 음모 규명이 완료되었습니다. 최종 승인 확인 키 [ done ]를 기입하여 이 새벽의 장애 인시던트 티켓을 공식 클리어하고 종결 처리하십시오." style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
-                    장애 수사 및 음모 규명이 완료되었습니다. 최종 승인 확인 키 [ done ]를 기입하여 이 새벽의 장애 인시던트 티켓을 공식 클리어하고 종결 처리하십시오.
+                <div class="dialogue-text typing-text" data-text="장애 수사 및 음모 규명이 완료되었습니다. 인시던트 티켓을 공식 클리어하고 종결 처리합시다." style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    장애 수사 및 음모 규명이 완료되었습니다. 인시던트 티켓을 공식 클리어하고 종결 처리합시다.
                 </div>
             </div>
         </div>
@@ -109,14 +109,31 @@
                     </div>
 
                     <!-- Gimmick HTML rendering -->
-                    <div class='puzzle-container'>
-    <div class='puzzle-title'>✅ RESOLUTION REPORT APPROVAL</div>
-    <p style='color: var(--text-primary); font-size: 0.85rem; line-height: 1.6;'>
-        - 장애 명칭: Core WAS Shutdown Incident<br>
-        - 조치 상태: 진범 식별 완료 및 DBA 누명 해소<br>
-        - 최종 승인 코드: done
+                    <div class='puzzle-container' style='text-align: center; border: 1px solid var(--accent-green); background: rgba(0,255,102,0.03); padding: 20px; border-radius: 8px;'>
+    <div class='puzzle-title' style='color: var(--accent-green); font-size: 1.1rem; margin-bottom: 10px;'>✅ 인시던트 규명 완료</div>
+    <p style='color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; line-height: 1.6; text-align: left;'>
+        장애 발생 경위 및 용의자 진술 검증이 공식 종결되었습니다.<br>
+        아래 [장애 인시던트 티켓 종결 승인] 버튼을 클릭하면 수사가 최종 종결되며 평가 등급 페이지로 이동합니다.
     </p>
+    <button onclick='closeIncidentTicket()' class='btn-cyber' style='font-size: 1.1rem; padding: 12px 30px; background: var(--accent-green); color: #020306; font-weight: bold; border: none; border-radius: 6px; cursor: pointer; box-shadow: var(--shadow-green); transition: all 0.2s;'>
+        🔏 장애 인시던트 티켓 종결 승인 (CLOSE TICKET)
+    </button>
 </div>
+<script>
+    function closeIncidentTicket() {
+        const terminalInput = document.querySelector('.terminal-input');
+        const submitBtn = document.querySelector('.submit-btn');
+        if (terminalInput && submitBtn) {
+            terminalInput.value = 'done';
+            submitBtn.click();
+        }
+    }
+    // Hide terminal prompt for cleaner cutscene feel
+    setTimeout(() => {
+        const promptDiv = document.querySelector('.terminal-prompt');
+        if (promptDiv) promptDiv.style.display = 'none';
+    }, 100);
+</script>
                 </div>
             </main>
 
