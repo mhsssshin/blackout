@@ -58,35 +58,61 @@
                         데이터베이스 단절 에러가 특정되었음에도, 권남훈 운영파트장은 외부 무단 침입 가능성을 강하게 부정합니다.
                     </div>
 
-                    <!-- Pure character dialogue feed -->
-                    <div class="dialogue-card speaker-suspect">
-                        <div class="avatar-container">
-                            <img src="avatar_kwon_nh.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px; border: 1px solid var(--border-color); box-shadow: 0 0 10px rgba(0,229,255,0.2);">
-                        </div>
-                        <div class="dialogue-body">
-                            <div class="dialogue-speaker">
-                                <span>권남훈 & 박재욱</span>
-                                <span class="speaker-role">원격 침입 원천 불가 주장</span>
-                            </div>
-                            <div class="dialogue-text typing-text" data-text="[권남훈]: VDI 보안 정책 하에서는 타인의 IP를 탈취해 무단 상주하는 행위가 원천 불가능합니다. 로그아웃이 일어나는 순간 사용하던 주소는 즉각 회수되어 재분배 대기에 들어갑니다.
-
-[박재욱]: 권 파트장님, 만약 로그아웃된 IP가 곧바로 공격자에게 재할당되어 악용되었다면 주소 도용이 성립할 수도 있는 것 아닙니까?
-
-[권남훈]: 음... 그렇다면 IP 주소의 동적 배분을 담당하는 이 자동 할당 네트워크 규약 약어(H C P D)의 아나그램을 풀어 회수 규칙의 맹점을 추론해 보십시오.">
-                                [권남훈]: VDI 보안 정책 하에서는 타인의 IP를 탈취해 무단 상주하는 행위가 원천 불가능합니다. 로그아웃이 일어나는 순간 사용하던 주소는 즉각 회수되어 재분배 대기에 들어갑니다.
-
-[박재욱]: 권 파트장님, 만약 로그아웃된 IP가 곧바로 공격자에게 재할당되어 악용되었다면 주소 도용이 성립할 수도 있는 것 아닙니까?
-
-[권남훈]: 음... 그렇다면 IP 주소의 동적 배분을 담당하는 이 자동 할당 네트워크 규약 약어(H C P D)의 아나그램을 풀어 회수 규칙의 맹점을 추론해 보십시오.
-                            </div>
-                        </div>
+                    <!-- Pure character dialogue feed (KakaoTalk / Chat style list) -->
+                    <div class="dialogue-feed-container" style="display: flex; flex-direction: column; gap: 12px;">
+                        
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+            <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="avatar_kwon_nh.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dialogue-body" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div class="dialogue-speaker" style="font-family: var(--font-title); font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); display: flex; justify-content: space-between;">
+                    <span>권남훈 파트장</span>
+                    <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">운영총괄 (규정 맹신자)</span>
+                </div>
+                <div class="dialogue-text typing-text" data-text="VDI 보안 정책 하에서는 타인의 IP를 탈취해 무단 상주하는 행위가 원천 불가능합니다. 사용자가 세션을 종료하는 즉시 할당되어 있던 사설 IP 주소는 풀에 회수되며 즉각 다른 사람에게 순차 배분됩니다." style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    VDI 보안 정책 하에서는 타인의 IP를 탈취해 무단 상주하는 행위가 원천 불가능합니다. 사용자가 세션을 종료하는 즉시 할당되어 있던 사설 IP 주소는 풀에 회수되며 즉각 다른 사람에게 순차 배분됩니다.
+                </div>
+            </div>
+        </div>
+        
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+            <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="avatar_park_jw.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dialogue-body" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div class="dialogue-speaker" style="font-family: var(--font-title); font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); display: flex; justify-content: space-between;">
+                    <span>박재욱 차장</span>
+                    <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">DBA (울분을 토하는 실무자)</span>
+                </div>
+                <div class="dialogue-text typing-text" data-text="권 파트장님, 만약 로그아웃된 IP가 곧바로 공격자에게 재할당되어 악용되었다면 주소 도용이 성립할 수도 있는 것 아닙니까?" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    권 파트장님, 만약 로그아웃된 IP가 곧바로 공격자에게 재할당되어 악용되었다면 주소 도용이 성립할 수도 있는 것 아닙니까?
+                </div>
+            </div>
+        </div>
+        
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+            <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="avatar_kwon_nh.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dialogue-body" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div class="dialogue-speaker" style="font-family: var(--font-title); font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); display: flex; justify-content: space-between;">
+                    <span>권남훈 파트장</span>
+                    <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">운영총괄 (규정 맹신자)</span>
+                </div>
+                <div class="dialogue-text typing-text" data-text="음... 그렇다면 IP 주소의 동적 배분을 담당하는 이 자동 할당 네트워크 규약 약어(H C P D)의 아나그램을 풀어 회수 규칙의 맹점을 추론해 보십시오." style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    음... 그렇다면 IP 주소의 동적 배분을 담당하는 이 자동 할당 네트워크 규약 약어(H C P D)의 아나그램을 풀어 회수 규칙의 맹점을 추론해 보십시오.
+                </div>
+            </div>
+        </div>
+        
                     </div>
 
                     <!-- Gimmick HTML rendering -->
                     <div class='puzzle-container'>
-    <div class='puzzle-title'>🧩 ANAGRAM SOLVER: H C P D</div>
+    <div class='puzzle-title'>🔌 PROTOCOL PORT CHECK: iSCSI TARGET</div>
     <p style='color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;'>
-        IP 주소를 동적으로 할당해 주는 대표적인 네트워크 표준 규약의 영어 약어로 재정렬하십시오.
+        힌트: 인터넷 소형 컴퓨터 시스템 인터페이스(iSCSI) 통신 프로토콜이 표준으로 점유하여 사용하는 포트 번호입니다.
     </p>
 </div>
                 </div>

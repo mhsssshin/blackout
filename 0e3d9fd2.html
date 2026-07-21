@@ -58,28 +58,54 @@
                         김 차장의 서브넷 오설정이 스토리지 통신 단절을 일으키고, 그로 인해 결산 DB 데이터가 연쇄 파손되었음이 물리적으로 실증되었습니다.
                     </div>
 
-                    <!-- Pure character dialogue feed -->
-                    <div class="dialogue-card speaker-suspect">
-                        <div class="avatar-container">
-                            <img src="avatar_park_jw.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px; border: 1px solid var(--border-color); box-shadow: 0 0 10px rgba(0,229,255,0.2);">
-                        </div>
-                        <div class="dialogue-body">
-                            <div class="dialogue-speaker">
-                                <span>박재욱 & 김진혁</span>
-                                <span class="speaker-role">iSCSI 채널 복구 명령</span>
-                            </div>
-                            <div class="dialogue-text typing-text" data-text="[박재욱]: 김 차장님의 O설정으로 인해 제 결산 백업 중에 DB가 파손된 것이 밝혀졌습니다. 당장 끊긴 블록 스토리지 연결부터 긴급 복구해 주십시오!
-
-[김진혁]: 크흠... 알겠습니다. 단순 실수였으니 바로 프로토콜 수동 연결 절차를 기동하겠습니다.
-
-[박재욱]: iSCSI 프로토콜 통신 채널을 수동 결선하여 동작을 복구하기 위해, 해당 스토리지 장비가 기본 점유하여 사용하는 표준 TCP 포트 번호 4자리를 도출하십시오!">
-                                [박재욱]: 김 차장님의 O설정으로 인해 제 결산 백업 중에 DB가 파손된 것이 밝혀졌습니다. 당장 끊긴 블록 스토리지 연결부터 긴급 복구해 주십시오!
-
-[김진혁]: 크흠... 알겠습니다. 단순 실수였으니 바로 프로토콜 수동 연결 절차를 기동하겠습니다.
-
-[박재욱]: iSCSI 프로토콜 통신 채널을 수동 결선하여 동작을 복구하기 위해, 해당 스토리지 장비가 기본 점유하여 사용하는 표준 TCP 포트 번호 4자리를 도출하십시오!
-                            </div>
-                        </div>
+                    <!-- Pure character dialogue feed (KakaoTalk / Chat style list) -->
+                    <div class="dialogue-feed-container" style="display: flex; flex-direction: column; gap: 12px;">
+                        
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+            <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="avatar_park_jw.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dialogue-body" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div class="dialogue-speaker" style="font-family: var(--font-title); font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); display: flex; justify-content: space-between;">
+                    <span>박재욱 차장</span>
+                    <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">DBA (울분을 토하는 실무자)</span>
+                </div>
+                <div class="dialogue-text typing-text" data-text="김 차장님의 오설정으로 인해 제 결산 백업 중에 DB가 파손된 것이 밝혀졌습니다. 당장 끊긴 블록 스토리지 연결부터 긴급 복구해 주십시오!" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    김 차장님의 오설정으로 인해 제 결산 백업 중에 DB가 파손된 것이 밝혀졌습니다. 당장 끊긴 블록 스토리지 연결부터 긴급 복구해 주십시오!
+                </div>
+            </div>
+        </div>
+        
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+            <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="avatar_kim_jh.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dialogue-body" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div class="dialogue-speaker" style="font-family: var(--font-title); font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); display: flex; justify-content: space-between;">
+                    <span>김진혁 차장</span>
+                    <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">네트워크 담당 (능글맞은 엔지니어)</span>
+                </div>
+                <div class="dialogue-text typing-text" data-text="크흠... 알겠습니다. 단순 실수였으니 바로 프로토콜 수동 연결 절차를 기동하겠습니다." style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    크흠... 알겠습니다. 단순 실수였으니 바로 프로토콜 수동 연결 절차를 기동하겠습니다.
+                </div>
+            </div>
+        </div>
+        
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+            <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="avatar_park_jw.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dialogue-body" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div class="dialogue-speaker" style="font-family: var(--font-title); font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); display: flex; justify-content: space-between;">
+                    <span>박재욱 차장</span>
+                    <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">DBA (울분을 토하는 실무자)</span>
+                </div>
+                <div class="dialogue-text typing-text" data-text="iSCSI 프로토콜 통신 채널을 수동 결선하여 동작을 복구하기 위해, 해당 스토리지 장비가 기본 점유하여 사용하는 표준 TCP 포트 번호 4자리를 도출하십시오!" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    iSCSI 프로토콜 통신 채널을 수동 결선하여 동작을 복구하기 위해, 해당 스토리지 장비가 기본 점유하여 사용하는 표준 TCP 포트 번호 4자리를 도출하십시오!
+                </div>
+            </div>
+        </div>
+        
                     </div>
 
                     <!-- Gimmick HTML rendering -->

@@ -58,28 +58,54 @@
                         스위치 콘솔 로그를 상세 조회하던 중, 스토리지 연결이 단절되도록 유도한 결정적인 조작 실수 흔적이 드러납니다.
                     </div>
 
-                    <!-- Pure character dialogue feed -->
-                    <div class="dialogue-card speaker-suspect">
-                        <div class="avatar-container">
-                            <img src="avatar_park_yc.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px; border: 1px solid var(--border-color); box-shadow: 0 0 10px rgba(0,229,255,0.2);">
-                        </div>
-                        <div class="dialogue-body">
-                            <div class="dialogue-speaker">
-                                <span>박용철 & 김진혁</span>
-                                <span class="speaker-role">서브넷 오설정 감사</span>
-                            </div>
-                            <div class="dialogue-text typing-text" data-text="[박용철]: 김진혁 차장! 장애 30분 전, 백업망 라우팅 대역 테이블을 임의 조작하다가 CIDR 서브넷 마스크 대역 폭을 `/28` 로 잘못 격리했더군요. 이것 때문에 스토리지 물리 볼륨 통신이 모조리 끊긴 겁니다!
-
-[김진혁]: 아... 단순 라우팅 경로 복구를 위한 테스트 단계에서 비트 연산 실수로 오설정이 들어간 모양입니다. 의도한 것은 아닙니다.
-
-[박용철]: 변명은 필요 없고, 서브넷 마스크 `/28` 등급 대역에서 예약 주소 2개를 제외하고 실제 내부 장비들에 유효하게 분배할 수 있는 최대 호스트 IP 개수를 산출해 보십시오!">
-                                [박용철]: 김진혁 차장! 장애 30분 전, 백업망 라우팅 대역 테이블을 임의 조작하다가 CIDR 서브넷 마스크 대역 폭을 `/28` 로 잘못 격리했더군요. 이것 때문에 스토리지 물리 볼륨 통신이 모조리 끊긴 겁니다!
-
-[김진혁]: 아... 단순 라우팅 경로 복구를 위한 테스트 단계에서 비트 연산 실수로 오설정이 들어간 모양입니다. 의도한 것은 아닙니다.
-
-[박용철]: 변명은 필요 없고, 서브넷 마스크 `/28` 등급 대역에서 예약 주소 2개를 제외하고 실제 내부 장비들에 유효하게 분배할 수 있는 최대 호스트 IP 개수를 산출해 보십시오!
-                            </div>
-                        </div>
+                    <!-- Pure character dialogue feed (KakaoTalk / Chat style list) -->
+                    <div class="dialogue-feed-container" style="display: flex; flex-direction: column; gap: 12px;">
+                        
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+            <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="avatar_park_yc.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dialogue-body" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div class="dialogue-speaker" style="font-family: var(--font-title); font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); display: flex; justify-content: space-between;">
+                    <span>박용철 파트장</span>
+                    <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">품질총괄 (예민한 리더)</span>
+                </div>
+                <div class="dialogue-text typing-text" data-text="김진혁 차장! 장애 30분 전, 백업망 라우팅 대역 테이블을 임의 조작하다가 CIDR 서브넷 마스크 대역 폭을 `/28` 로 잘못 격리했더군요. 이것 때문에 스토리지 물리 볼륨 통신이 모조리 끊긴 겁니다!" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    김진혁 차장! 장애 30분 전, 백업망 라우팅 대역 테이블을 임의 조작하다가 CIDR 서브넷 마스크 대역 폭을 `/28` 로 잘못 격리했더군요. 이것 때문에 스토리지 물리 볼륨 통신이 모조리 끊긴 겁니다!
+                </div>
+            </div>
+        </div>
+        
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+            <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="avatar_kim_jh.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dialogue-body" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div class="dialogue-speaker" style="font-family: var(--font-title); font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); display: flex; justify-content: space-between;">
+                    <span>김진혁 차장</span>
+                    <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">네트워크 담당 (능글맞은 엔지니어)</span>
+                </div>
+                <div class="dialogue-text typing-text" data-text="아... 단순 라우팅 경로 복구를 위한 테스트 단계에서 비트 연산 실수로 오설정이 들어간 모양입니다. 의도한 것은 아닙니다." style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    아... 단순 라우팅 경로 복구를 위한 테스트 단계에서 비트 연산 실수로 오설정이 들어간 모양입니다. 의도한 것은 아닙니다.
+                </div>
+            </div>
+        </div>
+        
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+            <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="avatar_park_yc.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dialogue-body" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div class="dialogue-speaker" style="font-family: var(--font-title); font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); display: flex; justify-content: space-between;">
+                    <span>박용철 파트장</span>
+                    <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">품질총괄 (예민한 리더)</span>
+                </div>
+                <div class="dialogue-text typing-text" data-text="변명은 필요 없고, 서브넷 마스크 `/28` 등급 대역에서 예약 주소 2개를 제외하고 실제 내부 장비들에 유효하게 분배할 수 있는 최대 호스트 IP 개수를 산출해 보십시오!" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    변명은 필요 없고, 서브넷 마스크 `/28` 등급 대역에서 예약 주소 2개를 제외하고 실제 내부 장비들에 유효하게 분배할 수 있는 최대 호스트 IP 개수를 산출해 보십시오!
+                </div>
+            </div>
+        </div>
+        
                     </div>
 
                     <!-- Gimmick HTML rendering -->

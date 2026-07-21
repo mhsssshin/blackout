@@ -58,28 +58,54 @@
                         시스템 가동이 중단되기 직전, 물리 자원을 독점하여 과부하를 가하던 프로세스 내역이 발견됩니다.
                     </div>
 
-                    <!-- Pure character dialogue feed -->
-                    <div class="dialogue-card speaker-suspect">
-                        <div class="avatar-container">
-                            <img src="avatar_park_yc.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px; border: 1px solid var(--border-color); box-shadow: 0 0 10px rgba(0,229,255,0.2);">
-                        </div>
-                        <div class="dialogue-body">
-                            <div class="dialogue-speaker">
-                                <span>박용철 & 이재헌</span>
-                                <span class="speaker-role">서버 담당자 취조</span>
-                            </div>
-                            <div class="dialogue-text typing-text" data-text="[박용철]: 이재헌 과장! 서버가 강제 종료되기 직전에 CPU를 98% 이상 과독점하며 인프라 마비를 유도한 백그라운드 프로세스가 기동 중이었습니다. 평소에 프로세스 모니터링도 안 하고 뭐 한 겁니까!
-
-[이재헌]: 억울합니다 파트장님! 당시 결산 배치 스레드 외에는 특별한 명령을 인가한 적이 없습니다. 시스템의 정상 부하 분산 범위였습니다.
-
-[박용철]: 입 다물고 당시 CPU 점유율을 비정상적으로 과점하며 시스템 리소스를 잠식한 주범 프로세스의 PID(프로세스 ID) 4자리를 프로세스 활성 로그(top/ps)에서 식별하십시오!">
-                                [박용철]: 이재헌 과장! 서버가 강제 종료되기 직전에 CPU를 98% 이상 과독점하며 인프라 마비를 유도한 백그라운드 프로세스가 기동 중이었습니다. 평소에 프로세스 모니터링도 안 하고 뭐 한 겁니까!
-
-[이재헌]: 억울합니다 파트장님! 당시 결산 배치 스레드 외에는 특별한 명령을 인가한 적이 없습니다. 시스템의 정상 부하 분산 범위였습니다.
-
-[박용철]: 입 다물고 당시 CPU 점유율을 비정상적으로 과점하며 시스템 리소스를 잠식한 주범 프로세스의 PID(프로세스 ID) 4자리를 프로세스 활성 로그(top/ps)에서 식별하십시오!
-                            </div>
-                        </div>
+                    <!-- Pure character dialogue feed (KakaoTalk / Chat style list) -->
+                    <div class="dialogue-feed-container" style="display: flex; flex-direction: column; gap: 12px;">
+                        
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+            <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="avatar_park_yc.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dialogue-body" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div class="dialogue-speaker" style="font-family: var(--font-title); font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); display: flex; justify-content: space-between;">
+                    <span>박용철 파트장</span>
+                    <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">품질총괄 (예민한 리더)</span>
+                </div>
+                <div class="dialogue-text typing-text" data-text="이재헌 과장! 서버가 강제 종료되기 직전에 CPU를 98% 이상 과독점하며 인프라 마비를 유도한 백그라운드 프로세스가 기동 중이었습니다. 평소에 프로세스 모니터링도 안 하고 뭐 한 겁니까!" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    이재헌 과장! 서버가 강제 종료되기 직전에 CPU를 98% 이상 과독점하며 인프라 마비를 유도한 백그라운드 프로세스가 기동 중이었습니다. 평소에 프로세스 모니터링도 안 하고 뭐 한 겁니까!
+                </div>
+            </div>
+        </div>
+        
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+            <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="avatar_lee_jh.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dialogue-body" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div class="dialogue-speaker" style="font-family: var(--font-title); font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); display: flex; justify-content: space-between;">
+                    <span>이재헌 과장</span>
+                    <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">서버 담당 (가상화 엔지니어)</span>
+                </div>
+                <div class="dialogue-text typing-text" data-text="억울합니다 파트장님! 당시 결산 배치 스레드 외에는 특별한 명령을 인가한 적이 없습니다. 시스템의 정상 부하 분산 범위였습니다." style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    억울합니다 파트장님! 당시 결산 배치 스레드 외에는 특별한 명령을 인가한 적이 없습니다. 시스템의 정상 부하 분산 범위였습니다.
+                </div>
+            </div>
+        </div>
+        
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+            <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="avatar_park_yc.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dialogue-body" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div class="dialogue-speaker" style="font-family: var(--font-title); font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); display: flex; justify-content: space-between;">
+                    <span>박용철 파트장</span>
+                    <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">품질총괄 (예민한 리더)</span>
+                </div>
+                <div class="dialogue-text typing-text" data-text="입 다물고 당시 CPU 점유율을 비정상적으로 과점하며 시스템 리소스를 잠식한 주범 프로세스의 PID(프로세스 ID) 4자리를 프로세스 활성 로그(top/ps)에서 식별하십시오!" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    입 다물고 당시 CPU 점유율을 비정상적으로 과점하며 시스템 리소스를 잠식한 주범 프로세스의 PID(프로세스 ID) 4자리를 프로세스 활성 로그(top/ps)에서 식별하십시오!
+                </div>
+            </div>
+        </div>
+        
                     </div>
 
                     <!-- Gimmick HTML rendering -->

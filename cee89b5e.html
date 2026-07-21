@@ -58,28 +58,54 @@
                         권남훈 운영파트장이 데이터베이스 파손의 원인을 DBA의 작업 과실로 모아가며 압박하자, 박재욱 차장이 억울함을 호소합니다.
                     </div>
 
-                    <!-- Pure character dialogue feed -->
-                    <div class="dialogue-card speaker-suspect">
-                        <div class="avatar-container">
-                            <img src="avatar_park_jw.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px; border: 1px solid var(--border-color); box-shadow: 0 0 10px rgba(0,229,255,0.2);">
-                        </div>
-                        <div class="dialogue-body">
-                            <div class="dialogue-speaker">
-                                <span>권남훈 & 박재욱</span>
-                                <span class="speaker-role">파트장 vs DBA (소명 요구)</span>
-                            </div>
-                            <div class="dialogue-text typing-text" data-text="[권남훈]: 박 차장님의 억지 소명을 접수해 검토는 해 보겠으나, 실제 오류 대상인 스토리지 장비가 보관된 랙 식별 번호 2자리(Rack ID)와 결선된 라우터 광포트 번호 2자리(Port ID)를 조합한 4자리 물리 관리 코드를 제출해 보십시오.
-
-[박재욱]: 권 파트장님, 새벽에 갑자기 하드웨어 물리 포트 대장 번호까지 대라니 치졸한 방해 공작입니다!
-
-[박재욱]: 기계실 단말기에 기록된 물리 장비 배치 맵과 광 스위치 포트 인터페이스 상태 로그를 대조해, 스토리지 랙 번호(2자리)와 스토리지 광 연결 포트 번호(2자리)를 조합한 4자리 장비 식별자(8204)를 찾아 주십시오!">
-                                [권남훈]: 박 차장님의 억지 소명을 접수해 검토는 해 보겠으나, 실제 오류 대상인 스토리지 장비가 보관된 랙 식별 번호 2자리(Rack ID)와 결선된 라우터 광포트 번호 2자리(Port ID)를 조합한 4자리 물리 관리 코드를 제출해 보십시오.
-
-[박재욱]: 권 파트장님, 새벽에 갑자기 하드웨어 물리 포트 대장 번호까지 대라니 치졸한 방해 공작입니다!
-
-[박재욱]: 기계실 단말기에 기록된 물리 장비 배치 맵과 광 스위치 포트 인터페이스 상태 로그를 대조해, 스토리지 랙 번호(2자리)와 스토리지 광 연결 포트 번호(2자리)를 조합한 4자리 장비 식별자(8204)를 찾아 주십시오!
-                            </div>
-                        </div>
+                    <!-- Pure character dialogue feed (KakaoTalk / Chat style list) -->
+                    <div class="dialogue-feed-container" style="display: flex; flex-direction: column; gap: 12px;">
+                        
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+            <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="avatar_kwon_nh.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dialogue-body" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div class="dialogue-speaker" style="font-family: var(--font-title); font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); display: flex; justify-content: space-between;">
+                    <span>권남훈 파트장</span>
+                    <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">운영총괄 (규정 맹신자)</span>
+                </div>
+                <div class="dialogue-text typing-text" data-text="박 차장님의 억지 소명을 접수해 검토는 해 보겠으나, 실제 오류 대상인 스토리지 장비가 보관된 랙 식별 번호 2자리(Rack ID)와 결선된 라우터 광포트 번호 2자리(Port ID)를 조합한 4자리 물리 관리 코드를 제출해 보십시오." style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    박 차장님의 억지 소명을 접수해 검토는 해 보겠으나, 실제 오류 대상인 스토리지 장비가 보관된 랙 식별 번호 2자리(Rack ID)와 결선된 라우터 광포트 번호 2자리(Port ID)를 조합한 4자리 물리 관리 코드를 제출해 보십시오.
+                </div>
+            </div>
+        </div>
+        
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+            <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="avatar_park_jw.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dialogue-body" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div class="dialogue-speaker" style="font-family: var(--font-title); font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); display: flex; justify-content: space-between;">
+                    <span>박재욱 차장</span>
+                    <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">DBA (울분을 토하는 실무자)</span>
+                </div>
+                <div class="dialogue-text typing-text" data-text="권 파트장님, 새벽에 갑자기 하드웨어 물리 포트 대장 번호까지 대라니 치졸한 방해 공작입니다!" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    권 파트장님, 새벽에 갑자기 하드웨어 물리 포트 대장 번호까지 대라니 치졸한 방해 공작입니다!
+                </div>
+            </div>
+        </div>
+        
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+            <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="avatar_park_jw.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dialogue-body" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div class="dialogue-speaker" style="font-family: var(--font-title); font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); display: flex; justify-content: space-between;">
+                    <span>박재욱 차장</span>
+                    <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">DBA (울분을 토하는 실무자)</span>
+                </div>
+                <div class="dialogue-text typing-text" data-text="기계실 단말기에 기록된 물리 장비 배치 맵과 광 스위치 포트 인터페이스 상태 로그를 대조해, 스토리지 랙 번호(2자리)와 스토리지 광 연결 포트 번호(2자리)를 조합한 4자리 장비 식별자(8204)를 찾아 주십시오!" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    기계실 단말기에 기록된 물리 장비 배치 맵과 광 스위치 포트 인터페이스 상태 로그를 대조해, 스토리지 랙 번호(2자리)와 스토리지 광 연결 포트 번호(2자리)를 조합한 4자리 장비 식별자(8204)를 찾아 주십시오!
+                </div>
+            </div>
+        </div>
+        
                     </div>
 
                     <!-- Gimmick HTML rendering -->

@@ -58,28 +58,54 @@
                         서버의 극심한 과부하 정황이 드러나자, 박용철 파트장이 스토리지 단절 당시 터진 DB 무결성 오류 코드를 특정하자고 나섭니다.
                     </div>
 
-                    <!-- Pure character dialogue feed -->
-                    <div class="dialogue-card speaker-suspect">
-                        <div class="avatar-container">
-                            <img src="avatar_park_yc.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px; border: 1px solid var(--border-color); box-shadow: 0 0 10px rgba(0,229,255,0.2);">
-                        </div>
-                        <div class="dialogue-body">
-                            <div class="dialogue-speaker">
-                                <span>박용철 & 권남훈</span>
-                                <span class="speaker-role">데이터베이스 무결성 감사</span>
-                            </div>
-                            <div class="dialogue-text typing-text" data-text="[박용철]: 리소스 부족에 따른 데이터베이스 파손 정황을 입증해야 합니다. 스토리지 단절 시점의 디스크 물리 무결성 실패 로그부터 분석하시죠.
-
-[권남훈]: 정규표현식 패턴 필터링을 사용하면 감사 로그 상의 오류 코드를 정확히 식별해 낼 수 있겠군요.
-
-[박용철]: 그렇습니다. 제시된 정규표현식 검출 필터를 로그 덤프에 매칭해, 디스크 파손을 유발한 오라클 내부의 치명적 에러 코드 명칭을 소문자로 기입하십시오.">
-                                [박용철]: 리소스 부족에 따른 데이터베이스 파손 정황을 입증해야 합니다. 스토리지 단절 시점의 디스크 물리 무결성 실패 로그부터 분석하시죠.
-
-[권남훈]: 정규표현식 패턴 필터링을 사용하면 감사 로그 상의 오류 코드를 정확히 식별해 낼 수 있겠군요.
-
-[박용철]: 그렇습니다. 제시된 정규표현식 검출 필터를 로그 덤프에 매칭해, 디스크 파손을 유발한 오라클 내부의 치명적 에러 코드 명칭을 소문자로 기입하십시오.
-                            </div>
-                        </div>
+                    <!-- Pure character dialogue feed (KakaoTalk / Chat style list) -->
+                    <div class="dialogue-feed-container" style="display: flex; flex-direction: column; gap: 12px;">
+                        
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+            <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="avatar_park_yc.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dialogue-body" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div class="dialogue-speaker" style="font-family: var(--font-title); font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); display: flex; justify-content: space-between;">
+                    <span>박용철 파트장</span>
+                    <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">품질총괄 (예민한 리더)</span>
+                </div>
+                <div class="dialogue-text typing-text" data-text="리소스 부족에 따른 데이터베이스 파손 정황을 입증해야 합니다. 스토리지 단절 시점의 디스크 물리 무결성 실패 로그부터 분석하시죠." style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    리소스 부족에 따른 데이터베이스 파손 정황을 입증해야 합니다. 스토리지 단절 시점의 디스크 물리 무결성 실패 로그부터 분석하시죠.
+                </div>
+            </div>
+        </div>
+        
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+            <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="avatar_kwon_nh.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dialogue-body" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div class="dialogue-speaker" style="font-family: var(--font-title); font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); display: flex; justify-content: space-between;">
+                    <span>권남훈 파트장</span>
+                    <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">운영총괄 (규정 맹신자)</span>
+                </div>
+                <div class="dialogue-text typing-text" data-text="정규표현식 패턴 필터링을 사용하면 감사 로그 상의 오류 코드를 정확히 식별해 낼 수 있겠군요." style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    정규표현식 패턴 필터링을 사용하면 감사 로그 상의 오류 코드를 정확히 식별해 낼 수 있겠군요.
+                </div>
+            </div>
+        </div>
+        
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+            <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="avatar_park_yc.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dialogue-body" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div class="dialogue-speaker" style="font-family: var(--font-title); font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); display: flex; justify-content: space-between;">
+                    <span>박용철 파트장</span>
+                    <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">품질총괄 (예민한 리더)</span>
+                </div>
+                <div class="dialogue-text typing-text" data-text="그렇습니다. 제시된 정규표현식 검출 필터를 로그 덤프에 매칭해, 디스크 파손을 유발한 오라클 내부의 치명적 에러 코드 명칭을 소문자로 기입하십시오." style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    그렇습니다. 제시된 정규표현식 검출 필터를 로그 덤프에 매칭해, 디스크 파손을 유발한 오라클 내부의 치명적 에러 코드 명칭을 소문자로 기입하십시오.
+                </div>
+            </div>
+        </div>
+        
                     </div>
 
                     <!-- Gimmick HTML rendering -->

@@ -58,28 +58,54 @@
                         박용철 파트장이 일방적인 일정 독촉 속에서 조사를 밀어붙이자, 권남훈 파트장이 정식 통제 절차의 당위성을 들고 나옵니다.
                     </div>
 
-                    <!-- Pure character dialogue feed -->
-                    <div class="dialogue-card speaker-suspect">
-                        <div class="avatar-container">
-                            <img src="avatar_kwon_nh.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px; border: 1px solid var(--border-color); box-shadow: 0 0 10px rgba(0,229,255,0.2);">
-                        </div>
-                        <div class="dialogue-body">
-                            <div class="dialogue-speaker">
-                                <span>권남훈 & 박용철</span>
-                                <span class="speaker-role">인프라 통제권 대립</span>
-                            </div>
-                            <div class="dialogue-text typing-text" data-text="[권남훈]: 정형화된 절차를 우회하는 임의 조사는 명백한 규정 위반입니다. 장애 상황 관리 시에는 임시 조치 단계부터 근본 문제(Problem)를 정식 식별하여 등록해야 합니다.
-
-[박용철]: 권 파트장, 이 난리에 거버넌스 절차가 밥을 먹여줍니까? 당장 문제 해결이 우선이지!
-
-[권남훈]: 무작정 들쑤시는 건 장애를 더 키울 뿐입니다. 품질 보증 표준 프로세스를 승인하기 위해, 사내 거버넌스가 따르는 정식 IT 서비스 관리 프레임워크의 영문 소문자 4글자 약어를 터미널에 입력하십시오.">
-                                [권남훈]: 정형화된 절차를 우회하는 임의 조사는 명백한 규정 위반입니다. 장애 상황 관리 시에는 임시 조치 단계부터 근본 문제(Problem)를 정식 식별하여 등록해야 합니다.
-
-[박용철]: 권 파트장, 이 난리에 거버넌스 절차가 밥을 먹여줍니까? 당장 문제 해결이 우선이지!
-
-[권남훈]: 무작정 들쑤시는 건 장애를 더 키울 뿐입니다. 품질 보증 표준 프로세스를 승인하기 위해, 사내 거버넌스가 따르는 정식 IT 서비스 관리 프레임워크의 영문 소문자 4글자 약어를 터미널에 입력하십시오.
-                            </div>
-                        </div>
+                    <!-- Pure character dialogue feed (KakaoTalk / Chat style list) -->
+                    <div class="dialogue-feed-container" style="display: flex; flex-direction: column; gap: 12px;">
+                        
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+            <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="avatar_kwon_nh.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dialogue-body" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div class="dialogue-speaker" style="font-family: var(--font-title); font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); display: flex; justify-content: space-between;">
+                    <span>권남훈 파트장</span>
+                    <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">운영총괄 (규정 맹신자)</span>
+                </div>
+                <div class="dialogue-text typing-text" data-text="정형화된 절차를 우회하는 임의 조사는 명백한 규정 위반입니다. 장애 상황 관리 시에는 임시 조치 단계부터 근본 문제(Problem)를 정식 식별하여 등록해야 합니다." style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    정형화된 절차를 우회하는 임의 조사는 명백한 규정 위반입니다. 장애 상황 관리 시에는 임시 조치 단계부터 근본 문제(Problem)를 정식 식별하여 등록해야 합니다.
+                </div>
+            </div>
+        </div>
+        
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+            <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="avatar_park_yc.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dialogue-body" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div class="dialogue-speaker" style="font-family: var(--font-title); font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); display: flex; justify-content: space-between;">
+                    <span>박용철 파트장</span>
+                    <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">품질총괄 (예민한 리더)</span>
+                </div>
+                <div class="dialogue-text typing-text" data-text="권 파트장, 이 난리에 거버넌스 절차가 밥을 먹여줍니까? 당장 문제 해결이 우선이지!" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    권 파트장, 이 난리에 거버넌스 절차가 밥을 먹여줍니까? 당장 문제 해결이 우선이지!
+                </div>
+            </div>
+        </div>
+        
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+            <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="avatar_kwon_nh.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dialogue-body" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div class="dialogue-speaker" style="font-family: var(--font-title); font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); display: flex; justify-content: space-between;">
+                    <span>권남훈 파트장</span>
+                    <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">운영총괄 (규정 맹신자)</span>
+                </div>
+                <div class="dialogue-text typing-text" data-text="무작정 들쑤시는 건 장애를 더 키울 뿐입니다. 품질 보증 표준 프로세스를 승인하기 위해, 사내 거버넌스가 따르는 정식 IT 서비스 관리 프레임워크의 영문 소문자 4글자 약어를 터미널에 입력하십시오." style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    무작정 들쑤시는 건 장애를 더 키울 뿐입니다. 품질 보증 표준 프로세스를 승인하기 위해, 사내 거버넌스가 따르는 정식 IT 서비스 관리 프레임워크의 영문 소문자 4글자 약어를 터미널에 입력하십시오.
+                </div>
+            </div>
+        </div>
+        
                     </div>
 
                     <!-- Gimmick HTML rendering -->

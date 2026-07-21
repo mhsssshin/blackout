@@ -58,28 +58,54 @@
                         스토리지 연결 복구 작업이 수립된 가운데, 서버 담당 이재헌 과장이 추가적인 설정 결함을 실토합니다.
                     </div>
 
-                    <!-- Pure character dialogue feed -->
-                    <div class="dialogue-card speaker-suspect">
-                        <div class="avatar-container">
-                            <img src="avatar_lee_jh.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px; border: 1px solid var(--border-color); box-shadow: 0 0 10px rgba(0,229,255,0.2);">
-                        </div>
-                        <div class="dialogue-body">
-                            <div class="dialogue-speaker">
-                                <span>이재헌 & 박용철</span>
-                                <span class="speaker-role">서버 타임 드래프트 보고</span>
-                            </div>
-                            <div class="dialogue-text typing-text" data-text="[이재헌]: 파트장님, 대단히 죄송합니다! 인프라 증설 당시에 시간 동기화 데몬(NTP) 동작 설정을 수동으로 누락하여, WAS 서버들의 시스템 시간이 실제 세상 표준시보다 정확히 '15분 느리게' 가동 중인 것을 발견했습니다.
-
-[박용철]: 이 과장! 자네 진짜 제정신인가! 타임스탬프 동기화도 안 맞춰놓다니!
-
-[이재헌]: WAS의 감사 기록 상 셧다운 명령이 인가된 시각은 '01:58'입니다. 이 15분의 오차를 물리적으로 정상 환산하여 보정한, 실제 세상의 실제 셧다운 구동 표준 시각(24시간 형식 4자리 HHMM)을 도출해야 당시 VDI 접속 이력과 대조가 가능합니다!">
-                                [이재헌]: 파트장님, 대단히 죄송합니다! 인프라 증설 당시에 시간 동기화 데몬(NTP) 동작 설정을 수동으로 누락하여, WAS 서버들의 시스템 시간이 실제 세상 표준시보다 정확히 '15분 느리게' 가동 중인 것을 발견했습니다.
-
-[박용철]: 이 과장! 자네 진짜 제정신인가! 타임스탬프 동기화도 안 맞춰놓다니!
-
-[이재헌]: WAS의 감사 기록 상 셧다운 명령이 인가된 시각은 '01:58'입니다. 이 15분의 오차를 물리적으로 정상 환산하여 보정한, 실제 세상의 실제 셧다운 구동 표준 시각(24시간 형식 4자리 HHMM)을 도출해야 당시 VDI 접속 이력과 대조가 가능합니다!
-                            </div>
-                        </div>
+                    <!-- Pure character dialogue feed (KakaoTalk / Chat style list) -->
+                    <div class="dialogue-feed-container" style="display: flex; flex-direction: column; gap: 12px;">
+                        
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+            <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="avatar_lee_jh.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dialogue-body" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div class="dialogue-speaker" style="font-family: var(--font-title); font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); display: flex; justify-content: space-between;">
+                    <span>이재헌 과장</span>
+                    <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">서버 담당 (가상화 엔지니어)</span>
+                </div>
+                <div class="dialogue-text typing-text" data-text="파트장님, 대단히 죄송합니다! 인프라 증설 당시에 시간 동기화 데몬(NTP) 동작 설정을 수동으로 누락하여, WAS 서버들의 시스템 시간이 실제 세상 표준시보다 정확히 '15분 느리게' 가동 중인 것을 발견했습니다." style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    파트장님, 대단히 죄송합니다! 인프라 증설 당시에 시간 동기화 데몬(NTP) 동작 설정을 수동으로 누락하여, WAS 서버들의 시스템 시간이 실제 세상 표준시보다 정확히 '15분 느리게' 가동 중인 것을 발견했습니다.
+                </div>
+            </div>
+        </div>
+        
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+            <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="avatar_park_yc.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dialogue-body" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div class="dialogue-speaker" style="font-family: var(--font-title); font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); display: flex; justify-content: space-between;">
+                    <span>박용철 파트장</span>
+                    <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">품질총괄 (예민한 리더)</span>
+                </div>
+                <div class="dialogue-text typing-text" data-text="이 과장! 자네 진짜 제정신인가! 타임스탬프 동기화도 안 맞춰놓다니!" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    이 과장! 자네 진짜 제정신인가! 타임스탬프 동기화도 안 맞춰놓다니!
+                </div>
+            </div>
+        </div>
+        
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+            <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="avatar_lee_jh.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dialogue-body" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div class="dialogue-speaker" style="font-family: var(--font-title); font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); display: flex; justify-content: space-between;">
+                    <span>이재헌 과장</span>
+                    <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">서버 담당 (가상화 엔지니어)</span>
+                </div>
+                <div class="dialogue-text typing-text" data-text="WAS의 감사 기록 상 셧다운 명령이 인가된 시각은 '01:58'입니다. 이 15분의 오차를 물리적으로 정상 환산하여 보정한, 실제 세상의 실제 셧다운 구동 표준 시각(24시간 형식 4자리 HHMM)을 도출해야 VDI 접속 이력 대조가 가능합니다!" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    WAS의 감사 기록 상 셧다운 명령이 인가된 시각은 '01:58'입니다. 이 15분의 오차를 물리적으로 정상 환산하여 보정한, 실제 세상의 실제 셧다운 구동 표준 시각(24시간 형식 4자리 HHMM)을 도출해야 VDI 접속 이력 대조가 가능합니다!
+                </div>
+            </div>
+        </div>
+        
                     </div>
 
                     <!-- Gimmick HTML rendering -->
