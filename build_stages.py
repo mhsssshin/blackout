@@ -213,25 +213,19 @@ stages = [
         "title": "Physical Device Map (물리 인프라 맵 감사)",
         "filename": "cee89b5e.html",
         "verify_hash": "27dce682e1ad2f2106be21d27e8025de5de7ee65cecc737d4f27a33af4c29a8a",
-        "narrative": "권남훈 운영파트장이 데이터베이스 파손의 원인을 DBA의 작업 과실로 모아가며 압박하자, 박재욱 차장이 억울함을 호소합니다.",
+        "narrative": "DBA 박재욱 차장이 스토리지 네트워크 단절 가능성을 제기하자, 권남훈 파트장이 네트워크 담당 김진혁 차장에게 기계실 물리 결선 상태 대조를 긴급 지시합니다.",
         "dialogue_list": [
             {
                 "speaker": "권남훈 파트장",
                 "role": "운영총괄 (규정 맹신자)",
                 "avatar": "avatar_kwon_nh.png",
-                "text": "박 차장님의 억지 소명을 접수해 검토는 해 보겠으나, 실제 오류 대상인 스토리지 장비가 보관된 랙 식별 번호 2자리(Rack ID)와 결선된 라우터 광포트 번호 2자리(Port ID)를 조합한 4자리 물리 관리 코드를 제출해 보십시오."
+                "text": "김 차장, DBA 박 차장은 스토리지 단절이 원인이라 주장하는군. 정식 티켓에 기입할 테니 실제 해당 스토리지 장비가 보관된 랙 식별 번호 2자리(Rack ID)와 스토리지 스위치 포트 번호 2자리(Port ID)를 조합한 4자리 물리 감사 코드를 대조해 주게."
             },
             {
-                "speaker": "박재욱 차장",
-                "role": "DBA (울분을 토하는 실무자)",
-                "avatar": "avatar_park_jw.png",
-                "text": "권 파트장님, 새벽에 갑자기 하드웨어 물리 포트 대장 번호까지 대라니 치졸한 방해 공작입니다!"
-            },
-            {
-                "speaker": "박재욱 차장",
-                "role": "DBA (울분을 토하는 실무자)",
-                "avatar": "avatar_park_jw.png",
-                "text": "기계실 단말기에 기록된 물리 장비 배치 맵과 광 스위치 포트 인터페이스 상태 로그를 대조해, 스토리지 랙 번호(2자리)와 스토리지 광 연결 포트 번호(2자리)를 조합한 4자리 장비 식별자(8204)를 찾아 주십시오!"
+                "speaker": "김진혁 차장",
+                "role": "네트워크 담당 (능글맞은 엔지니어)",
+                "avatar": "avatar_kim_jh.png",
+                "text": "아, 그 물리 결선 정보는 기계실 콘솔 단말의 장비 맵과 광 스위치 포트 로그를 대조해 보면 바로 나옵니다. 랙 ID(2자리)와 타겟 포트(2자리)를 합친 코드(8204)를 입력하시면 확인 티켓을 발행해 드리지요."
             }
         ],
         "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>⚙️ PHYSICAL SERVER ROOM RACK MAP</div>\n    <div class='ascii-diagram' style='text-align: left; font-size: 0.8rem; line-height: 1.5; background: rgba(0,0,0,0.5); padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); color: var(--text-primary);'>\n+-------------------------------------------------------------+\n|  [SERVER ROOM ZONE A - RACK ARRANGEMENT]                    |\n|                                                             |\n|  [Rack 80] : L4 load balancer VIP suite                     |\n|  [Rack 81] : Financial Core WAS clusters (01-08)            |\n|  [Rack 82] : SAN Storage Target controller units            |\n|  [Rack 83] : Oracle RAC database engine nodes               |\n+-------------------------------------------------------------+\n    </div>\n    \n    <div class='puzzle-title' style='margin-top: 15px;'>📡 SWITCH ROUTER PORT INTERFACE LOG</div>\n    <div style='background: rgba(0,0,0,0.6); padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.6; text-align: left; color: var(--text-primary);'>\n        [Port 01] - LINK UP   - target: Core-WAS-Switch<br>\n        [Port 02] - LINK UP   - target: Enterprise-Backbone<br>\n        [Port 03] - LINK DOWN - target: Internal-VDI-Hub<br>\n        [Port 04] - LINK UP   - target: SAN-Storage-Fibre-Switch\n    </div>\n    \n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 12px; line-height: 1.5;'>\n        힌트: 배치 맵에서 'SAN Storage' 장비가 속한 랙 번호 2자리와 스위치 로그에서 'SAN-Storage-Fibre-Switch'가 결선된 포트 번호 2자리를 찾아 차례대로 조합하십시오.\n    </p>\n</div>"
@@ -505,7 +499,7 @@ stages = [
                 "speaker": "박재욱 차장",
                 "role": "DBA (울분을 토하는 실무자)",
                 "avatar": "avatar_park_jw.png",
-                "text": "그렇습니다! 그리고 단 8분 뒤인 02시 13분에 누군가 제가 사용하던 그 똑같은 IP 주소를 DHCP 시스템을 통해 동적 할당받아 WAS 강제 셧다운 명령을 내렸습니다. 02시 13분에 그 IP로 접속해 있던 자가 진짜 범인입니다!"
+                "text": "그확실히 그렇습니다! 그리고 단 8분 뒤인 02시 13분에 누군가 제가 사용하던 그 똑같은 IP 주소를 DHCP 시스템을 통해 동적 할당받아 WAS 강제 셧다운 명령을 내렸습니다. 02시 13분에 그 IP로 접속해 있던 자가 진짜 범인입니다!"
             },
             {
                 "speaker": "권남훈 파트장",
