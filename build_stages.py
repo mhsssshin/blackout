@@ -161,7 +161,7 @@ stages = [
         "dialogue_list": [
             {
                 "speaker": "박용철 파트장",
-                "role": "품질총괄 (예민한 리dev)",
+                "role": "품질총괄 (예민한 리더)",
                 "avatar": "avatar_park_yc.png",
                 "text": "이재헌 과장! 서버가 강제 종료되기 직전에 CPU를 98% 이상 과독점하며 인프라 마비를 유도한 백그라운드 프로세스가 기동 중이었습니다. 평소에 프로세스 모니터링도 안 하고 뭐 한 겁니까!"
             },
@@ -219,7 +219,7 @@ stages = [
                 "speaker": "박재욱 차장",
                 "role": "DBA (억울한 실무자)",
                 "avatar": "avatar_park_jw.png",
-                "text": "권 파트장님, WAS 셧다운 직전에 금융 DB 스토리지 동기화 데몬이 I/O 디스크 오류로 끊겼습니다. 이건 제 쿼리 작업 실수가 아니라 백업 스토리지망 연결 장치 자체의 물리 단절입니다!"
+                "text": "권 파트장님, WAS 셧다운 직전에 금융 DB 스토리지 동기화 데몬이 I/O 디스크 오류로 끊겼습니다. 이건 제 쿼리 작업 실수가 아니라 백업 스토리지 물리망이 단절된 게 확실합니다!"
             },
             {
                 "speaker": "권남훈 파트장",
@@ -702,7 +702,7 @@ clear_page_html = """<!DOCTYPE html>
 
 # Write stage pages
 for s in stages:
-    # Build dialogue list HTML structure (KakaoTalk / Feed style)
+    # Build dialogue list HTML structure (KakaoTalk / Feed style with hidden default display)
     dialogue_html = ""
     for d in s["dialogue_list"]:
         if d["avatar"].endswith(".png"):
@@ -711,7 +711,7 @@ for s in stages:
             card_avatar = f'<div class="avatar-placeholder" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0,229,255,0.1); border: 1px solid var(--border-color); border-radius: 4px; font-family: var(--font-mono); font-weight: bold; color: var(--accent-blue); font-size: 0.75rem;">{d["avatar"]}</div>'
             
         dialogue_html += f"""
-        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: none; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
             <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
                 {card_avatar}
             </div>

@@ -145,9 +145,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     updateSLAWidget(cleanName);
 });
 
-// Helper: Typewriter typing animation
 function typeWriterEffect(element) {
     return new Promise((resolve) => {
+        const card = element.closest('.dialogue-card');
+        if (card) {
+            card.style.display = 'flex';
+            // Scroll dialogue container dynamically to keep new feeds in view
+            const mainStage = document.querySelector('.main-stage-panel');
+            if (mainStage) {
+                mainStage.scrollTop = mainStage.scrollHeight;
+            }
+        }
         const text = element.getAttribute('data-text') || element.textContent;
         element.textContent = '';
         element.classList.add('cursor-blink');
