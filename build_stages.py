@@ -2,6 +2,269 @@ import os
 import json
 import hashlib
 
+# ---------------------------------------------------------
+# Define Virtual File Systems for Stages 3, 6, 10, 11, 14, 18
+# ---------------------------------------------------------
+
+# Stage 03 File System (Log Flood Permissions Scan)
+stage3_files = []
+for i in range(1, 101):
+    if i == 74: # Hide the target anomaly at index 74
+        stage3_files.append({
+            "name": "backup_corrupt.bin",
+            "type": "file",
+            "content": "FILE_NAME: backup_corrupt.bin\nOWNER: tqo_ops\nSIZE: 8204 bytes\nPERMISSIONS: -rwxr-xr--\nSTATUS: Anomalous Permission Mask Detected."
+        })
+    else:
+        stage3_files.append({
+            "name": f"file_{i:03d}.bin",
+            "type": "file",
+            "content": f"FILE_NAME: file_{i:03d}.bin\nOWNER: tqo_ops\nSIZE: 4096 bytes\nPERMISSIONS: -rwxr-xr-x\nSTATUS: Verified Normal."
+        })
+
+stage3_fs = {
+    "name": "root",
+    "type": "directory",
+    "children": [
+        {
+            "name": "var",
+            "type": "directory",
+            "children": [
+                {
+                    "name": "www",
+                    "type": "directory",
+                    "children": [
+                        {
+                            "name": "backups",
+                            "type": "directory",
+                            "children": stage3_files
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+# Stage 06 File System (OS Syslog Audit)
+stage6_fs = {
+    "name": "root",
+    "type": "directory",
+    "children": [
+        {
+            "name": "var",
+            "type": "directory",
+            "children": [
+                {
+                    "name": "log",
+                    "type": "directory",
+                    "children": [
+                        {
+                            "name": "syslog",
+                            "type": "file",
+                            "content": "[Jul 21 01:58:05] authpriv.info sudo: root : TTY=pts/0 ; PWD=/ ; USER=root ; COMMAND=/sbin/shutdown\n[Jul 21 01:58:08] kern.info kernel: System is going down for halt NOW!\n[Jul 21 01:58:10] systemd[1]: Sent signal SIGTERM to all processes..."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+# Stage 10 File System (Crontab Config)
+stage10_fs = {
+    "name": "root",
+    "type": "directory",
+    "children": [
+        {
+            "name": "etc",
+            "type": "directory",
+            "children": [
+                {
+                    "name": "crontab",
+                    "type": "file",
+                    "content": "# /etc/crontab: system-wide crontab\n# Format: minute hour day-of-month month day-of-week user command\n45 1 * * * root /usr/sbin/backup.sh"
+                }
+            ]
+        }
+    ]
+}
+
+# Stage 11 File System (Bash History Audit)
+stage11_fs = {
+    "name": "root",
+    "type": "directory",
+    "children": [
+        {
+            "name": "home",
+            "type": "directory",
+            "children": [
+                {
+                    "name": "oracle",
+                    "type": "directory",
+                    "children": [
+                        {
+                            "name": ".bash_history",
+                            "type": "file",
+                            "content": "cd /u01/app/oracle/product/12.1.0/dbhome_1/bin\n./sqlplus / as sysdba\nshutdown immediate\nexit"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+# Stage 14 File System (Oracle Alert Log Diagnostics)
+stage14_fs = {
+    "name": "root",
+    "type": "directory",
+    "children": [
+        {
+            "name": "u01",
+            "type": "directory",
+            "children": [
+                {
+                    "name": "app",
+                    "type": "directory",
+                    "children": [
+                        {
+                            "name": "oracle",
+                            "type": "directory",
+                            "children": [
+                                {
+                                    "name": "diag",
+                                    "type": "directory",
+                                    "children": [
+                                        {
+                                            "name": "alert_his.log",
+                                            "type": "file",
+                                            "content": "sys-info-10023\nORA-9941\nERR-DB-CONN-5020\nORA-00600\noracle-752119"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+# Stage 18 File System (NTP Synchronization Logs)
+stage18_fs = {
+    "name": "root",
+    "type": "directory",
+    "children": [
+        {
+            "name": "var",
+            "type": "directory",
+            "children": [
+                {
+                    "name": "log",
+                    "type": "directory",
+                    "children": [
+                        {
+                            "name": "ntp.log",
+                            "type": "file",
+                            "content": "NTP Daemon v4.2.8p10 Started.\n[Jul 21 02:13:00] ntp_sync: server time drift detected.\n[Jul 21 02:13:00] ntp_sync: local server clock is 15 minutes slow (900 seconds drift offset).\n[Jul 21 02:13:00] ntp_sync: system clock sync deferred due to large offset."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+# Escape helpers for HTML data attributes
+def escape_fs_data(fs_dict):
+    return json.dumps(fs_dict).replace("'", "&#39;").replace('"', "&quot;")
+
+stage3_html = f"""<div class='puzzle-container'>
+    <div class='puzzle-title'>📁 VIRTUAL FILE EXPLORER: BROWSE BACKUPS</div>
+    <p style='color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px; line-height: 1.5;'>
+        배포 스토리지 백업 경로를 정밀 진단하십시오. 더블클릭하여 디렉토리(<span style='color: var(--accent-magenta);'>/var/www/backups</span>)로 깊숙이 이동한 다음, 파일을 더블클릭하여 세부 권한을 검사하십시오.
+    </p>
+    <div id='file-explorer-widget' data-files='{escape_fs_data(stage3_fs)}'>
+        <div class='explorer-path'>Path: /</div>
+        <div class='explorer-grid'></div>
+    </div>
+    <p style='color: var(--text-muted); font-size: 0.82rem; margin-top: 12px; line-height: 1.5;'>
+        힌트: 취약 권한 마스크(rwxr-xr--)를 지닌 파일을 찾아 8진수 합산식(r=4, w=2, x=1, -=0)에 대입하십시오.
+    </p>
+</div>"""
+
+stage6_html = f"""<div class='puzzle-container'>
+    <div class='puzzle-title'>📁 VIRTUAL FILE EXPLORER: OS DIAGNOSTICS</div>
+    <p style='color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px; line-height: 1.5;'>
+        시스템 로그 파일을 추적하십시오. 더블클릭하여 디렉토리(<span style='color: var(--accent-magenta);'>/var/log</span>)로 이동한 뒤, 관련 로그 파일을 더블클릭하여 모달로 안전하게 열어 확인하십시오.
+    </p>
+    <div id='file-explorer-widget' data-files='{escape_fs_data(stage6_fs)}'>
+        <div class='explorer-path'>Path: /</div>
+        <div class='explorer-grid'></div>
+    </div>
+    <p style='color: var(--text-muted); font-size: 0.82rem; margin-top: 12px; line-height: 1.5;'>
+        힌트: 시스템을 즉각적인 Halt 상태로 차단시키기 위해 실행된 UNIX/Linux 표준 8글자 셧다운 명령어를 식별하십시오.
+    </p>
+</div>"""
+
+stage10_html = f"""<div class='puzzle-container'>
+    <div class='puzzle-title'>📁 VIRTUAL FILE EXPLORER: CRON SCHEDULER</div>
+    <p style='color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px; line-height: 1.5;'>
+        서버 스케줄러 환경설정을 감사하십시오. 더블클릭하여 디렉토리(<span style='color: var(--accent-magenta);'>/etc</span>)로 이동한 다음, 크론탭 파일을 열어 배치 작업 예약 주기를 확인하십시오.
+    </p>
+    <div id='file-explorer-widget' data-files='{escape_fs_data(stage10_fs)}'>
+        <div class='explorer-path'>Path: /</div>
+        <div class='explorer-grid'></div>
+    </div>
+    <p style='color: var(--text-muted); font-size: 0.82rem; margin-top: 12px; line-height: 1.5;'>
+        힌트: 크론탭 주기 정의는 [분] [시] [일] [월] [요일] 순입니다. 매일 해당 스크립트가 실행되도록 등록된 고정 시각을 24시간제 4자리 숫자(HHMM)로 기입하십시오.
+    </p>
+</div>"""
+
+stage11_html = f"""<div class='puzzle-container'>
+    <div class='puzzle-title'>📁 VIRTUAL FILE EXPLORER: COMMAND HISTORY</div>
+    <p style='color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px; line-height: 1.5;'>
+        관리자 계정의 최근 명령어 히스토리를 정밀 감사하십시오. 더블클릭하여 디렉토리(<span style='color: var(--accent-magenta);'>/home/oracle</span>)로 들어가 무단 침입 기록을 확인하십시오.
+    </p>
+    <div id='file-explorer-widget' data-files='{escape_fs_data(stage11_fs)}'>
+        <div class='explorer-path'>Path: /</div>
+        <div class='explorer-grid'></div>
+    </div>
+    <p style='color: var(--text-muted); font-size: 0.82rem; margin-top: 12px; line-height: 1.5;'>
+        힌트: 공격자가 데이터베이스 원격 접속 시 sqlplus 클라이언트 뒤에 무단 도용한 시스템 최고 관리자 권한 롤 명칭(영문 소문자 6자)을 입력하십시오.
+    </p>
+</div>"""
+
+stage14_html = f"""<div class='puzzle-container'>
+    <div class='puzzle-title'>📁 VIRTUAL FILE EXPLORER: ORACLE TRACE LOGS</div>
+    <p style='color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px; line-height: 1.5;'>
+        Oracle 엔진의 트레이스 정보가 기록된 알럿 로그를 감사하십시오. 더블클릭하여 디렉토리(<span style='color: var(--accent-magenta);'>/u01/app/oracle/diag</span>)로 끝까지 이동한 뒤 타겟 파일을 스캔하십시오.
+    </p>
+    <div id='file-explorer-widget' data-files='{escape_fs_data(stage14_fs)}'>
+        <div class='explorer-path'>Path: /</div>
+        <div class='explorer-grid'></div>
+    </div>
+    <p style='color: var(--text-muted); font-size: 0.82rem; margin-top: 12px; line-height: 1.5;'>
+        힌트: 모달 뷰어 내부의 에러 리스트 중 정규식 패턴 <strong>^[A-Za-z]+-[0-9]{{5}}$</strong> 에 부합하는 단 하나의 오류 코드를 찾아 소문자로 입력하십시오.
+    </p>
+</div>"""
+
+stage18_html = f"""<div class='puzzle-container'>
+    <div class='puzzle-title'>📁 VIRTUAL FILE EXPLORER: NTP SYNC INSPECTION</div>
+    <p style='color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px; line-height: 1.5;'>
+        가상 WAS 호스트들의 NTP 시차 로그 파일 명세를 진단하십시오. 더블클릭하여 디렉토리(<span style='color: var(--accent-magenta);'>/var/log</span>)로 이동해 타겟 파일을 더블클릭하여 여십시오.
+    </p>
+    <div id='file-explorer-widget' data-files='{escape_fs_data(stage18_fs)}'>
+        <div class='explorer-path'>Path: /</div>
+        <div class='explorer-grid'></div>
+    </div>
+    <p style='color: var(--text-muted); font-size: 0.82rem; margin-top: 12px; line-height: 1.5;'>
+        힌트: 로그를 통해 시간 오차(Slow drift) 분량을 정상 보정한 실제 세상의 셧다운 실행 시간(24시간제 HHMM 4자리)을 산출하십시오.
+    </p>
+</div>"""
+
 stages = [
     {
         "stage": 1,
@@ -67,7 +330,7 @@ stages = [
                 "text": "말도 안 되는 소리! 박 파트장의 말은 신뢰하기 어렵습니다. 즉시 스토리지의 디렉토리 권한 감사 덤프를 전수 스캔하십시오.\n\n관리 소홀로 인해 쓰기 권한이 허용된 비정상 파일(rwxr-xr--)을 가려내야 합니다. 찾아내서 수치값으로 변환해 주십시오!"
             }
         ],
-        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>📂 DIRECTORY PERMISSIONS SCAN</div>\n    <div class='log-flood-area'>\n" + "\n".join([f"        <div class='log-flood-line'>-rwxr-xr-x  1 tqo_ops  staff  4096 Jul 21 02:00 file_{i:03d}.bin</div>" if i != 273 else "        <div class='log-flood-line log-target'>-rwxr-xr--  1 tqo_ops  staff  8204 Jul 21 01:45 backup_corrupt.bin</div>" for i in range(500)]) + "\n    </div>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.5;'>\n        힌트: 수백 줄의 리스트 속에서 무언가 다른 파일 하나가 숨어 있습니다.<br>\n        찾아낸 취약 마스크(rwxr-xr--) 값을 8진수 변환식(r=4, w=2, x=1, -=0 합산)에 대입하십시오.\n    </p>\n</div>"
+        "gimmick_html": stage3_html
     },
     {
         "stage": 4,
@@ -151,7 +414,7 @@ stages = [
                 "text": "우길 걸 우겨야지! 공격자가 서버 자체를 완전히 정지시키기 위해 실행한 UNIX/Linux 표준 시스템 종료 명령어(영문 소문자 8자)를 식별하십시오!"
             }
         ],
-        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>⚙️ UNIX/Linux SYSTEM LOG DUMP</div>\n    <div style='background: rgba(0,0,0,0.6); padding: 15px; border-radius: 6px; border: 1px solid var(--border-color); font-family: var(--font-mono); font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); text-align: left;'>\n        <span style='color: var(--text-muted);'>[Jul 21 01:58:05] authpriv.info sudo: root : TTY=pts/0 ; PWD=/ ; USER=root ; COMMAND=/sbin/shutdown</span><br>\n        <span style='color: var(--accent-magenta);'>[Jul 21 01:58:08] kern.info kernel: System is going down for halt NOW!</span><br>\n        <span style='color: var(--accent-red);'>[Jul 21 01:58:10] systemd[1]: Sent signal SIGTERM to all processes...</span>\n    </div>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.5;'>\n        힌트: `/sbin/` 경로 하위에서 호출되어 운영체제를 강제 종료시키는 대표적인 8글자 Linux 표준 명령어(영문 소문자)를 식별하십시오.\n    </p>\n</div>"
+        "gimmick_html": stage6_html
     },
     {
         "stage": 7,
@@ -186,7 +449,7 @@ stages = [
         "title": "Governance (IT 거버넌스 규정)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "악성 프로세스 구동 정황이 밝혀지며 긴급 조치가 전개되자, 품질총괄 박용철 파트장이 수사 절차의 공식 IT 서비스 거버넌스 등록을 완강히 요구하고 나섭니다.",
+        "narrative": "악성 프로세스 구동 정황이 밝혀지며 긴급 조치가 전개되자, 품질총괄 박용철 파트장이 수사 절차의 공식 IT 서비스 거버넌스 등록을 완강히 요구하고 나겁니다.",
         "dialogue_list": [
             {
                 "speaker": "박용철 파트장",
@@ -263,7 +526,7 @@ stages = [
                 "text": "그래요? 타겟 서버의 크론탭(Crontab) 스케줄링 설정 데이터를 분석해 보면 진실이 밝혀지겠지요. 이 배치 스크립트가 기동되도록 예약되어 있던 매일 정기 시각(24시간 형식 4자리 HHMM)을 도출해 검증해 봅시다."
             }
         ],
-        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>⏰ TARGET CRONTAB CONFIGURATION</div>\n    <div style='background: #020306; font-family: var(--font-mono); padding: 15px; border-radius: 6px; border: 1px solid var(--border-color); text-align: center; font-size: 1.1rem; color: var(--accent-blue);'>\n        45 1 * * * /usr/sbin/backup.sh\n    </div>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.5;'>\n        힌트: 크론탭 시간 설정 구조는 [분] [시] [일] [월] [요일] 순서입니다.\n        위 설정은 매일 '1시 45분'에 구동됨을 의미합니다. 포맷에 맞춰 4자리 숫자로 입력하십시오.\n    </p>\n</div>"
+        "gimmick_html": stage10_html
     },
     {
         "stage": 11,
@@ -291,7 +554,7 @@ stages = [
                 "text": "그건 차차 규명할 일이고, 침입자가 데이터베이스를 강제로 즉시 종료시키기(SHUTDOWN IMMEDIATE) 위해 무단 도용한 이 오라클 최고 권한 관리자 롤(Role) 명칭(영문 소문자 6자)을 식별하십시오!"
             }
         ],
-        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>💻 INCIDENT COMMAND HISTORY DUMP</div>\n    <p style='font-family: var(--font-mono); color: var(--text-primary); font-size: 0.95rem; line-height: 1.6;'>\n        $ cd /u01/app/oracle/product/12.1.0/dbhome_1/bin<br>\n        $ ./sqlplus / as [ MASKED_ROLE ]<br>\n        &gt; SHUTDOWN IMMEDIATE;<br>\n        <span style='color: var(--accent-red);'>[01:58:21] DISCONNECTED FROM DATABASE.</span>\n    </p>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.5;'>\n        힌트: 데이터베이스의 커널 상태를 직접 제어하고 종료하기 위해 사용하는 오라클의 대표적인 최고 시스템 권한 관리자 롤 명칭(영문 소문자 6자)을 입력하십시오.\n    </p>\n</div>"
+        "gimmick_html": stage11_html
     },
     {
         "stage": 12,
@@ -375,7 +638,7 @@ stages = [
                 "text": "그렇습니다. 제시된 정규표현식 검출 필터를 로그 덤프에 매칭해, 디스크 파손을 유발한 오라클 내부의 치명적 에러 코드 명칭을 소문자로 기입하십시오."
             }
         ],
-        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>🔍 CORRUPTION PATTERN DETECTION FILTER</div>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px; line-height: 1.5;'>\n        아래 로그 덤프에서 정규식 패턴 <strong>^[A-Za-z]+-[0-9]{{5}}$</strong> 에 완벽히 부합하는 오라클 치명적 오류 코드를 식별하여 소문자로 입력하십시오.\n    </p>\n    <ul style='list-style-type: square; padding-left: 20px; font-size: 0.85rem; line-height: 1.8; color: var(--text-primary); font-family: var(--font-mono); text-align: left;'>\n        <li>sys-info-10023</li>\n        <li>ORA-9941</li>\n        <li>ERR-DB-CONN-5020</li>\n        <li>ORA-00600</li>\n        <li>oracle-752119</li>\n    </ul>\n</div>"
+        "gimmick_html": stage14_html
     },
     {
         "stage": 15,
@@ -487,7 +750,7 @@ stages = [
                 "text": "WAS의 감사 기록 상 셧다운 명령이 인가된 시각은 '01:58'입니다. 이 15분의 오차를 물리적으로 정상 환산하여 보정한, 실제 세상의 실제 셧다운 구동 표준 시각(24시간 형식 4자리 HHMM)을 도출해야 VDI 접속 이력 대조가 가능합니다!"
             }
         ],
-        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>⏳ TIME SYNC DRIFT LOGS</div>\n    <ul style='list-style-type: square; padding-left: 20px; font-size: 0.85rem; line-height: 1.6; color: var(--text-primary);'>\n        <li>WAS 서버 기록 시각: 01:58 (서버 시계가 15분 느린 상태)</li>\n        <li>물리적 실제 표준 시각 = 서버 기록 시각 + 15분 오차 보정</li>\n        <li><strong style='color: var(--accent-magenta);'>요구 포맷: 4자리 디지털 형식 (예: 01시 10분 -> 0110)</strong></li>\n    </ul>\n</div>"
+        "gimmick_html": stage18_html
     },
     {
         "stage": 19,

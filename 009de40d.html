@@ -110,15 +110,16 @@
 
                     <!-- Gimmick HTML rendering -->
                     <div class='puzzle-container'>
-    <div class='puzzle-title'>💻 INCIDENT COMMAND HISTORY DUMP</div>
-    <p style='font-family: var(--font-mono); color: var(--text-primary); font-size: 0.95rem; line-height: 1.6;'>
-        $ cd /u01/app/oracle/product/12.1.0/dbhome_1/bin<br>
-        $ ./sqlplus / as [ MASKED_ROLE ]<br>
-        &gt; SHUTDOWN IMMEDIATE;<br>
-        <span style='color: var(--accent-red);'>[01:58:21] DISCONNECTED FROM DATABASE.</span>
+    <div class='puzzle-title'>📁 VIRTUAL FILE EXPLORER: COMMAND HISTORY</div>
+    <p style='color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px; line-height: 1.5;'>
+        관리자 계정의 최근 명령어 히스토리를 정밀 감사하십시오. 더블클릭하여 디렉토리(<span style='color: var(--accent-magenta);'>/home/oracle</span>)로 들어가 무단 침입 기록을 확인하십시오.
     </p>
-    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.5;'>
-        힌트: 데이터베이스의 커널 상태를 직접 제어하고 종료하기 위해 사용하는 오라클의 대표적인 최고 시스템 권한 관리자 롤 명칭(영문 소문자 6자)을 입력하십시오.
+    <div id='file-explorer-widget' data-files='{&quot;name&quot;: &quot;root&quot;, &quot;type&quot;: &quot;directory&quot;, &quot;children&quot;: [{&quot;name&quot;: &quot;home&quot;, &quot;type&quot;: &quot;directory&quot;, &quot;children&quot;: [{&quot;name&quot;: &quot;oracle&quot;, &quot;type&quot;: &quot;directory&quot;, &quot;children&quot;: [{&quot;name&quot;: &quot;.bash_history&quot;, &quot;type&quot;: &quot;file&quot;, &quot;content&quot;: &quot;cd /u01/app/oracle/product/12.1.0/dbhome_1/bin\n./sqlplus / as sysdba\nshutdown immediate\nexit&quot;}]}]}]}'>
+        <div class='explorer-path'>Path: /</div>
+        <div class='explorer-grid'></div>
+    </div>
+    <p style='color: var(--text-muted); font-size: 0.82rem; margin-top: 12px; line-height: 1.5;'>
+        힌트: 공격자가 데이터베이스 원격 접속 시 sqlplus 클라이언트 뒤에 무단 도용한 시스템 최고 관리자 권한 롤 명칭(영문 소문자 6자)을 입력하십시오.
     </p>
 </div>
                 </div>

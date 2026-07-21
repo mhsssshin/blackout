@@ -110,12 +110,17 @@
 
                     <!-- Gimmick HTML rendering -->
                     <div class='puzzle-container'>
-    <div class='puzzle-title'>⏳ TIME SYNC DRIFT LOGS</div>
-    <ul style='list-style-type: square; padding-left: 20px; font-size: 0.85rem; line-height: 1.6; color: var(--text-primary);'>
-        <li>WAS 서버 기록 시각: 01:58 (서버 시계가 15분 느린 상태)</li>
-        <li>물리적 실제 표준 시각 = 서버 기록 시각 + 15분 오차 보정</li>
-        <li><strong style='color: var(--accent-magenta);'>요구 포맷: 4자리 디지털 형식 (예: 01시 10분 -> 0110)</strong></li>
-    </ul>
+    <div class='puzzle-title'>📁 VIRTUAL FILE EXPLORER: NTP SYNC INSPECTION</div>
+    <p style='color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px; line-height: 1.5;'>
+        가상 WAS 호스트들의 NTP 시차 로그 파일 명세를 진단하십시오. 더블클릭하여 디렉토리(<span style='color: var(--accent-magenta);'>/var/log</span>)로 이동해 타겟 파일을 더블클릭하여 여십시오.
+    </p>
+    <div id='file-explorer-widget' data-files='{&quot;name&quot;: &quot;root&quot;, &quot;type&quot;: &quot;directory&quot;, &quot;children&quot;: [{&quot;name&quot;: &quot;var&quot;, &quot;type&quot;: &quot;directory&quot;, &quot;children&quot;: [{&quot;name&quot;: &quot;log&quot;, &quot;type&quot;: &quot;directory&quot;, &quot;children&quot;: [{&quot;name&quot;: &quot;ntp.log&quot;, &quot;type&quot;: &quot;file&quot;, &quot;content&quot;: &quot;NTP Daemon v4.2.8p10 Started.\n[Jul 21 02:13:00] ntp_sync: server time drift detected.\n[Jul 21 02:13:00] ntp_sync: local server clock is 15 minutes slow (900 seconds drift offset).\n[Jul 21 02:13:00] ntp_sync: system clock sync deferred due to large offset.&quot;}]}]}]}'>
+        <div class='explorer-path'>Path: /</div>
+        <div class='explorer-grid'></div>
+    </div>
+    <p style='color: var(--text-muted); font-size: 0.82rem; margin-top: 12px; line-height: 1.5;'>
+        힌트: 로그를 통해 시간 오차(Slow drift) 분량을 정상 보정한 실제 세상의 셧다운 실행 시간(24시간제 HHMM 4자리)을 산출하십시오.
+    </p>
 </div>
                 </div>
             </main>

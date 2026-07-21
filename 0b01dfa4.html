@@ -110,17 +110,17 @@
 
                     <!-- Gimmick HTML rendering -->
                     <div class='puzzle-container'>
-    <div class='puzzle-title'>🔍 CORRUPTION PATTERN DETECTION FILTER</div>
+    <div class='puzzle-title'>📁 VIRTUAL FILE EXPLORER: ORACLE TRACE LOGS</div>
     <p style='color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px; line-height: 1.5;'>
-        아래 로그 덤프에서 정규식 패턴 <strong>^[A-Za-z]+-[0-9]{{5}}$</strong> 에 완벽히 부합하는 오라클 치명적 오류 코드를 식별하여 소문자로 입력하십시오.
+        Oracle 엔진의 트레이스 정보가 기록된 알럿 로그를 감사하십시오. 더블클릭하여 디렉토리(<span style='color: var(--accent-magenta);'>/u01/app/oracle/diag</span>)로 끝까지 이동한 뒤 타겟 파일을 스캔하십시오.
     </p>
-    <ul style='list-style-type: square; padding-left: 20px; font-size: 0.85rem; line-height: 1.8; color: var(--text-primary); font-family: var(--font-mono); text-align: left;'>
-        <li>sys-info-10023</li>
-        <li>ORA-9941</li>
-        <li>ERR-DB-CONN-5020</li>
-        <li>ORA-00600</li>
-        <li>oracle-752119</li>
-    </ul>
+    <div id='file-explorer-widget' data-files='{&quot;name&quot;: &quot;root&quot;, &quot;type&quot;: &quot;directory&quot;, &quot;children&quot;: [{&quot;name&quot;: &quot;u01&quot;, &quot;type&quot;: &quot;directory&quot;, &quot;children&quot;: [{&quot;name&quot;: &quot;app&quot;, &quot;type&quot;: &quot;directory&quot;, &quot;children&quot;: [{&quot;name&quot;: &quot;oracle&quot;, &quot;type&quot;: &quot;directory&quot;, &quot;children&quot;: [{&quot;name&quot;: &quot;diag&quot;, &quot;type&quot;: &quot;directory&quot;, &quot;children&quot;: [{&quot;name&quot;: &quot;alert_his.log&quot;, &quot;type&quot;: &quot;file&quot;, &quot;content&quot;: &quot;sys-info-10023\nORA-9941\nERR-DB-CONN-5020\nORA-00600\noracle-752119&quot;}]}]}]}]}]}'>
+        <div class='explorer-path'>Path: /</div>
+        <div class='explorer-grid'></div>
+    </div>
+    <p style='color: var(--text-muted); font-size: 0.82rem; margin-top: 12px; line-height: 1.5;'>
+        힌트: 모달 뷰어 내부의 에러 리스트 중 정규식 패턴 <strong>^[A-Za-z]+-[0-9]{5}$</strong> 에 부합하는 단 하나의 오류 코드를 찾아 소문자로 입력하십시오.
+    </p>
 </div>
                 </div>
             </main>

@@ -44,6 +44,148 @@ function getCurrentFilename() {
     return filename || 'index.html';
 }
 
+// Virtual File Explorer Engine
+let virtualFS = null;
+let currentFSPath = [];
+
+function getFSNodeAtPath(path) {
+    let current = virtualFS;
+    for (const folder of path) {
+        if (!current || current.type !== 'directory') return null;
+        const found = current.children.find(child => child.name === folder);
+        if (!found) return null;
+        current = found;
+    }
+    return current;
+}
+
+function renderExplorer() {
+    const grid = document.querySelector('.explorer-grid');
+    const pathText = document.querySelector('.explorer-path');
+    if (!grid || !pathText) return;
+
+    // Render path breadcrumb
+    pathText.textContent = `Path: /${currentFSPath.join('/')}`;
+
+    // Get current directory contents
+    const node = getFSNodeAtPath(currentFSPath);
+    if (!node || node.type !== 'directory') {
+        grid.innerHTML = '<div style="color: var(--accent-red); padding: 10px;">[ERROR] File system path corrupt.</div>';
+        return;
+    }
+
+    grid.innerHTML = '';
+
+    // 1. Add "parent directory" link if not root
+    if (currentFSPath.length > 0) {
+        const parentItem = document.createElement('div');
+        parentItem.className = 'explorer-item parent';
+        parentItem.innerHTML = `
+            <div class="item-icon">📁</div>
+            <div class="item-name">[ .. ]</div>
+        `;
+        parentItem.addEventListener('dblclick', () => {
+            currentFSPath.pop();
+            playBeep(450, 50);
+            renderExplorer();
+        });
+        grid.appendChild(parentItem);
+    }
+
+    // 2. Render children nodes (directories first, then files)
+    const sortedChildren = [...node.children].sort((a, b) => {
+        if (a.type === b.type) return a.name.localeCompare(b.name);
+        return a.type === 'directory' ? -1 : 1;
+    });
+
+    sortedChildren.forEach(child => {
+        const item = document.createElement('div');
+        item.className = `explorer-item ${child.type}`;
+        const icon = child.type === 'directory' ? '📁' : '📄';
+        item.innerHTML = `
+            <div class="item-icon">${icon}</div>
+            <div class="item-name">${child.name}</div>
+        `;
+
+        // Double click actions
+        item.addEventListener('dblclick', () => {
+            if (child.type === 'directory') {
+                currentFSPath.push(child.name);
+                playBeep(450, 50);
+                renderExplorer();
+            } else {
+                playBeep(550, 70);
+                openFileModal(child.name, child.content);
+            }
+        });
+
+        grid.appendChild(item);
+    });
+}
+
+function initFileExplorer() {
+    const explorerEl = document.getElementById('file-explorer-widget');
+    if (!explorerEl) return;
+
+    try {
+        const fsData = JSON.parse(explorerEl.getAttribute('data-files') || '{}');
+        virtualFS = fsData;
+        currentFSPath = [];
+        renderExplorer();
+    } catch (e) {
+        console.error('Failed to initialize virtual file system:', e);
+    }
+}
+
+// Modal text viewer controls
+function openFileModal(filename, content) {
+    let overlay = document.querySelector('.modal-overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.className = 'modal-overlay';
+        overlay.innerHTML = `
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="modal-title"></span>
+                    <button class="modal-close">CLOSE [X]</button>
+                </div>
+                <div class="text-viewer">
+                    <pre class="line-numbers"></pre>
+                    <pre class="text-content"></pre>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(overlay);
+
+        // Add close event
+        const closeBtn = overlay.querySelector('.modal-close');
+        closeBtn.addEventListener('click', closeFileModal);
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) closeFileModal();
+        });
+    }
+
+    // Set content and filename
+    overlay.querySelector('.modal-title').textContent = `📄 VIEWING: ${filename}`;
+    
+    // Generate line numbers
+    const lines = content.split('\n');
+    const lineNumsText = lines.map((_, idx) => idx + 1).join('\n');
+    
+    overlay.querySelector('.line-numbers').textContent = lineNumsText;
+    overlay.querySelector('.text-content').textContent = content;
+
+    overlay.style.display = 'flex';
+}
+
+function closeFileModal() {
+    const overlay = document.querySelector('.modal-overlay');
+    if (overlay) {
+        playBeep(350, 60);
+        overlay.style.display = 'none';
+    }
+}
+
 // Initialize Page Guard & Loading state
 document.addEventListener('DOMContentLoaded', async () => {
     const currentFile = getCurrentFilename();
@@ -73,7 +215,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         await typeWriterEffect(el);
     }
 
-    // 4. Set up input submit handlers
+    // 4. Initialize File Explorer if element exists
+    initFileExplorer();
+
+    // 5. Set up input submit handlers
     const terminalInput = document.querySelector('.terminal-input');
     const submitBtn = document.querySelector('.submit-btn');
     const stageContainer = document.getElementById('stage-container');
@@ -195,28 +340,15 @@ function appendLog(message, className) {
     terminalBody.scrollTop = terminalBody.scrollHeight;
 }
 
-// SLA Indicator Logic: Decreases as player goes deeper into the incident, representing urgency
+// SLA Indicator Logic: Decreases as player goes deeper into the incident
 function updateSLAWidget(currentCleanName) {
     const slaBar = document.querySelector('.sla-bar');
     const slaValue = document.querySelector('.sla-value');
     if (!slaBar) return;
     
-    // Stage filename list for SLA scaling
-    const stages = [
-        "a7f93b2c", "b4bcdd0d", "83e5e934", "13b3bfc6", "48b42551",
-        "db590ac0", "4ae9c668", "e3ad4d0a", "cee89b5e", "524cfb66",
-        "e3307ab7", "16417f5b", "94e06050", "c70ec350", "aac380d4",
-        "ef5ad16e", "0e3d9fd2", "58addc3e", "60268820", "6c46331e", "8505f529"
-    ];
-    
-    const idx = stages.indexOf(currentCleanName);
-    if (idx === -1) {
-        slaBar.style.width = '100%';
-        if (slaValue) slaValue.textContent = '100.00%';
-        return;
-    }
-    
-    if (idx === 20) { // Clear screen
+    const stageContainer = document.getElementById('stage-container');
+    if (!stageContainer) {
+        // Clear page
         slaBar.style.width = '99.9%';
         slaBar.style.backgroundColor = 'var(--accent-green)';
         if (slaValue) {
@@ -226,9 +358,20 @@ function updateSLAWidget(currentCleanName) {
         return;
     }
     
-    // Simulate SLA dropping down as time goes by, representing mounting crisis
-    // Starting at 99.90%, dropping to ~95% near stage 19
-    const percent = 99.90 - (idx * 0.25);
+    const stageNum = parseInt(stageContainer.getAttribute('data-stage'), 10) || 1;
+    
+    if (stageNum === 20) {
+        slaBar.style.width = '99.9%';
+        slaBar.style.backgroundColor = 'var(--accent-green)';
+        if (slaValue) {
+            slaValue.textContent = '99.90% (SLA SAFE)';
+            slaValue.style.color = 'var(--accent-green)';
+        }
+        return;
+    }
+    
+    // SLA drops slightly per stage
+    const percent = 99.90 - ((stageNum - 1) * 0.25);
     slaBar.style.width = `${percent}%`;
     if (slaValue) {
         slaValue.textContent = `${percent.toFixed(2)}%`;

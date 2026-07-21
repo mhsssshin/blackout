@@ -110,13 +110,16 @@
 
                     <!-- Gimmick HTML rendering -->
                     <div class='puzzle-container'>
-    <div class='puzzle-title'>⏰ TARGET CRONTAB CONFIGURATION</div>
-    <div style='background: #020306; font-family: var(--font-mono); padding: 15px; border-radius: 6px; border: 1px solid var(--border-color); text-align: center; font-size: 1.1rem; color: var(--accent-blue);'>
-        45 1 * * * /usr/sbin/backup.sh
+    <div class='puzzle-title'>📁 VIRTUAL FILE EXPLORER: CRON SCHEDULER</div>
+    <p style='color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px; line-height: 1.5;'>
+        서버 스케줄러 환경설정을 감사하십시오. 더블클릭하여 디렉토리(<span style='color: var(--accent-magenta);'>/etc</span>)로 이동한 다음, 크론탭 파일을 열어 배치 작업 예약 주기를 확인하십시오.
+    </p>
+    <div id='file-explorer-widget' data-files='{&quot;name&quot;: &quot;root&quot;, &quot;type&quot;: &quot;directory&quot;, &quot;children&quot;: [{&quot;name&quot;: &quot;etc&quot;, &quot;type&quot;: &quot;directory&quot;, &quot;children&quot;: [{&quot;name&quot;: &quot;crontab&quot;, &quot;type&quot;: &quot;file&quot;, &quot;content&quot;: &quot;# /etc/crontab: system-wide crontab\n# Format: minute hour day-of-month month day-of-week user command\n45 1 * * * root /usr/sbin/backup.sh&quot;}]}]}'>
+        <div class='explorer-path'>Path: /</div>
+        <div class='explorer-grid'></div>
     </div>
-    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.5;'>
-        힌트: 크론탭 시간 설정 구조는 [분] [시] [일] [월] [요일] 순서입니다.
-        위 설정은 매일 '1시 45분'에 구동됨을 의미합니다. 포맷에 맞춰 4자리 숫자로 입력하십시오.
+    <p style='color: var(--text-muted); font-size: 0.82rem; margin-top: 12px; line-height: 1.5;'>
+        힌트: 크론탭 주기 정의는 [분] [시] [일] [월] [요일] 순입니다. 매일 해당 스크립트가 실행되도록 등록된 고정 시각을 24시간제 4자리 숫자(HHMM)로 기입하십시오.
     </p>
 </div>
                 </div>
