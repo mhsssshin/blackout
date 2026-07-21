@@ -126,9 +126,9 @@
             <span>[guest@his-server ~]$ </span><span class='cursor-blink'></span>
         </div>
         <div class='cli-btn-group' style='display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap;'>
-            <button onclick='runCliMacro(&quot;ls&quot;)' class='copy-btn' style='font-size: 0.78rem;'>ls -la var/www/backups/</button>
-            <button onclick='runCliMacro(&quot;find&quot;)' class='copy-btn' style='font-size: 0.78rem; border-color: var(--accent-green); color: var(--accent-green);'>find var/www/backups -perm 754</button>
-            <button onclick='runCliMacro(&quot;grep&quot;)' class='copy-btn' style='font-size: 0.78rem;'>grep -rn 'Anomalous' var/www/</button>
+            <button onclick="runCliMacro('ls')" class='copy-btn' style='font-size: 0.78rem;'>ls -la var/www/backups/</button>
+            <button onclick="runCliMacro('find')" class='copy-btn' style='font-size: 0.78rem; border-color: var(--accent-green); color: var(--accent-green);'>find var/www/backups -perm 754</button>
+            <button onclick="runCliMacro('grep')" class='copy-btn' style='font-size: 0.78rem;'>grep -rn 'Anomalous' var/www/</button>
         </div>
     </div>
 
@@ -137,63 +137,63 @@
     </p>
 </div>
 <script>
-    let currentMode = &quot;explorer&quot;;
+    let currentMode = "explorer";
     function toggleStage3Mode() {
-        const expView = document.getElementById(&quot;stage3-explorer-view&quot;);
-        const cliView = document.getElementById(&quot;stage3-cli-view&quot;);
-        const toggleBtn = document.getElementById(&quot;toggle-mode-btn&quot;);
-        if (currentMode === &quot;explorer&quot;) {
-            expView.style.display = &quot;none&quot;;
-            cliView.style.display = &quot;block&quot;;
-            toggleBtn.textContent = &quot;📁 탐색기 모드로 전환&quot;;
-            toggleBtn.style.borderColor = &quot;var(--accent-blue)&quot;;
-            toggleBtn.style.color = &quot;var(--accent-blue)&quot;;
-            currentMode = &quot;cli&quot;;
+        const expView = document.getElementById("stage3-explorer-view");
+        const cliView = document.getElementById("stage3-cli-view");
+        const toggleBtn = document.getElementById("toggle-mode-btn");
+        if (currentMode === "explorer") {
+            expView.style.display = "none";
+            cliView.style.display = "block";
+            toggleBtn.textContent = "📁 탐색기 모드로 전환";
+            toggleBtn.style.borderColor = "var(--accent-blue)";
+            toggleBtn.style.color = "var(--accent-blue)";
+            currentMode = "cli";
         } else {
-            expView.style.display = &quot;block&quot;;
-            cliView.style.display = &quot;none&quot;;
-            toggleBtn.textContent = &quot;💻 커맨드 모드로 전환&quot;;
-            toggleBtn.style.borderColor = &quot;var(--accent-magenta)&quot;;
-            toggleBtn.style.color = &quot;var(--accent-magenta)&quot;;
-            currentMode = &quot;explorer&quot;;
+            expView.style.display = "block";
+            cliView.style.display = "none";
+            toggleBtn.textContent = "💻 커맨드 모드로 전환";
+            toggleBtn.style.borderColor = "var(--accent-magenta)";
+            toggleBtn.style.color = "var(--accent-magenta)";
+            currentMode = "explorer";
         }
         if (typeof playBeep === 'function') playBeep(500, 60);
     }
 
     function runCliMacro(type) {
-        const screen = document.getElementById(&quot;cli-screen&quot;);
+        const screen = document.getElementById("cli-screen");
         if (!screen) return;
         if (typeof playBeep === 'function') playBeep(650, 40);
 
-        let cmdText = &quot;&quot;;
-        let outputText = &quot;&quot;;
+        let cmdText = "";
+        let outputText = "";
 
         if (type === 'ls') {
-            cmdText = &quot;ls -la var/www/backups/&quot;;
+            cmdText = "ls -la var/www/backups/";
             let lines = [];
             for (let i = 1; i <= 5; i++) {
-                lines.push(&quot;-rwxr-xr-x  1 tqo_ops  staff  4096 Jul 21 02:00 file_00&quot; + i + &quot;.bin&quot;);
+                lines.push("-rwxr-xr-x  1 tqo_ops  staff  4096 Jul 21 02:00 file_00" + i + ".bin");
             }
-            lines.push(&quot;... (skipped 94 normal files) ...&quot;);
-            lines.push(&quot;<strong style='color: var(--accent-magenta);'>-rwxr-xr--  1 tqo_ops  staff  8204 Jul 21 01:45 backup_corrupt.bin</strong>&quot;);
-            lines.push(&quot;-rwxr-xr-x  1 tqo_ops  staff  4096 Jul 21 02:00 file_100.bin&quot;);
-            outputText = lines.join(&quot;<br>&quot;);
+            lines.push("... (skipped 94 normal files) ...");
+            lines.push("<strong style='color: var(--accent-magenta);'>-rwxr-xr--  1 tqo_ops  staff  8204 Jul 21 01:45 backup_corrupt.bin</strong>");
+            lines.push("-rwxr-xr-x  1 tqo_ops  staff  4096 Jul 21 02:00 file_100.bin");
+            outputText = lines.join("<br>");
         } else if (type === 'find') {
-            cmdText = &quot;find var/www/backups -perm 754&quot;;
-            outputText = &quot;<span style='color: var(--accent-green);'>./var/www/backups/backup_corrupt.bin  (permission matches 754)</span>&quot;;
+            cmdText = "find var/www/backups -perm 754";
+            outputText = "<span style='color: var(--accent-green);'>./var/www/backups/backup_corrupt.bin  (permission matches 754)</span>";
         } else if (type === 'grep') {
-            cmdText = &quot;grep -rn 'Anomalous' var/www/&quot;;
-            outputText = &quot;<span style='color: var(--accent-green);'>var/www/backups/backup_corrupt.bin:4: STATUS: Anomalous Permission Mask Detected.</span>&quot;;
+            cmdText = "grep -rn 'Anomalous' var/www/";
+            outputText = "<span style='color: var(--accent-green);'>var/www/backups/backup_corrupt.bin:4: STATUS: Anomalous Permission Mask Detected.</span>";
         }
 
         // Remove old cursor
         const blinkCursor = screen.querySelector('.cursor-blink');
         if (blinkCursor) blinkCursor.remove();
 
-        screen.innerHTML += cmdText + &quot;<br>&quot;;
+        screen.innerHTML += cmdText + "<br>";
         
         setTimeout(() => {
-            screen.innerHTML += outputText + &quot;<br><br>[guest@his-server ~]$ <span class='cursor-blink'></span>&quot;;
+            screen.innerHTML += outputText + "<br><br>[guest@his-server ~]$ <span class='cursor-blink'></span>";
             screen.scrollTop = screen.scrollHeight;
             if (typeof playBeep === 'function') playBeep(800, 80);
         }, 200);
