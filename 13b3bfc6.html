@@ -39,7 +39,7 @@
         </header>
 
         <!-- Stage Game Body -->
-        <div class="dashboard-grid" id="stage-container" data-stage="4" data-verify="7970f1f08c678259aa519bb1beaa3e57186a40b0c3fbfc572d37f874125d38fe">
+        <div class="dashboard-grid" id="stage-container" data-stage="4" data-verify="ccb75d4df40098686a552340ebb1a34adca4e2f5ecc5ec780f81df76f4b31b5a">
             <!-- Left Narrative Area -->
             <main class="main-stage-panel">
                 <div class="panel-header">
@@ -47,7 +47,7 @@
                         📡 DETECTED LOG FILE & SUSPECT SHIELD
                     </div>
                     <div class="stage-badge">
-                        STAGE 04 : The Blackout (Hidden Text)
+                        STAGE 04 : PDU Power Overload (PDU 전력 임계치 초과 적발)
                     </div>
                 </div>
 
@@ -55,7 +55,7 @@
                     <!-- 3rd-person neutral narrative text block -->
                     <div class="narrative-panel" style="background: rgba(0, 229, 255, 0.07); border-left: 4px solid var(--accent-blue); box-shadow: -5px 0 15px rgba(0, 229, 255, 0.15); padding: 16px; margin-bottom: 20px; font-size: 0.95rem; line-height: 1.6; color: var(--text-primary); border-radius: 0 6px 6px 0; font-family: var(--font-sans);">
                         <div style="font-family: var(--font-title); font-size: 0.75rem; color: var(--accent-blue); font-weight: bold; letter-spacing: 1px; margin-bottom: 8px; text-transform: uppercase;">📡 SITUATION BRIEFING</div>
-                        <div style="white-space: pre-wrap; margin: 0; padding: 0;">[위이이이잉- 삐- 삐-] 서버실 내부의 전압 경보 장치가 작동하며 갑작스럽게 단말기 모니터 화면의 신호가 끊어집니다. 모든 텍스트가 사라지고 서버실 내부가 어둠으로 물듭니다.</div>
+                        <div style="white-space: pre-wrap; margin: 0; padding: 0;">[위이이이잉- 삐- 삐-] 서버실 내부의 전압 경보 장치가 작동하며 갑작스럽게 단말기 모니터 화면의 신호가 끊어집니다. 비상 전압 차단기(Circuit Breaker)가 강제 작동하며 시스템이 완전히 정전 상태에 직면합니다.</div>
                     </div>
 
                     <!-- Pure character dialogue feed (KakaoTalk / Chat style list) -->
@@ -70,8 +70,8 @@
                     <span>이재헌 과장</span>
                     <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">서버 담당 (가상화 엔지니어)</span>
                 </div>
-                <div class="dialogue-text typing-text" data-text="으악! 정전인가요? 갑자기 콘솔 화면 신호가 죽어버렸습니다!" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
-                    으악! 정전인가요? 갑자기 콘솔 화면 신호가 죽어버렸습니다!
+                <div class="dialogue-text typing-text" data-text="으악! 전압 경보가 울리더니 정전이 터졌습니다. 비상 발전기가 돌기 전에 분전반 차단기가 강제 트립된 것 같습니다!" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    으악! 전압 경보가 울리더니 정전이 터졌습니다. 비상 발전기가 돌기 전에 분전반 차단기가 강제 트립된 것 같습니다!
                 </div>
             </div>
         </div>
@@ -85,8 +85,8 @@
                     <span>박주암 과장</span>
                     <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">WAS 담당 (실무 운영자)</span>
                 </div>
-                <div class="dialogue-text typing-text" data-text="누군가가 강제로 단말기 모니터 신호를 차단해 분석을 방해하려는 수작이 분명합니다!" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
-                    누군가가 강제로 단말기 모니터 신호를 차단해 분석을 방해하려는 수작이 분명합니다!
+                <div class="dialogue-text typing-text" data-text="각 PDU(전력 분배 장치)의 단일 라인 한계 정격 전류는 최대 80A입니다. 이 과장님, 정전 직전에 결선되어 있던 각 장비들의 전류 소모량 합계를 PDU별로 감사해 보십시오." style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    각 PDU(전력 분배 장치)의 단일 라인 한계 정격 전류는 최대 80A입니다. 이 과장님, 정전 직전에 결선되어 있던 각 장비들의 전류 소모량 합계를 PDU별로 감사해 보십시오.
                 </div>
             </div>
         </div>
@@ -100,8 +100,8 @@
                     <span>이재헌 과장</span>
                     <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">서버 담당 (가상화 엔지니어)</span>
                 </div>
-                <div class="dialogue-text typing-text" data-text="다행히 터미널 장치의 비상 자체 안전 모듈이 돌고 있습니다. 화면 중앙 캔버스 어딘가에 마스크 처리된 복구 코드가 숨겨져 있으니, 마우스 드래그(Ctrl+A)를 수행해 코드를 읽어냅시다!" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
-                    다행히 터미널 장치의 비상 자체 안전 모듈이 돌고 있습니다. 화면 중앙 캔버스 어딘가에 마스크 처리된 복구 코드가 숨겨져 있으니, 마우스 드래그(Ctrl+A)를 수행해 코드를 읽어냅시다!
+                <div class="dialogue-text typing-text" data-text="아! 임계치 80A를 단독으로 초과해 서지 부하를 가하고 셧다운을 유도한 범인 PDU의 식별 코드(pdu01, pdu02, pdu03 중 하나)를 찾아 터미널에 입력하십시오!" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    아! 임계치 80A를 단독으로 초과해 서지 부하를 가하고 셧다운을 유도한 범인 PDU의 식별 코드(pdu01, pdu02, pdu03 중 하나)를 찾아 터미널에 입력하십시오!
                 </div>
             </div>
         </div>
@@ -110,12 +110,37 @@
 
                     <!-- Gimmick HTML rendering -->
                     <div class='puzzle-container'>
-    <div class='puzzle-title'>💡 VISIBILITY RESTORATION OVERLAY</div>
-    <div class='hidden-text-container'>
-        <span class='hidden-error-text'>404500</span>
+    <div class='puzzle-title'>🔌 PDU CURRENT LOAD INVENTORY (80A MAX LIMIT)</div>
+    <div style='display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 10px;'>
+        <div style='background: rgba(0,0,0,0.5); padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); text-align: left;'>
+            <h4 style='color: var(--accent-blue); margin-bottom: 8px;'>[PDU-01]</h4>
+            <ul style='list-style: none; font-family: var(--font-mono); font-size: 0.8rem; padding: 0; line-height: 1.6;'>
+                <li>- Core-WAS-01 : 25A</li>
+                <li>- Core-WAS-02 : 25A</li>
+                <li>- L4-LoadBalancer : 10A</li>
+                <li>- Switch-Hub-01 : 15A</li>
+            </ul>
+        </div>
+        <div style='background: rgba(0,0,0,0.5); padding: 12px; border-radius: 6px; border: 1px solid var(--accent-magenta); text-align: left;'>
+            <h4 style='color: var(--accent-magenta); margin-bottom: 8px;'>[PDU-02]</h4>
+            <ul style='list-style: none; font-family: var(--font-mono); font-size: 0.8rem; padding: 0; line-height: 1.6;'>
+                <li>- DB-Oracle-Node1 : 35A</li>
+                <li>- DB-Oracle-Node2 : 35A</li>
+                <li>- SAN-Fibre-Switch : 12A</li>
+            </ul>
+        </div>
+        <div style='background: rgba(0,0,0,0.5); padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); text-align: left;'>
+            <h4 style='color: var(--accent-blue); margin-bottom: 8px;'>[PDU-03]</h4>
+            <ul style='list-style: none; font-family: var(--font-mono); font-size: 0.8rem; padding: 0; line-height: 1.6;'>
+                <li>- Web-Server-01 : 15A</li>
+                <li>- Web-Server-02 : 15A</li>
+                <li>- NAS-Storage-Unit : 20A</li>
+                <li>- Dev-VM-Host : 15A</li>
+            </ul>
+        </div>
     </div>
-    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px;'>
-        드래그하여 숨겨진 에러 코드를 찾아 터미널에 입력하십시오.
+    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 15px; line-height: 1.5;'>
+        힌트: 각 PDU 분전반 하위에 가동되던 장비의 전류 소모량 합산값을 계산하여, 80A 허용 상한선을 홀로 위반하여 차단기 트립을 초래한 분전반 식별 기호(pdu01, pdu02, pdu03)를 입력하십시오.
     </p>
 </div>
                 </div>

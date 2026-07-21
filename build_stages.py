@@ -1,12 +1,13 @@
 import os
 import json
+import hashlib
 
 stages = [
     {
         "stage": 1,
         "title": "System Boot (F12)",
         "filename": "a7f93b2c.html",
-        "verify_hash": "3068430da9e4b7a674184035643d9e19af3dc7483e31cc03b35f75268401df77",
+        "verify_hash": "",
         "narrative": "금융 코어 WAS 서버가 알 수 없는 명령어로 강제 종료된 대형 장애 현장. 부서장과 본부장의 압박 속에 박용철 파트장이 단말기 제어 콘솔을 켜고 다급히 움직이기 시작합니다.",
         "dialogue_list": [
             {
@@ -21,8 +22,8 @@ stages = [
     {
         "stage": 2,
         "title": "Encrypted Packet (Base64)",
-        "filename": "b4bcdd0d.html",
-        "verify_hash": "f5334f59cc820a5c99fd2a5b5527884c821c19f1daa7c825368603aba61d6178",
+        "filename": "",
+        "verify_hash": "",
         "narrative": "터미널 부팅에 성공하자마자 권남훈 파트장이 다가와 방어적인 경고를 보내고, 박용철 파트장이 격렬하게 언성을 높입니다.",
         "dialogue_list": [
             {
@@ -49,8 +50,8 @@ stages = [
     {
         "stage": 3,
         "title": "Log Flood (권한 검색)",
-        "filename": "83e5e934.html",
-        "verify_hash": "4099ed5ba70aebc5a9dc26bc2093d4b45839f99b306bd12f68cedfd351e6ab7a",
+        "filename": "",
+        "verify_hash": "",
         "narrative": "권남훈 파트장의 장담과 달리, 파일 배포 프로세스 상에 허점이 감지됩니다.",
         "dialogue_list": [
             {
@@ -70,37 +71,37 @@ stages = [
     },
     {
         "stage": 4,
-        "title": "The Blackout (Hidden Text)",
-        "filename": "13b3bfc6.html",
-        "verify_hash": "7970f1f08c678259aa519bb1beaa3e57186a40b0c3fbfc572d37f874125d38fe",
-        "narrative": "[위이이이잉- 삐- 삐-] 서버실 내부의 전압 경보 장치가 작동하며 갑작스럽게 단말기 모니터 화면의 신호가 끊어집니다. 모든 텍스트가 사라지고 서버실 내부가 어둠으로 물듭니다.",
+        "title": "PDU Power Overload (PDU 전력 임계치 초과 적발)",
+        "filename": "",
+        "verify_hash": "",
+        "narrative": "[위이이이잉- 삐- 삐-] 서버실 내부의 전압 경보 장치가 작동하며 갑작스럽게 단말기 모니터 화면의 신호가 끊어집니다. 비상 전압 차단기(Circuit Breaker)가 강제 작동하며 시스템이 완전히 정전 상태에 직면합니다.",
         "dialogue_list": [
             {
                 "speaker": "이재헌 과장",
                 "role": "서버 담당 (가상화 엔지니어)",
                 "avatar": "avatar_lee_jh.png",
-                "text": "으악! 정전인가요? 갑자기 콘솔 화면 신호가 죽어버렸습니다!"
+                "text": "으악! 전압 경보가 울리더니 정전이 터졌습니다. 비상 발전기가 돌기 전에 분전반 차단기가 강제 트립된 것 같습니다!"
             },
             {
                 "speaker": "박주암 과장",
                 "role": "WAS 담당 (실무 운영자)",
                 "avatar": "avatar_park_ja.png",
-                "text": "누군가가 강제로 단말기 모니터 신호를 차단해 분석을 방해하려는 수작이 분명합니다!"
+                "text": "각 PDU(전력 분배 장치)의 단일 라인 한계 정격 전류는 최대 80A입니다. 이 과장님, 정전 직전에 결선되어 있던 각 장비들의 전류 소모량 합계를 PDU별로 감사해 보십시오."
             },
             {
                 "speaker": "이재헌 과장",
                 "role": "서버 담당 (가상화 엔지니어)",
                 "avatar": "avatar_lee_jh.png",
-                "text": "다행히 터미널 장치의 비상 자체 안전 모듈이 돌고 있습니다. 화면 중앙 캔버스 어딘가에 마스크 처리된 복구 코드가 숨겨져 있으니, 마우스 드래그(Ctrl+A)를 수행해 코드를 읽어냅시다!"
+                "text": "아! 임계치 80A를 단독으로 초과해 서지 부하를 가하고 셧다운을 유도한 범인 PDU의 식별 코드(pdu01, pdu02, pdu03 중 하나)를 찾아 터미널에 입력하십시오!"
             }
         ],
-        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>💡 VISIBILITY RESTORATION OVERLAY</div>\n    <div class='hidden-text-container'>\n        <span class='hidden-error-text'>404500</span>\n    </div>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px;'>\n        드래그하여 숨겨진 에러 코드를 찾아 터미널에 입력하십시오.\n    </p>\n</div>"
+        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>🔌 PDU CURRENT LOAD INVENTORY (80A MAX LIMIT)</div>\n    <div style='display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 10px;'>\n        <div style='background: rgba(0,0,0,0.5); padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); text-align: left;'>\n            <h4 style='color: var(--accent-blue); margin-bottom: 8px;'>[PDU-01]</h4>\n            <ul style='list-style: none; font-family: var(--font-mono); font-size: 0.8rem; padding: 0; line-height: 1.6;'>\n                <li>- Core-WAS-01 : 25A</li>\n                <li>- Core-WAS-02 : 25A</li>\n                <li>- L4-LoadBalancer : 10A</li>\n                <li>- Switch-Hub-01 : 15A</li>\n            </ul>\n        </div>\n        <div style='background: rgba(0,0,0,0.5); padding: 12px; border-radius: 6px; border: 1px solid var(--accent-magenta); text-align: left;'>\n            <h4 style='color: var(--accent-magenta); margin-bottom: 8px;'>[PDU-02]</h4>\n            <ul style='list-style: none; font-family: var(--font-mono); font-size: 0.8rem; padding: 0; line-height: 1.6;'>\n                <li>- DB-Oracle-Node1 : 35A</li>\n                <li>- DB-Oracle-Node2 : 35A</li>\n                <li>- SAN-Fibre-Switch : 12A</li>\n            </ul>\n        </div>\n        <div style='background: rgba(0,0,0,0.5); padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); text-align: left;'>\n            <h4 style='color: var(--accent-blue); margin-bottom: 8px;'>[PDU-03]</h4>\n            <ul style='list-style: none; font-family: var(--font-mono); font-size: 0.8rem; padding: 0; line-height: 1.6;'>\n                <li>- Web-Server-01 : 15A</li>\n                <li>- Web-Server-02 : 15A</li>\n                <li>- NAS-Storage-Unit : 20A</li>\n                <li>- Dev-VM-Host : 15A</li>\n            </ul>\n        </div>\n    </div>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 15px; line-height: 1.5;'>\n        힌트: 각 PDU 분전반 하위에 가동되던 장비의 전류 소모량 합산값을 계산하여, 80A 허용 상한선을 홀로 위반하여 차단기 트립을 초래한 분전반 식별 기호(pdu01, pdu02, pdu03)를 입력하십시오.\n    </p>\n</div>"
     },
     {
         "stage": 5,
         "title": "Zalgo Text (글자 깨짐)",
-        "filename": "48b42551.html",
-        "verify_hash": "af4883c99558a3f6ef589d7e9a69585135ebac48f6b55c12e5e96849dc3707ee",
+        "filename": "",
+        "verify_hash": "",
         "narrative": "정전의 여파로 서버 콘솔 메모리 버퍼 영역 전체가 완전히 깨진 특수문자 노이즈로 덮여 복구가 난해해진 상황입니다.",
         "dialogue_list": [
             {
@@ -127,8 +128,8 @@ stages = [
     {
         "stage": 6,
         "title": "System Halt Signal (시스템 종료 명령어)",
-        "filename": "db590ac0.html",
-        "verify_hash": "08434ba9cdf55a02284e2913400586cd289878e0f055f7bb0b07ce392caeb989",
+        "filename": "",
+        "verify_hash": "",
         "narrative": "콘솔 메모리 버퍼가 복구되자, OS Syslog에서 결정적인 기동 중단 감사 흔적이 관측됩니다.",
         "dialogue_list": [
             {
@@ -155,8 +156,8 @@ stages = [
     {
         "stage": 7,
         "title": "CPU Overload PID (악성 프로세스 PID 추적)",
-        "filename": "4ae9c668.html",
-        "verify_hash": "2841dad7e57a80b5a9fdc7cd5799e7108f394e1c6157a8feb8e83db0808d3432",
+        "filename": "",
+        "verify_hash": "",
         "narrative": "시스템 가동이 중단되기 직전, 물리 자원을 독점하여 과부하를 가하던 프로세스 내역이 발견됩니다.",
         "dialogue_list": [
             {
@@ -183,8 +184,8 @@ stages = [
     {
         "stage": 8,
         "title": "Governance (IT 거버넌스 규정)",
-        "filename": "e3ad4d0a.html",
-        "verify_hash": "0b483f69c9eaed1e8f96259917fd826bc27d8cc20f8a5715880fb0b8a011def2",
+        "filename": "",
+        "verify_hash": "",
         "narrative": "박용철 파트장이 일방적인 일정 독촉 속에서 조사를 밀어붙이자, 권남훈 파트장이 정식 통제 절차의 당위성을 들고 나옵니다.",
         "dialogue_list": [
             {
@@ -211,8 +212,8 @@ stages = [
     {
         "stage": 9,
         "title": "Physical Device Map (물리 인프라 맵 감사)",
-        "filename": "cee89b5e.html",
-        "verify_hash": "27dce682e1ad2f2106be21d27e8025de5de7ee65cecc737d4f27a33af4c29a8a",
+        "filename": "",
+        "verify_hash": "",
         "narrative": "DBA 박재욱 차장이 스토리지 네트워크 단절 가능성을 공식적으로 제기하고 나서자, 권남훈 파트장이 네트워크 담당 김진혁 차장에게 결선 물리 식별 확인을 현장 요구합니다.",
         "dialogue_list": [
             {
@@ -239,8 +240,8 @@ stages = [
     {
         "stage": 10,
         "title": "The Cronjob (Crontab 스케줄링)",
-        "filename": "524cfb66.html",
-        "verify_hash": "318fb6b0fd6eb7ef86613797123429db40159a50c0b443197c3a229ecefc07fb",
+        "filename": "",
+        "verify_hash": "",
         "narrative": "네트워크 담당 김진혁 차장이 개입하여 박재욱 차장의 임의 수동 조작 혐의를 주장하고 나섭니다. 박 차장은 수동 가동 사실이 없음을 해명합니다.",
         "dialogue_list": [
             {
@@ -267,8 +268,8 @@ stages = [
     {
         "stage": 11,
         "title": "The Command (박주암 과장)",
-        "filename": "e3307ab7.html",
-        "verify_hash": "53c148b793bd0c621b03b40afe93b7c39bce8b4d00157bc10142b8a848af32ac",
+        "filename": "",
+        "verify_hash": "",
         "narrative": "결산 백업의 단순 과부하가 셧다운을 직접 유도한 원인이 아니라는 정황이 WAS 로그에서 마침내 실증됩니다.",
         "dialogue_list": [
             {
@@ -295,8 +296,8 @@ stages = [
     {
         "stage": 12,
         "title": "The Network Lie (김진혁 차장)",
-        "filename": "16417f5b.html",
-        "verify_hash": "debdc6fdb6c19c94ff78b653767bfac108d84ed51a54a58a72866dc635b15729",
+        "filename": "",
+        "verify_hash": "",
         "narrative": "김진혁 차장은 당시 본인의 모니터링 접속 환경이 철저하게 보장되었음을 강변하지만, 기술적 모순이 드러납니다.",
         "dialogue_list": [
             {
@@ -323,13 +324,13 @@ stages = [
     {
         "stage": 13,
         "title": "The Server Lie (이재헌 과장)",
-        "filename": "94e06050.html",
-        "verify_hash": "692e4e5decffcf5eac86471ba27ac56a861268d060e4a53a0c768617f4d3a56f",
+        "filename": "",
+        "verify_hash": "",
         "narrative": "김 차장의 거짓말이 포착된 가운데, 서버 담당 이재헌 과장이 자원 튜닝 무결성을 강력하게 어필합니다.",
         "dialogue_list": [
             {
                 "speaker": "이재헌 과장",
-                "role": "서버 담당 (가상화 엔지니어)",
+                "role": "서载헌 과장",
                 "avatar": "avatar_lee_jh.png",
                 "text": "물리 서버 자원은 평소에 아주 풍부하게 할당해 두어 넉넉한 상태였습니다. 자원 부족으로 죽은 게 절대 아닙니다!"
             },
@@ -351,8 +352,8 @@ stages = [
     {
         "stage": 14,
         "title": "The Motivation (박용철 총괄)",
-        "filename": "c70ec350.html",
-        "verify_hash": "838940b6f1deea2e9aca2c69a4df9a484139e1d8ab954a1b2366df3777ae416b",
+        "filename": "",
+        "verify_hash": "",
         "narrative": "서버의 극심한 과부하 정황이 드러나자, 박용철 파트장이 스토리지 단절 당시 터진 DB 무결성 오류 코드를 특정하자고 나섭니다.",
         "dialogue_list": [
             {
@@ -379,8 +380,8 @@ stages = [
     {
         "stage": 15,
         "title": "The VDI Rule (권남훈 총괄)",
-        "filename": "aac380d4.html",
-        "verify_hash": "6f89bddf8582a8d223e132d10c9436e788687f159fbbf5ac36a6eb14d307a3fa",
+        "filename": "",
+        "verify_hash": "",
         "narrative": "데이터베이스 단절 에러가 특정되었음에도, 권남훈 운영파트장은 외부 무단 침입 가능성을 강하게 부정합니다.",
         "dialogue_list": [
             {
@@ -407,8 +408,8 @@ stages = [
     {
         "stage": 16,
         "title": "Subnet Mistake (김진혁의 실수 1)",
-        "filename": "ef5ad16e.html",
-        "verify_hash": "8527a891e224136950ff32ca212b45bc93f69fbb801c3b1ebedac52775f99e61",
+        "filename": "",
+        "verify_hash": "",
         "narrative": "스위치 콘솔 로그를 상세 조회하던 중, 스토리지 연결이 단절되도록 유도한 결정적인 조작 실수 흔적이 드러납니다.",
         "dialogue_list": [
             {
@@ -435,8 +436,8 @@ stages = [
     {
         "stage": 17,
         "title": "SAN Storage (김진혁의 실수 2)",
-        "filename": "0e3d9fd2.html",
-        "verify_hash": "2fac394011e7d326f9c7ff5e532316be43ce2e7d88b4f1377f585e8c8c083672",
+        "filename": "",
+        "verify_hash": "",
         "narrative": "김 차장의 서브넷 오설정이 스토리지 통신 단절을 일으키고, 그로 인해 결산 DB 데이터가 연쇄 파손되었음이 물리적으로 실증되었습니다.",
         "dialogue_list": [
             {
@@ -463,8 +464,8 @@ stages = [
     {
         "stage": 18,
         "title": "Time Drift (이재헌의 실수)",
-        "filename": "58addc3e.html",
-        "verify_hash": "f020272c938ba0a213d31613fd5a1a8b053c693d489551f8b24e900db43d6873",
+        "filename": "",
+        "verify_hash": "",
         "narrative": "스토리지 연결 복구 작업이 수립된 가운데, 서버 담당 이재헌 과장이 추가적인 설정 결함을 실토합니다.",
         "dialogue_list": [
             {
@@ -491,8 +492,8 @@ stages = [
     {
         "stage": 19,
         "title": "The Culprit (진범 도출)",
-        "filename": "60268820.html",
-        "verify_hash": "3a693a0e2772b93bc89e4ba6167e17118923d7bdae9e10f1857a89d30540d85f",
+        "filename": "",
+        "verify_hash": "",
         "narrative": "서버의 느린 클럭 오차를 보정한 진짜 셧다운 명령 구동 시간은 실제 시간 기준으로 정확히 '02:13'이었습니다. DBA 박재욱 차장은 '02:05'에 공식 로그아웃하여 세션을 해제하고 사용하던 IP를 반납했습니다.",
         "dialogue_list": [
             {
@@ -519,8 +520,8 @@ stages = [
     {
         "stage": 20,
         "title": "Ticket Closed (최종 결재)",
-        "filename": "6c46331e.html",
-        "verify_hash": "a4c3ed04a95a3da14a9d235c83d868bed7c0f45cf7f3faa751ee8f50598d2211",
+        "filename": "",
+        "verify_hash": "",
         "narrative": "진범의 정체가 최종 확인되었습니다. OSPF 라우팅 오설정을 숨기기 위한 김진혁 차장의 전말이 드러납니다. 결국 공격자가 내세운 무선 모니터링이라는 하드웨어적 모순이 자가당착을 유발했습니다.",
         "dialogue_list": [
             {
@@ -545,6 +546,43 @@ stages = [
         "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>✅ RESOLUTION REPORT APPROVAL</div>\n    <p style='color: var(--text-primary); font-size: 0.85rem; line-height: 1.6;'>\n        - 장애 명칭: Core WAS Shutdown Incident<br>\n        - 조치 상태: 진범 식별 완료 및 DBA 누명 해소<br>\n        - 최종 승인 코드: done\n    </p>\n</div>"
     }
 ]
+
+# Canonical Game Passcodes (chained logic)
+answers = [
+    "179",
+    "2321",
+    "754",
+    "pdu02",  # Stage 4 new answer
+    "666568",
+    "shutdown",
+    "5250",
+    "itil",
+    "8204",
+    "0145",
+    "sqlplus",
+    "wifi",
+    "minimum",
+    "ora00600",
+    "dhcp",
+    "14",
+    "3260",
+    "0213",
+    "김진혁",
+    "done"
+]
+
+def get_sha256(text):
+    return hashlib.sha256(text.encode('utf-8')).hexdigest()
+
+# Dynamic pre-calculation of cryptographic filenames and verify_hashes
+current_file = "a7f93b2c"  # Fixed Stage 1 entry name
+for idx, ans in enumerate(answers):
+    normalized_ans = "".join(ans.split()).lower()
+    stages[idx]["verify_hash"] = get_sha256(normalized_ans)
+    stages[idx]["filename"] = f"{current_file}.html"
+    
+    # Cascade hashing to build the deterministic link chain
+    current_file = get_sha256(current_file + normalized_ans)[:8]
 
 html_template = """<!DOCTYPE html>
 <html lang="ko">
@@ -739,8 +777,9 @@ for s in stages:
         f.write(content)
     print(f"Generated: {s['filename']}")
 
-# Write clear page (8505f529.html)
-with open("8505f529.html", "w", encoding="utf-8") as f:
+# Write clear page (dynamic endpoint to match end-of-chain hash)
+clear_filename = f"{current_file}.html"
+with open(clear_filename, "w", encoding="utf-8") as f:
     f.write(clear_page_html)
-print("Generated Clear Page: 8505f529.html")
+print(f"Generated Clear Page: {clear_filename}")
 print("All stages generated successfully.")

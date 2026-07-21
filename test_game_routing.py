@@ -6,7 +6,7 @@ answers = [
     "179",
     "2321",
     "754",
-    "404500",
+    "pdu02",
     "666568",
     "shutdown",
     "5250",
@@ -72,7 +72,7 @@ for idx, ans in enumerate(answers):
     current_file = next_file_hash
 
 # Check clear page specifically
-clear_page = "8505f529.html"
+clear_page = f"{current_file}.html"
 if not os.path.exists(clear_page):
     print(f"[ERROR] Clear page file missing: {clear_page}")
     errors += 1
