@@ -15,7 +15,7 @@ answers = [
     "0145",
     "sysdba",
     "wifi",
-    "minimum",
+    "headroom",
     "ora00600",
     "dhcp",
     "14",

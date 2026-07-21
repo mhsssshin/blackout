@@ -323,7 +323,7 @@ stages = [
     },
     {
         "stage": 13,
-        "title": "The Server Lie (이재헌 과장)",
+        "title": "The Server Margin (서버 마진 고갈)",
         "filename": "",
         "verify_hash": "",
         "narrative": "네트워크 무선 거짓 진술이 발각된 와중, 서버 담당 이재헌 과장이 가상화 서버 자원 분배는 지극히 풍부하고 넉넉한 상태였다고 다급히 주장하기 시작합니다.",
@@ -344,10 +344,10 @@ stages = [
                 "speaker": "권남훈 파트장",
                 "role": "운영총괄 (예민한 리더)",
                 "avatar": "avatar_kwon_nh.png",
-                "text": "리소스가 고갈 직전이어서 물리 장비의 숨통만 겨우 붙여놓은 이 과장님의 방만한 한계 튜닝 상태를 가리키는 IT 업계 전문 용어(영문 소문자 7자)를 기입하십시오!"
+                "text": "갑작스러운 트래픽 폭주(Spike)나 백업 부하에 완충 작용을 하도록 서버 설계 단계에서 반드시 확보해 두어야 하는 '자원의 물리 여유 용량 마진'을 뜻하는 SRE 전문 용어(영문 소문자 8자)를 기입하십시오!"
             }
         ],
-        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>⚙️ VM INSTANCE SPECIFICATION OVERVIEW</div>\n    <div class='cpu-widget'>\n        <div>INSTANCE_NAME: Core-WAS-01</div>\n        <div class='cpu-bar'>CPU USAGE: [██████████] 99.6% (Overload)</div>\n        <div style='color: var(--accent-magenta); margin-top: 5px;'>AVAILABLE_MARGIN: 0.4%</div>\n    </div>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.6;'>\n        CPU 여유 마진이 0.4%밖에 되지 않는 위태로운 상태입니다.<br>\n        서버 튜닝이 충분히 넉넉한 상태가 아니라, 자원이 고갈 직전이어서 물리 장비의 숨통만 겨우 붙여놓은 한계 튜닝 상태를 의미하는 IT 영단어(영문 소문자 7자)를 기입하십시오.\n    </p>\n</div>"
+        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>⚙️ VM INSTANCE SPECIFICATION OVERVIEW</div>\n    <div class='cpu-widget'>\n        <div>INSTANCE_NAME: Core-WAS-01</div>\n        <div class='cpu-bar'>CPU USAGE: [██████████] 99.6% (Overload)</div>\n        <div style='color: var(--accent-magenta); margin-top: 5px;'>AVAILABLE_MARGIN: 0.4%</div>\n    </div>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.6;'>\n        CPU 여유 마진이 0.4%밖에 되지 않는 위태로운 상태입니다.<br>\n        트래픽 변동성이나 이상 작동 시 시스템이 즉각 불능 상태에 빠지지 않도록 아키텍처 설계 시 확보해 두는 최소한의 여유 가용 공간(마진)을 뜻하는 SRE 전문 용어(H로 시작하는 영문 소문자 8자)를 기입하십시오.\n    </p>\n</div>"
     },
     {
         "stage": 14,
@@ -559,9 +559,9 @@ answers = [
     "itil",
     "8204",
     "0145",
-    "sysdba",  # Dynamic Chain Automatically synchronizes this value
+    "sysdba",  
     "wifi",
-    "minimum",
+    "headroom",  # Updated target answer
     "ora00600",
     "dhcp",
     "14",
