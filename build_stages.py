@@ -189,7 +189,7 @@ stages = [
         "narrative": "악성 프로세스 구동 정황이 밝혀지며 긴급 조치가 전개되자, 품질총괄 박용철 파트장이 수사 절차의 공식 IT 서비스 거버넌스 등록을 완강히 요구하고 나섭니다.",
         "dialogue_list": [
             {
-                "speaker": "박용철 파特장",
+                "speaker": "박용철 파트장",
                 "role": "품질총괄 (규정 맹신자)",
                 "avatar": "avatar_park_yc.png",
                 "text": "정형화된 절차를 우회하는 임의 조사는 명백한 규정 위반입니다. 장애 상황 관리 시에는 임시 조치 단계부터 근본 문제(Problem)를 정식 식별하여 등록해야 합니다."
@@ -295,31 +295,31 @@ stages = [
     },
     {
         "stage": 12,
-        "title": "The Network Lie (김진혁 차장)",
+        "title": "The Encryption Shell (보안 접속 프로토콜)",
         "filename": "",
         "verify_hash": "",
-        "narrative": "누군가 무단으로 데이터베이스 클라이언트를 인가한 시각, 네트워크 담당 김진혁 차장은 본인이 휴게실에서 안전하게 원격 무선 전파 신호로 모니터링을 수행하고 있었다고 강변하지만 하드웨어적 모순이 드러납니다.",
+        "narrative": "누군가 무단으로 데이터베이스 클라이언트를 인가한 시각, 네트워크 담당 김진혁 차장은 본인이 휴게실에서 안전하게 switch 콘솔 원격 접속을 기동하고 있었다고 강변하지만 보안 정책적 모순이 드러납니다.",
         "dialogue_list": [
             {
                 "speaker": "김진혁 차장",
                 "role": "네트워크 담당 (능글맞은 엔지니어)",
                 "avatar": "avatar_kim_jh.png",
-                "text": "장애 시각, 저는 휴게실에서 노트북으로 기계실 랙에 적재된 라우터 허브 장비의 무선 전파 신호를 수신해 모니터링 중이었습니다. 접속 장애는 전혀 없었습니다."
+                "text": "장애 시각, 저는 휴게실에서 보안 규정 준수 하에 switch 원격 접속을 위해 비암호화 프로토콜인 telnet을 통해 모니터링을 돌리고 있었습니다. 접속은 지극히 양호했습니다."
             },
             {
                 "speaker": "권남훈 파트장",
                 "role": "운영총괄 (예민한 리더)",
                 "avatar": "avatar_kwon_nh.png",
-                "text": "거짓말 마십시오! 기계실 단말의 T5004 라우터 장비 도면을 분석해 보니, 이 장비는 무선 모듈 자체가 아예 탑재되어 있지 않은 물리적 유선 전용 허브입니다!"
+                "text": "거짓말 마십시오! 평문으로 계정이 노출되는 telnet 접속은 사내 인프라 관리 보안 지침상 전사 장비에서 완전 차단되어 있습니다!"
             },
             {
                 "speaker": "권남훈 파트장",
                 "role": "운영총괄 (예민한 리더)",
                 "avatar": "avatar_kwon_nh.png",
-                "text": "김 차장님, 무선 신호를 수신해 접속했다는 당시 진술은 물리적으로 불가능합니다. 김 차장이 모니터링에 썼다고 주장한 이 거짓말 속의 무선 인터넷 기술 명칭(영문 소문자 4자)을 밝히십시오!"
+                "text": "스위치 제어를 위해 오직 포트 22번으로만 개방되어 작동하는 암호화 원격 터미널 접속 표준 보안 프로토콜 규격(영문 소문자 3자)을 파악하여 김 차장의 진술 모순을 실증하십시오!"
             }
         ],
-        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>🌐 T5004 ROUTER HARDWARE SPECIFICATION</div>\n    <div class='ascii-diagram'>\n+------------------------------------------------+\n|  T5004 INTERNET RACK HUB                      |\n|                                                |\n|  [LAN1]   [LAN2]   [LAN3]   [LAN4]   [WAN]     |\n|  [ [O] ]  [ [O] ]  [ [X] ]  [ [X] ]  [ [O] ]   |\n|   |  |     |  |                         |  |   |\n|    유선     유선                         인터넷  |\n|                                                |\n|  * WARNING: NO WIRELESS ANTENNA MODULE *       |\n|  * ONLY WIRED ETHERNET CONNECTION SUPPORTED *  |\n+------------------------------------------------+\n    </div>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.6;'>\n        김진혁 차장의 주장: '공유기의 무선 전파 안테나 신호를 잡아 노트북으로 모니터링했다.'<br>\n        장비 매뉴얼: 무선 모듈 없음, 오직 유선 포트만 존재.<br>\n        김 차장이 접속 기술이라고 주장한 이 거짓말 속의 무선 인터넷 명칭(영문 소문자 4자)을 기입하십시오.\n    </p>\n</div>"
+        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>🌐 HIS INFRASTRUCTURE SECURITY POLICY</div>\n    <div class='ascii-diagram' style='text-align: left; font-size: 0.8rem; line-height: 1.5; background: rgba(0,0,0,0.5); padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); color: var(--text-primary);'>\n+------------------------------------------------+\n|  [HIS INFRASTRUCTURE SECURITY STANDARD v4.2]   |\n|                                                |\n|  * REMOTE CONSOLE PRIVILEGE:                   |\n|    - Telnet (Port 23) : [ DISABLED / BLOCK ]   |\n|    - ???    (Port 22) : [ ENABLED / REQUIRED ] |\n|                                                |\n|  * Policy Rule: All administrative sessions    |\n|    must be encrypted using secure shell.       |\n+------------------------------------------------+\n    </div>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.6;'>\n        김진혁 차장의 주장: 'telnet 통신(평문 전송)을 사용해 스위치에 정상 원격 접속했다.'<br>\n        보안 표준 명세: telnet은 엄격 차단, 포트 22번을 점유하는 이 프로토콜만 보안상 개방됨.<br>\n        사내 정책에 의거해 강제 적용되는 암호화 원격 접속 프로토콜 규격 명칭(영문 소문자 3자)을 기입하십시오.\n    </p>\n</div>"
     },
     {
         "stage": 13,
@@ -347,7 +347,7 @@ stages = [
                 "text": "CPU 점유율이 임계치를 초과하여 시스템의 동작이 심각하게 마비되거나 다운되는 '치명적 과부하' 상태를 일컫는 대표적인 IT 용어(영문 소문자 8자)를 기입하십시오!"
             }
         ],
-        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>⚙️ VM INSTANCE SPECIFICATION OVERVIEW</div>\n    <div class='cpu-widget'>\n        <div>INSTANCE_NAME: Core-WAS-01</div>\n        <div class='cpu-bar'>CPU USAGE: [██████████] 99.6% (Critical Limit)</div>\n        <div style='color: var(--accent-magenta); margin-top: 5px;'>AVAILABLE_MARGIN: 0.4%</div>\n    </div>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.6;'>\n        CPU 여유 마진이 0.4%밖에 되지 않는 위태로운 상태입니다.<br>\n        시스템 자원이 허용 한도를 초과해 극도의 과부하에 직면한 상태를 뜻하는 영문 소문자 8자 단어를 기입하십시오.\n    </p>\n</div>"
+        "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>⚙️ VM INSTANCE SPECIFICATION OVERVIEW</div>\n    <div class='cpu-widget'>\n        <div>INSTANCE_NAME: Core-WAS-01</div>\n        <div class='cpu-bar'>CPU USAGE: [██████████] 99.6% ( MASKED )</div>\n        <div style='color: var(--accent-magenta); margin-top: 5px;'>AVAILABLE_MARGIN: 0.4%</div>\n    </div>\n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 10px; line-height: 1.6;'>\n        CPU 여유 마진이 0.4%밖에 되지 않는 위태로운 상태입니다.<br>\n        시스템 자원이 허용 한도를 초과해 극도의 과부하에 직면한 상태를 뜻하는 영문 소문자 8자 단어를 기입하십시오.<br>\n        <strong style='color: var(--accent-blue);'>힌트: '위(Over)'에 '짐(Load)'을 과도하게 실어 인프라가 감당할 수 없는 한계 상태를 의미하는 8글자 합성어(O로 시작)입니다. 도로 위의 과적 차량을 표현할 때도 널리 쓰이는 용어입니다.</strong>\n    </p>\n</div>"
     },
     {
         "stage": 14,
@@ -560,8 +560,8 @@ answers = [
     "8204",
     "0145",
     "sysdba",  
-    "wifi",
-    "overload",  # Updated target answer
+    "ssh",  # Stage 12 new answer
+    "overload",  # Stage 13 new answer
     "ora00600",
     "dhcp",
     "14",

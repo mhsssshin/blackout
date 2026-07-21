@@ -14,7 +14,7 @@ answers = [
     "8204",
     "0145",
     "sysdba",
-    "wifi",
+    "ssh",
     "overload",
     "ora00600",
     "dhcp",
