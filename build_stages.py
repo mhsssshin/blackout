@@ -161,7 +161,7 @@ stages = [
         "dialogue_list": [
             {
                 "speaker": "박용철 파트장",
-                "role": "품질총괄 (예민한 리더)",
+                "role": "품질총괄 (예민한 리dev)",
                 "avatar": "avatar_park_yc.png",
                 "text": "이재헌 과장! 서버가 강제 종료되기 직전에 CPU를 98% 이상 과독점하며 인프라 마비를 유도한 백그라운드 프로세스가 기동 중이었습니다. 평소에 프로세스 모니터링도 안 하고 뭐 한 겁니까!"
             },
@@ -213,19 +213,25 @@ stages = [
         "title": "Physical Device Map (물리 인프라 맵 감사)",
         "filename": "cee89b5e.html",
         "verify_hash": "27dce682e1ad2f2106be21d27e8025de5de7ee65cecc737d4f27a33af4c29a8a",
-        "narrative": "DBA 박재욱 차장이 스토리지 네트워크 단절 가능성을 제기하자, 권남훈 파트장이 네트워크 담당 김진혁 차장에게 기계실 물리 결선 상태 대조를 긴급 지시합니다.",
+        "narrative": "DBA 박재욱 차장이 스토리지 네트워크 단절 가능성을 공식적으로 제기하고 나서자, 권남훈 파트장이 네트워크 담당 김진혁 차장에게 결선 물리 식별 확인을 현장 요구합니다.",
         "dialogue_list": [
+            {
+                "speaker": "박재욱 차장",
+                "role": "DBA (억울한 실무자)",
+                "avatar": "avatar_park_jw.png",
+                "text": "권 파트장님, WAS 셧다운 직전에 금융 DB 스토리지 동기화 데몬이 I/O 디스크 오류로 끊겼습니다. 이건 제 쿼리 작업 실수가 아니라 백업 스토리지망 연결 장치 자체의 물리 단절입니다!"
+            },
             {
                 "speaker": "권남훈 파트장",
                 "role": "운영총괄 (규정 맹신자)",
                 "avatar": "avatar_kwon_nh.png",
-                "text": "김 차장, DBA 박 차장은 스토리지 단절이 원인이라 주장하는군. 정식 티켓에 기입할 테니 실제 해당 스토리지 장비가 보관된 랙 식별 번호 2자리(Rack ID)와 스토리지 스위치 포트 번호 2자리(Port ID)를 조합한 4자리 물리 감사 코드를 대조해 주게."
+                "text": "스토리지망 물리적 단절이라고요? 김 차장, 박 차장 말이 사실인지 검증해야겠네. 티켓 조회를 기동할 테니 스토리지 장비가 보관된 랙 번호 2자리(Rack ID)와 결선된 스위치 포트 번호 2자리(Port ID)를 조합한 4자리 물리 감사 코드를 대조해 보게."
             },
             {
                 "speaker": "김진혁 차장",
                 "role": "네트워크 담당 (능글맞은 엔지니어)",
                 "avatar": "avatar_kim_jh.png",
-                "text": "아, 그 물리 결선 정보는 기계실 콘솔 단말의 장비 맵과 광 스위치 포트 로그를 대조해 보면 바로 나옵니다. 랙 ID(2자리)와 타겟 포트(2자리)를 합친 코드(8204)를 입력하시면 확인 티켓을 발행해 드리지요."
+                "text": "물리 결선 정보 대장은 기계실 콘솔 단말의 배치 맵과 광 스위치 포트 로그를 대조해 보면 바로 나옵니다. 랙 ID(2자리)와 포트(2자리)를 합친 코드(8204)를 입력하시면 즉시 스위치 상태를 모니터링하겠습니다."
             }
         ],
         "gimmick_html": "<div class='puzzle-container'>\n    <div class='puzzle-title'>⚙️ PHYSICAL SERVER ROOM RACK MAP</div>\n    <div class='ascii-diagram' style='text-align: left; font-size: 0.8rem; line-height: 1.5; background: rgba(0,0,0,0.5); padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); color: var(--text-primary);'>\n+-------------------------------------------------------------+\n|  [SERVER ROOM ZONE A - RACK ARRANGEMENT]                    |\n|                                                             |\n|  [Rack 80] : L4 load balancer VIP suite                     |\n|  [Rack 81] : Financial Core WAS clusters (01-08)            |\n|  [Rack 82] : SAN Storage Target controller units            |\n|  [Rack 83] : Oracle RAC database engine nodes               |\n+-------------------------------------------------------------+\n    </div>\n    \n    <div class='puzzle-title' style='margin-top: 15px;'>📡 SWITCH ROUTER PORT INTERFACE LOG</div>\n    <div style='background: rgba(0,0,0,0.6); padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.6; text-align: left; color: var(--text-primary);'>\n        [Port 01] - LINK UP   - target: Core-WAS-Switch<br>\n        [Port 02] - LINK UP   - target: Enterprise-Backbone<br>\n        [Port 03] - LINK DOWN - target: Internal-VDI-Hub<br>\n        [Port 04] - LINK UP   - target: SAN-Storage-Fibre-Switch\n    </div>\n    \n    <p style='color: var(--text-muted); font-size: 0.85rem; margin-top: 12px; line-height: 1.5;'>\n        힌트: 배치 맵에서 'SAN Storage' 장비가 속한 랙 번호 2자리와 스위치 로그에서 'SAN-Storage-Fibre-Switch'가 결선된 포트 번호 2자리를 찾아 차례대로 조합하십시오.\n    </p>\n</div>"
@@ -499,7 +505,7 @@ stages = [
                 "speaker": "박재욱 차장",
                 "role": "DBA (울분을 토하는 실무자)",
                 "avatar": "avatar_park_jw.png",
-                "text": "그확실히 그렇습니다! 그리고 단 8분 뒤인 02시 13분에 누군가 제가 사용하던 그 똑같은 IP 주소를 DHCP 시스템을 통해 동적 할당받아 WAS 강제 셧다운 명령을 내렸습니다. 02시 13분에 그 IP로 접속해 있던 자가 진짜 범인입니다!"
+                "text": "확실히 그렇습니다! 그리고 단 8분 뒤인 02시 13분에 누군가 제가 사용하던 그 똑같은 IP 주소를 DHCP 시스템을 통해 동적 할당받아 WAS 강제 셧다운 명령을 내렸습니다. 02시 13분에 그 IP로 접속해 있던 자가 진짜 범인입니다!"
             },
             {
                 "speaker": "권남훈 파트장",

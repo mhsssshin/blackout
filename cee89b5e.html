@@ -55,12 +55,27 @@
                     <!-- 3rd-person neutral narrative text block -->
                     <div class="narrative-panel" style="background: rgba(0, 229, 255, 0.07); border-left: 4px solid var(--accent-blue); box-shadow: -5px 0 15px rgba(0, 229, 255, 0.15); padding: 16px; margin-bottom: 20px; font-size: 0.95rem; line-height: 1.6; color: var(--text-primary); border-radius: 0 6px 6px 0; font-family: var(--font-sans);">
                         <div style="font-family: var(--font-title); font-size: 0.75rem; color: var(--accent-blue); font-weight: bold; letter-spacing: 1px; margin-bottom: 8px; text-transform: uppercase;">📡 SITUATION BRIEFING</div>
-                        <div style="white-space: pre-wrap; margin: 0; padding: 0;">DBA 박재욱 차장이 스토리지 네트워크 단절 가능성을 제기하자, 권남훈 파트장이 네트워크 담당 김진혁 차장에게 기계실 물리 결선 상태 대조를 긴급 지시합니다.</div>
+                        <div style="white-space: pre-wrap; margin: 0; padding: 0;">DBA 박재욱 차장이 스토리지 네트워크 단절 가능성을 공식적으로 제기하고 나서자, 권남훈 파트장이 네트워크 담당 김진혁 차장에게 결선 물리 식별 확인을 현장 요구합니다.</div>
                     </div>
 
                     <!-- Pure character dialogue feed (KakaoTalk / Chat style list) -->
                     <div class="dialogue-feed-container" style="display: flex; flex-direction: column; gap: 12px;">
                         
+        <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
+            <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <img src="avatar_park_jw.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="dialogue-body" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                <div class="dialogue-speaker" style="font-family: var(--font-title); font-size: 0.8rem; font-weight: bold; color: var(--accent-blue); display: flex; justify-content: space-between;">
+                    <span>박재욱 차장</span>
+                    <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">DBA (억울한 실무자)</span>
+                </div>
+                <div class="dialogue-text typing-text" data-text="권 파트장님, WAS 셧다운 직전에 금융 DB 스토리지 동기화 데몬이 I/O 디스크 오류로 끊겼습니다. 이건 제 쿼리 작업 실수가 아니라 백업 스토리지망 연결 장치 자체의 물리 단절입니다!" style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    권 파트장님, WAS 셧다운 직전에 금융 DB 스토리지 동기화 데몬이 I/O 디스크 오류로 끊겼습니다. 이건 제 쿼리 작업 실수가 아니라 백업 스토리지망 연결 장치 자체의 물리 단절입니다!
+                </div>
+            </div>
+        </div>
+        
         <div class="dialogue-card speaker-suspect" style="margin-bottom: 5px; display: flex; gap: 15px; background: rgba(15, 61, 89, 0.12); border: 1px solid rgba(15, 61, 89, 0.35); border-radius: 8px; padding: 12px; border-left: 4px solid var(--accent-magenta);">
             <div class="avatar-container" style="flex-shrink: 0; width: 48px; height: 48px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
                 <img src="avatar_kwon_nh.png" alt="Suspect Avatar" style="width: 100%; height: 100%; object-fit: cover;">
@@ -70,8 +85,8 @@
                     <span>권남훈 파트장</span>
                     <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">운영총괄 (규정 맹신자)</span>
                 </div>
-                <div class="dialogue-text typing-text" data-text="김 차장, DBA 박 차장은 스토리지 단절이 원인이라 주장하는군. 정식 티켓에 기입할 테니 실제 해당 스토리지 장비가 보관된 랙 식별 번호 2자리(Rack ID)와 스토리지 스위치 포트 번호 2자리(Port ID)를 조합한 4자리 물리 감사 코드를 대조해 주게." style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
-                    김 차장, DBA 박 차장은 스토리지 단절이 원인이라 주장하는군. 정식 티켓에 기입할 테니 실제 해당 스토리지 장비가 보관된 랙 식별 번호 2자리(Rack ID)와 스토리지 스위치 포트 번호 2자리(Port ID)를 조합한 4자리 물리 감사 코드를 대조해 주게.
+                <div class="dialogue-text typing-text" data-text="스토리지망 물리적 단절이라고요? 김 차장, 박 차장 말이 사실인지 검증해야겠네. 티켓 조회를 기동할 테니 스토리지 장비가 보관된 랙 번호 2자리(Rack ID)와 결선된 스위치 포트 번호 2자리(Port ID)를 조합한 4자리 물리 감사 코드를 대조해 보게." style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    스토리지망 물리적 단절이라고요? 김 차장, 박 차장 말이 사실인지 검증해야겠네. 티켓 조회를 기동할 테니 스토리지 장비가 보관된 랙 번호 2자리(Rack ID)와 결선된 스위치 포트 번호 2자리(Port ID)를 조합한 4자리 물리 감사 코드를 대조해 보게.
                 </div>
             </div>
         </div>
@@ -85,8 +100,8 @@
                     <span>김진혁 차장</span>
                     <span class="speaker-role" style="font-size: 0.7rem; color: var(--text-muted);">네트워크 담당 (능글맞은 엔지니어)</span>
                 </div>
-                <div class="dialogue-text typing-text" data-text="아, 그 물리 결선 정보는 기계실 콘솔 단말의 장비 맵과 광 스위치 포트 로그를 대조해 보면 바로 나옵니다. 랙 ID(2자리)와 타겟 포트(2자리)를 합친 코드(8204)를 입력하시면 확인 티켓을 발행해 드리지요." style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
-                    아, 그 물리 결선 정보는 기계실 콘솔 단말의 장비 맵과 광 스위치 포트 로그를 대조해 보면 바로 나옵니다. 랙 ID(2자리)와 타겟 포트(2자리)를 합친 코드(8204)를 입력하시면 확인 티켓을 발행해 드리지요.
+                <div class="dialogue-text typing-text" data-text="물리 결선 정보 대장은 기계실 콘솔 단말의 배치 맵과 광 스위치 포트 로그를 대조해 보면 바로 나옵니다. 랙 ID(2자리)와 포트(2자리)를 합친 코드(8204)를 입력하시면 즉시 스위치 상태를 모니터링하겠습니다." style="font-size: 0.88rem; line-height: 1.5; color: var(--text-primary); white-space: pre-wrap;">
+                    물리 결선 정보 대장은 기계실 콘솔 단말의 배치 맵과 광 스위치 포트 로그를 대조해 보면 바로 나옵니다. 랙 ID(2자리)와 포트(2자리)를 합친 코드(8204)를 입력하시면 즉시 스위치 상태를 모니터링하겠습니다.
                 </div>
             </div>
         </div>
